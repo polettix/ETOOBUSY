@@ -21,7 +21,7 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
 You can also look at [several formatting hints][mathjax-examples]. To
 enable it, add `mathjax: true` in the front matter of the page (look at
-the first lines of `about.md` to see how).
+the first lines of [about.md][about-md-raw] to see how).
 
 ## Get your own
 
@@ -45,6 +45,7 @@ Now you can add your posts inside the `_posts` sub-directory (even in
 [tl-examples]: https://heiswayi.github.io/textlog/2017/01/15/example-content/
 [MathJax]: https://www.mathjax.org/
 [mathjax-examples]: https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+[about-md-raw]: https://raw.githubusercontent.com/polettix/ETOOBUSY/master/about.md
 [GitHub]: https://github.com
 [etoobusy-gh]: https://github.com/polettix/ETOOBUSY
 [ghp-master]: https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages
