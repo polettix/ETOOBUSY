@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About this blog...
 ---
 
 This is a minimalistic blog scaffolding that is supposed to work out of
