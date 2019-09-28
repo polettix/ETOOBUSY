@@ -128,10 +128,10 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur e
 
 ### Math
 
-Say that $\sum\_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$ but also:
+Say that $\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$ but also:
 
 
-$$\sum\_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
 -----
 
