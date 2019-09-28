@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About this blog...
+mathjax: true
 ---
 
 This is a minimalistic blog scaffolding that is supposed to work out of
@@ -13,12 +14,14 @@ This relies heavily on [Jekyll][] and the [TextLog][] theme. In
 particular, [this page][tl-examples] has examples of what formatting
 capabilities are available.
 
-In addition, [MathJax][] is also enabled so that you can write
+In addition, [MathJax][] can also be enabled so that you can write
 $\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$ and also:
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
-You can also look at [several formatting hints][mathjax-examples].
+You can also look at [several formatting hints][mathjax-examples]. To
+enable it, add `mathjax: true` in the front matter of the page (look at
+the first lines of `about.md` to see how).
 
 ## Get your own
 
