@@ -46,3 +46,20 @@ $on-:              800px;
         "layout",
         "syntax-highlighting"
 ;
+
+// ::before psuedo-element
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+
+  li {
+    padding-left: 1rem;
+    text-indent: -0.7rem;
+    list-style-image: none;
+  }
+
+  li::before {
+    content: "✏️ ";
+  }
+}
