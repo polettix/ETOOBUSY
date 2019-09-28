@@ -23,11 +23,9 @@ title: Tagged
 {% endfor %}
 
 <div class="home">
-	<section class="site-header">
-		<p>All tagged posts will be sorted here.</p>
-	</section>
 
 	<section>
+		<p>All tagged posts will be sorted here.</p>
 		{% for tag in tags %}
 		<h3 class="tag-title" id="{{ tag | slugify }}"># {{ tag }}</h3>
 		<ul class="post-list">
