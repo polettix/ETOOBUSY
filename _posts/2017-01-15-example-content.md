@@ -2,6 +2,7 @@
 layout: post
 title: Example content
 tags: [Demo, Example Content]
+mathjax: true
 comment: true
 ---
 
@@ -124,6 +125,13 @@ Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, conse
 </table>
 
 Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+### Math
+
+Say that $\sum\_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$ but also:
+
+
+$$\sum\_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
 -----
 
