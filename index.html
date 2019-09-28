@@ -11,7 +11,7 @@ layout: default
 		<ul class="post-list">
 			{% for post in site.posts %}
 			<li>
-            [<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>]
+            [<time datetime="{{ post.date | date_to_xmlschema }}" />{{ post.date | date: "%Y-%m-%d" }}]
 				<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
 			</li>
 			{% endfor %}
