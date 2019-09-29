@@ -62,7 +62,7 @@ You might wonder why you would ever want to include [Busybox][] in your
 
 One consideration is that some of those tools are slightly above *basic*
 and might lack in a typical Linux installation. Two notable examples are
-[ncat][] and `xxd`, the former useful to set up quick TCP connections
+[ncat][] and [xxd][], the former useful to set up quick TCP connections
 towards a destination (and check if it's alive, how it works, etc.), the
 former to get a better idea of the contents of a (binary) file.
 
@@ -76,4 +76,5 @@ the container's filesystem is an invaluable help for troubleshooting.
 [Busybox]: https://busybox.net/
 [#toolbox]: {{ '/tagged/#toolbox' | prepend: site.baseurl | prepend: site.url }}
 [ncat]: https://nmap.org/ncat/
+[xxd]: https://github.com/vim/vim/blob/master/src/xxd/xxd.c
 [Docker]: https://www.docker.com/
