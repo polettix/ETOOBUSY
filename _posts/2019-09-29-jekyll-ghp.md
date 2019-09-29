@@ -40,7 +40,7 @@ The index page already includes listing all available posts, in some
 
 Fact is... multiple posts on the same date might not get in the order
 you think or would prefer. There is [a simple solution][date-order] this
-this, i.e.  just add a `date` field in the [front matter][#front-matter].
+this, i.e.  just add a `date` field in the [front matter](#front-matter).
 
 {% highlight YAML %}
 ---
