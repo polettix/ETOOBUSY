@@ -107,6 +107,8 @@ handy anyway. As an example, you might run into a very stripped down
 only, and all tools are lacking; in this case, injecting [Busybox][] in
 the container's filesystem is an invaluable help for troubleshooting.
 
+Last, but not least, [Busybox][] is indeed also released as a statically
+compiled executable, just look at the [binaries][bb-binaries] directory.
 
 [Busybox]: https://busybox.net/
 [#toolbox]: {{ '/tagged/#toolbox' | prepend: site.baseurl | prepend: site.url }}
@@ -114,3 +116,4 @@ the container's filesystem is an invaluable help for troubleshooting.
 [xxd]: https://github.com/vim/vim/blob/master/src/xxd/xxd.c
 [Docker]: https://www.docker.com/
 [bash]: https://www.gnu.org/software/bash/
+[bb-binaries]: https://busybox.net/downloads/binaries/
