@@ -147,7 +147,7 @@ because it involves black magic, but you're the owner of your stuff. The
 first thing to do is to find the container's process identifier:
 
 {% highlight bash %}
-pid="$(docker inspect --format '\{{ .State.Pid }}' "$c_nid")"
+pid="$(docker inspect --format '{{ "{{ .State.Pid }}" }}' "$c_nid")"
 {% endhighlight %}
 
 (see e.g. [docker-pid][]).
