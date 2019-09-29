@@ -4,6 +4,7 @@ description: "🚀 minimal blogging for the impatient"
 baseurl: "/ETOOBUSY"
 url: ""
 author: "polettix"
+timezone: Europe/Rome
 
 # Build settings
 permalink: pretty
