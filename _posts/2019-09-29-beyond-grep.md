@@ -1,13 +1,13 @@
 ---
 title: beyond grep
 type: post
-comment: true
 tags: [ grep, ack, ag, toolbox ]
+comment: true
 date: 2019-09-29 17:24:14 +0200
 ---
 
 Everybody loves [grep][], but sometimes we need to go beyond just looking
-for a string inside.
+for a string inside a file.
 
 ## POSIX `grep` Can Have Many Options
 
@@ -48,7 +48,7 @@ So, it's time to go beyond that, too.
 [grep][]'s shortcomings, including also [GNU grep][gnu-grep]. In
 particular, looking only in the right files was a driving principle, but
 the author listed the [Top 10 reasons to use ack for source
-code][ack-top-10], which can illuminate on the other 9 reasons.
+code][ack-top-ten], which can illuminate on the other 9 reasons.
 
 I usually don't need anything fancy, just looking for a pattern like
 this:
@@ -73,15 +73,18 @@ lacking in some sense or other, hence decided to rewrite it with some
 different goals in mind. You can find a few of the alternatives
 [here][ack-alternatives].
 
-Among them we find [ag, the Silver Searcher][ag], which the author dubs
-as *5-10x faster than Ack* in typical usage. The command line options
-are mostly compatible with [ack][]'s, although they diverged a bit in
-time. For just simple searches of a pattern you can just trade `ag` for
-`ack`, although I'm not 100% sure that it supports the full gamut of
-options and syntax you would expect in a [Perl][] regex:
+Among them we find [ag, the Silver Searcher][ag], which the author
+describes as *5-10x faster than Ack* in typical usage. The command line
+options are mostly compatible with [ack][]'s, although they diverged a
+bit in time.
+
+For just simple searches of a pattern you can just trade `ag` for `ack`,
+although I'm not 100% sure that it supports the full gamut of options
+and syntax you would expect in a [Perl][] regex; for this reason I'll
+stick to a more portable example:
 
 {% highlight bash %}
-$ ag '^\s*sub\s+(foo|bar)\b)'
+$ ag '^\s*sub\s+(foo|bar)\b'
 {% endhighlight %}
 
 One interesting aspect of [ag][] is that it's possible to compile it as
