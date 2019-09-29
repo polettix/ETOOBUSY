@@ -32,6 +32,8 @@ date: 2019-09-29 12:08:18 +0200
 As a bare minimum, put `title` and `type` (the latter set to `post` like
 the example).
 
+See more in the [official documentation][front-matter].
+
 ## Ordering Posts
 
 The index page already includes listing all available posts, in some
@@ -70,3 +72,4 @@ disqus_shortname: my-new-site
 [date-order]: https://groups.google.com/forum/#!topic/jekyll-rb/8QCIzevauSU
 [front-matter]: https://jekyllrb.com/docs/front-matter/
 [Disqus]: https://disqus.com/
+[front-matter]: https://jekyllrb.com/docs/front-matter/
