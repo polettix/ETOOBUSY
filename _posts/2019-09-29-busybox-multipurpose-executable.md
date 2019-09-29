@@ -94,7 +94,7 @@ option `--install` will be helpful.
 You might wonder why you would ever want to include [Busybox][] in your
 [#toolbox][], provided that it includes pretty basic tools.
 
-One consideration is that some of those tools are slightly above *basic*
+One consideration is that some of those tools are above *basic* level
 and might lack in a typical Linux installation. Two notable examples are
 [ncat][] (as `nc`) and [xxd][], the former useful to set up quick TCP
 connections towards a destination (and check if it's alive, how it
