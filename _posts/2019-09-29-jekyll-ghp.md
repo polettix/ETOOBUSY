@@ -54,15 +54,11 @@ date: 2019-09-29 12:08:18 +0200
 
 Activating comments with [Disqus][] is straightforward:
 
-- create a new discussion site in [Disqus][], e.g. named `whatever`
+- create a new discussion site in [Disqus][], e.g. named `my-new-site`
 - set the name of this new site in `_config.yml`:
 
 {% highlight YAML %}
-# ...
-
-disqus_shortname: whatever
-
-# ...
+disqus_shortname: my-new-site
 {% endhighlight %}
 
 
