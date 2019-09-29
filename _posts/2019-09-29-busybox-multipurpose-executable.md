@@ -72,9 +72,10 @@ $ busybox grep -i whatever *.txt
 {% endhighlight %}
 
 If you plan on using the tools interactively many times, typing
-`busybox' can be annoying, so you have two options. The least invasive
-is to enter `busybox`'s shell, which is no [bash][] but it's honest.
-From there, all tools are just available by magic:
+`busybox` over and over can be annoying, so you have two options. The
+least invasive is to enter the shell provided by `busybox`, which is no
+[bash][] but it's honest.  From there, all tools are just available by
+magic:
 
 {% highlight text %}
 host-shell$ busybox sh
@@ -85,7 +86,8 @@ If you don't like [Busybox][]'s shell (e.g. because you have a different
 one, or want to invoke commands from somewhere else) then it's possible
 to *install* the sub-commands as symbolic links to the `busybox`
 executable itself. In fact, when it's run with a different name,
-`busybox` *becomes* the program with that name.
+`busybox` *becomes* the program with that name. If this is your way,
+option `--install` will be helpful.
 
 ## Why `busybox` In The [#toolbox][]?
 
@@ -111,3 +113,4 @@ the container's filesystem is an invaluable help for troubleshooting.
 [ncat]: https://nmap.org/ncat/
 [xxd]: https://github.com/vim/vim/blob/master/src/xxd/xxd.c
 [Docker]: https://www.docker.com/
+[bash]: https://www.gnu.org/software/bash/
