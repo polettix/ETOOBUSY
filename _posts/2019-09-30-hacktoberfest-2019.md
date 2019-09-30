@@ -17,6 +17,7 @@ was *already* October. So I decided to give it a try.
 It turns out that I took the risk to submit the required four Pull
 Requests already:
 
+<img src="{{ '/assets/images/hacktoberfest-2019.png' | prepend: site.baseurl | prepend: site.url }}" alt="Hacktoberfest 2019 - polettix">
 
 If they are not marked as spam (and I don't expect them to be) it seems
 that my Hacktoberfest is completed before October even arrives in Rome
