@@ -21,7 +21,7 @@ Requests already:
 
 If they are not marked as spam (and I don't expect them to be) it seems
 that my Hacktoberfest is completed before October even arrives in Rome
-:-)
+😅
 
 [Hacktoberfest]: https://hacktoberfest.digitalocean.com/
 [do]: https://www.digitalocean.com/
