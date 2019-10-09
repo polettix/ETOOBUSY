@@ -23,6 +23,11 @@ If they are not marked as spam (and I don't expect them to be) it seems
 that my Hacktoberfest is completed before October even arrives in Rome
 😅
 
+**Update** - it looks like I made it!
+
+
+<img src="{{ '/assets/images/hacktoberfest-2019-done.png' | prepend: site.baseurl | prepend: site.url }}" alt="Hacktoberfest 2019 - polettix">
+
 [Hacktoberfest]: https://hacktoberfest.digitalocean.com/
 [do]: https://www.digitalocean.com/
 [GitHub]: https://www.github.com/
