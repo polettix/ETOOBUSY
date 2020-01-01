@@ -38,7 +38,7 @@ grep -o '[0-9]\+\(\.[0-9]\+\)\{3\}' <input.txt
   example would become:
 
 ~~~~
-grep -Po '\d+(\.\d+\){3}' <input.txt
+grep -Po '\d+(\.\d+){3}' <input.txt
 ~~~~
 
 ## Also, `\K` Can Save The Day
@@ -56,14 +56,14 @@ accomplished by just putting the additional constraint in the regular
 expression:
 
 ~~~~
-grep -Po 'right \d+(\.\d+\){3}' <input.txt
+grep -Po 'right \d+(\.\d+){3}' <input.txt
 ~~~~
 
 Alas, this kind of defies the usefulness of `-o` though, because now we
 also get `right ` in the output! This is where `\K` comes to the rescue:
 
 ~~~~
-grep -Po 'right \K\d+(\.\d+\){3}' <input.txt
+grep -Po 'right \K\d+(\.\d+){3}' <input.txt
 ~~~~
 
 This tells that a successful match *MUST* include `right ` as we wish, but
@@ -88,7 +88,7 @@ To tell the two situations apart, we can just require that our approximate
 pattern for IP addresses ends on a word boundary:
 
 ~~~~
-grep -Po 'right \K\d+(\.\d+\){3}\b' <input.txt
+grep -Po 'right \K\d+(\.\d+){3}\b' <input.txt
 ~~~~
 
 ## Today I Learnt...
