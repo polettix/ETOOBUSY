@@ -3,7 +3,7 @@ title: Grep o Treat
 type: post
 tags: [ grep, shell, terminal, regex ]
 comment: true
-date: 2019-01-01 09:08:48
+date: 2020-01-01 09:08:48
 ---
 
 **TL;DR**
