@@ -11,7 +11,7 @@ date: 2020-01-01 09:08:48
 > there is more to [GNU grep][] than what I thought for a long time,
 > including the possibility to avoid using [sed][] from time to time.
 
-<script id="asciicast-290862" src="https://asciinema.org/a/290862.js" data-speed="2" async></script>
+<script id="asciicast-291236" src="https://asciinema.org/a/291236.js" data-speed="1.5" async></script>
 
 I guess everybody has those nice little *Today I Learnt...* moments every
 now and then. This happened to me not too much time ago, reading some
