@@ -34,7 +34,7 @@ Ok, ok... here's a few links to the tools used above (again, you only need
 to choose one):
 
 - [Carton][]
-- [Cpanminus][]
+- [Cpanminus][cpanm]
 
 
 ## Boilerplate
