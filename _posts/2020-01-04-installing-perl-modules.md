@@ -12,6 +12,8 @@ published: true
 > When you need to install Perl modules locally for a project, nothing beats
 > [Carton][] and [Cpanminus][cpanm].
 
+<script id="asciicast-291607" src="https://asciinema.org/a/291607.js" data-speed="1.5" async></script>
+
 When I need to install Perl modules, I usually do this from [CPAN][]
 directly without relying on the modules shipped with [Debian][]. This allows
 me fine control over versions, etc., at the cost of **not** installing those
@@ -21,8 +23,8 @@ modules in any place known to system perl.
 for another time).
 
 To install modules locally for a project there are two very easy ways, i.e.
-[Carton][] and [Cpanminus][]. You don't have to (explicitly) use both, and
-if you can go with [Carton][] alone it's probably the fastest way.
+[Carton][] and [Cpanminus][cpanm]. You don't have to (explicitly) use both,
+and if you can go with [Carton][] alone it's probably the fastest way.
 
 ## `cpanfile`, where your needs are explicit
 
