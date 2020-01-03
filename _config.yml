@@ -1,6 +1,7 @@
 # Site settings
 title: "ETOOBUSY"
 description: "🚀 minimal blogging for the impatient"
+origin: https://github.com/polettix/ETOOBUSY
 baseurl: "/ETOOBUSY"
 url: ""
 author: "polettix"
