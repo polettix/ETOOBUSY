@@ -50,6 +50,7 @@ END_OF_MAZE
       exit => [14, 48], # lower-right corner
       hero => [1, 1],   # upper-left  corner
       maze => $maze,
+      moves => 0,
    };
 }
 
@@ -88,6 +89,7 @@ sub try_move ($win, $maze, $row_delta, $col_delta) {
    my $char = $win->inch($row, $col);
    if ($char ne '#') {
       $maze->{hero}->@* = ($row, $col);
+      $maze->{moves}++;
       maze_display($win, $maze);
    }
    return;
