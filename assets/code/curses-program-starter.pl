@@ -13,4 +13,6 @@ $win->keypad(1);
 
 # ... now use $win for most things
 
-endwin();
+END {
+   endwin();
+}
