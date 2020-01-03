@@ -1,0 +1,107 @@
+#!/usr/bin/env perl
+use 5.024;
+use warnings;
+use experimental qw< postderef signatures >;
+no warnings qw< experimental::postderef experimental::signatures >;
+use Curses;
+
+my $win = Curses->new;
+curs_set(0);       # don't show the cursor
+noecho();          # don't echo keypresses on screen
+cbreak();          # get anything unbuffered
+$win->keypad(1);
+
+# ... now use $win for most things
+# load a maze
+my $maze = load_maze();
+
+# display it
+maze_display($win, $maze);
+
+# main loop
+make_a_move($win, $maze) until hero_reached_exit($maze);
+
+# salutations
+goodbye_display($win, $maze);
+
+END {
+   endwin();
+}
+
+sub load_maze {
+   my $maze = <<'END_OF_MAZE';
+##################################################
+#      #         #   #          #      #   #     #
+# #### # ####### # # # ######## # # #  # # # ### #
+#    # # #       # # #        # # # #### # #  #  #
+#### #   # ####### # ######## # # #    # # ## # ##
+#    ##### #       #          # # # ## # #    #  #
+# # ###    ##### # ############ # # #  # ####### #
+# ### #######    # #            # # # ## #       #
+# #         # #### # ############ # #    # #######
+# # ####### # #    #              # # ####   #   #
+# # ##    # # # ################### ###  ### # # #
+# #    ## # # # # #               #        #   # #
+# ####### # # # # ######### ##### ##### ######## #
+#         #   #             #         #   #      #
+################################################ #
+END_OF_MAZE
+   return {
+      exit => [14, 48], # lower-right corner
+      hero => [1, 1],   # upper-left  corner
+      maze => $maze,
+   };
+}
+
+sub maze_display ($win, $maze) {
+   my $n_row = 0;
+   for my $row (split m{\n+}mxs, $maze->{maze}) {
+      $win->addstr($n_row++, 0, $row);
+   }
+   $win->addch($maze->{exit}->@*, '.');
+   $win->addch($maze->{hero}->@*, '@');
+   $win->refresh;
+}
+
+sub make_a_move ($win, $maze) {
+   my ($ch, $key) = $win->getchar;
+   if (defined $key) {
+      my $key_up = KEY_UP;
+      try_move($win, $maze, -1,  0) if $key == KEY_UP;
+      try_move($win, $maze,  0,  1) if $key == KEY_RIGHT;
+      try_move($win, $maze,  1,  0) if $key == KEY_DOWN;
+      try_move($win, $maze,  0, -1) if $key == KEY_LEFT;
+   }
+   elsif (defined $ch) {
+      exit 0 if $ch eq 'q';
+   }
+   else {
+      die 'getch failed?!?';
+   }
+   return;
+}
+
+sub try_move ($win, $maze, $row_delta, $col_delta) {
+   my ($row, $col) = $maze->{hero}->@*;
+   $row += $row_delta;
+   $col += $col_delta;
+   my $char = $win->inch($row, $col);
+   if ($char ne '#') {
+      $maze->{hero}->@* = ($row, $col);
+      maze_display($win, $maze);
+   }
+   return;
+}
+
+sub hero_reached_exit ($maze) {
+   return $maze->{hero}[0] == $maze->{exit}[0]
+      &&  $maze->{hero}[1] == $maze->{exit}[1];
+}
+
+sub goodbye_display ($win, $maze) {
+   $win->addstr(5, 17, '               ');
+   $win->addstr(6, 17, '  YOU MADE IT! ');
+   $win->addstr(7, 17, '               ');
+   $win->refresh;
+   $win->getchar;
+}
