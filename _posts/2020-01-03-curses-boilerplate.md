@@ -54,3 +54,5 @@ Hopefully, more on [Curses][] will follow, but until then... happy hacking!
 [Carton]: https://metacpan.org/pod/Carton
 [cpanm]: https://metacpan.org/pod/App-cpanminus
 [boilerplate]: {{ '/assets/code/curses-program-starter.pl' | prepend: site.baseurl | prepend: site.url }}
+[Curses]: https://metacpan.org/pod/Curses
+[Perl]: https://www.perl.org/
