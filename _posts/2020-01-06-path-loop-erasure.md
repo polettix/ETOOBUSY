@@ -1,7 +1,7 @@
 ---
 title: Removing loops from a path
 type: post
-tags: [ algorithm, graph ]
+tags: [ algorithm, graph, perl ]
 comment: true
 date: 2020-01-06 08:00:00
 mathjax: true
