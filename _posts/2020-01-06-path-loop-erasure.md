@@ -148,11 +148,12 @@ The following [Perl][] subroutine implements the algorithm:
 sub path_loop_erasure ($input_path) {
     my @output_path;
     my $i = -1;
-    while (++$i < @output_path) {
+    my $N = @$input_path;
+    while (++$i < $N) {
 
         # find latest occurrence of $input_path->[$i]
         my $j = $i;
-        while (++$j < @output_path) {
+        while (++$j < $N) {
             # "advance" $i if the corresponding item is found
             # later in the array
             $i = $j if $input_path->[$i] eq $input_path->[$j];
