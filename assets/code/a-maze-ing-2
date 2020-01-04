@@ -1,0 +1,172 @@
+#!/usr/bin/env perl
+use 5.024;
+use warnings;
+use experimental qw< postderef signatures >;
+no warnings qw< experimental::postderef experimental::signatures >;
+use Curses;
+
+my $win = Curses->new;
+curs_set(0);       # don't show the cursor
+noecho();          # don't echo keypresses on screen
+cbreak();          # get anything unbuffered
+$win->keypad(1);
+
+# ... now use $win for most things
+# load a maze
+my $maze = load_maze(@ARGV[0,1]);
+
+# display it
+maze_display($win, $maze);
+
+# main loop
+make_a_move($win, $maze) until hero_reached_exit($maze);
+
+# salutations
+goodbye_display($win, $maze);
+
+END {
+   endwin();
+}
+
+sub path_loop_erasure ($input_path) {
+   my @output_path;
+   my $i = -1;
+   my $N = $input_path->@*;
+   while (++$i < $N) {
+      print "i<$i>\n";
+
+      # find latest occurrence of $input_path->[$i]
+      my $j = $i;
+      while (++$j < $N) {
+         # "advance" $i if the corresponding item is found
+         # later in the array
+         $i = $j if $input_path->[$i]{id} eq $input_path->[$j]{id};
+      }
+
+      # whatever, this item fits into the output
+      print "  --> i<$i>\n";
+      push @output_path, $input_path->[$i];
+   }
+   return \@output_path;
+}
+
+sub random_walk ($maze, $r, $c) {
+   my @retval;
+   my @moves = ([-2, 0], [0, 2], [2, 0], [0, -2]);
+   my $Mr = $#$maze;
+   my $Mc = $#{$maze->[0]};
+   while ('necessary') {
+      push @retval, {
+         row => $r,
+         col => $c,
+         id  => "$r-$c",
+      };
+      last if $maze->[$r][$c] eq ' ';
+      my $move = @moves[rand @moves];
+      my ($cr, $cc) = ($r + $move->[0], $c + $move->[1]);
+      next if $cr < 0 || $cr > $Mr || $cc < 0 || $cc > $Mc;
+      ($r, $c) = ($cr, $cc);
+   }
+   return \@retval;
+}
+
+sub generate_maze ($rows, $cols) {
+   $_ -= 2 for $rows, $cols; # will add boundary walls at the end
+   my @maze = map { [('#') x $cols] } 1 .. $rows;
+   $maze[0][0] = ' '; # starting position is in maze
+   my $row = 0;
+   my $col = 0;
+   while ($row < $rows) {
+      if ($maze[$row][$col] eq '#') { # not reached yet
+         my $path = random_walk(\@maze, $row, $col);
+         say $_->{id} for $path->@*; 
+         $path = path_loop_erasure($path);
+
+         # apply path to maze
+         my ($pr, $pc);
+         my $n = 0;
+         for my $v ($path->@*) {
+            my ($r, $c) = $v->@{qw< row col >};
+            printf {*STDERR} "row<$r> col<$c>\n";
+            $maze[$r][$c] = ' ';
+            $maze[($r + $pr) / 2][($c + $pc)/2] = ' ' if defined $pr;
+            ($pr, $pc) = ($r, $c);
+         }
+      }
+      $col += 2;
+      ($row, $col) = ($row + 2, 0) if $col > $cols;
+   }
+   my $hwall = '#' x ($cols + 2);
+   join "\n", $hwall, (map { join '', '#', $_->@*, '#' } @maze), $hwall;
+}
+
+sub load_maze ($rows, $cols) {
+   $rows //= 15;
+   $cols //= 49;
+   $rows-- unless $rows % 2;
+   $cols-- unless $cols % 2;
+   my $maze = generate_maze($rows, $cols);
+
+   return {
+      exit => [$rows - 1, $cols - 2], # lower-right corner
+      hero => [1, 1],   # upper-left  corner
+      maze => $maze,
+      moves => 0,
+   };
+}
+
+sub maze_display ($win, $maze) {
+   my $n_row = 0;
+   for my $row (split m{\n+}mxs, $maze->{maze}) {
+      $win->addstr($n_row++, 0, $row);
+   }
+   $win->addch($maze->{exit}->@*, '.');
+   $win->addch($maze->{hero}->@*, '@');
+   $win->refresh;
+}
+
+sub make_a_move ($win, $maze) {
+   my ($ch, $key) = $win->getchar;
+   if (defined $key) {
+      my $key_up = KEY_UP;
+      try_move($win, $maze, -1,  0) if $key == KEY_UP;
+      try_move($win, $maze,  0,  1) if $key == KEY_RIGHT;
+      try_move($win, $maze,  1,  0) if $key == KEY_DOWN;
+      try_move($win, $maze,  0, -1) if $key == KEY_LEFT;
+   }
+   elsif (defined $ch) {
+      exit 0 if $ch eq 'q';
+   }
+   else {
+      die 'getch failed?!?';
+   }
+   return;
+}
+
+sub try_move ($win, $maze, $row_delta, $col_delta) {
+   my ($row, $col) = $maze->{hero}->@*;
+   $row += $row_delta;
+   $col += $col_delta;
+   my $char = $win->inch($row, $col);
+   if ($char ne '#') {
+      $maze->{hero}->@* = ($row, $col);
+      $maze->{moves}++;
+      maze_display($win, $maze);
+   }
+   return;
+}
+
+sub hero_reached_exit ($maze) {
+   return $maze->{hero}[0] == $maze->{exit}[0]
+      &&  $maze->{hero}[1] == $maze->{exit}[1];
+}
+
+sub goodbye_display ($win, $maze) {
+   $win->addstr(4, 17, '                  ');
+   $win->addstr(5, 17, ' +--------------+ ');
+   $win->addstr(6, 17, ' | YOU MADE IT! | ');
+   $win->addstr(7, 17, ' +--------------+ ');
+   $win->addstr(8, 17, '                  ');
+   $win->refresh;
+   $win->getchar;
+}
