@@ -61,7 +61,7 @@ the computed loop-free path comes from position `0` of the original array:
 $$ i_0 = 0 $$
 
 Now, let's consider the item immediately following it, i.e. the one at
-index '1' in the array. There are two cases:
+index `1` in the array. There are two cases:
 
 - the identifier at that position does *not* appear later in the *path*,
   which means that it does not participate in a loop, OR
@@ -69,7 +69,7 @@ index '1' in the array. There are two cases:
   that *vertex* a crossing of one or more loops.
 
 This latter case can be represented as follows, where `X` is the
-identifier in position `1` of the array,
+identifier in position `1` of the array:
 
 ```
 S' X   ...     X   ...     X    ...      X   ...     T'
@@ -143,7 +143,8 @@ loop-free path.
 The following [Perl][] subroutine implements the algorithm:
 
 ```perl
-# compute the loop-free path from $input_path and return as anonymous array
+# compute the loop-free path from $input_path
+# return as anonymous array
 sub path_loop_erasure ($input_path) {
     my @output_path;
     my $i = -1;
@@ -152,14 +153,20 @@ sub path_loop_erasure ($input_path) {
         # find latest occurrence of $input_path->[$i]
         my $j = $i;
         while (++$j < @output_path) {
+            # "advance" $i if the corresponding item is found
+            # later in the array
             $i = $j if $input_path->[$i] eq $input_path->[$j];
         }
 
+        # whatever, this item fits into the output
         push @output_path, $input_path->[$i];
     }
     return \@output_path;
 }
 ```
+
+This implementation does not rely on fictious items but it is otherwise a
+direct application of the algorithm seen before.
 
 ## Time's up
 
@@ -172,3 +179,4 @@ otherwise please comment!
 
 [wikipedia-maze]: https://en.wikipedia.org/wiki/Maze_generation_algorithm
 [wikipedia-lerw]: https://en.wikipedia.org/wiki/Loop-erased_random_walk
+[Perl]: https://www.perl.org/
