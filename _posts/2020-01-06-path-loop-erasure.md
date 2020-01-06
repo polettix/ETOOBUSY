@@ -3,8 +3,7 @@ title: Removing loops from a path
 type: post
 tags: [ algorithm, graph, perl ]
 comment: true
-date: 2020-01-06 09:52:40
-mathjax: true
+date: 2020-01-06 18:08:57
 published: true
 ---
 
@@ -35,111 +34,124 @@ possible to detect a loop in the path, because at least one *node*
 identifier will be repeated two or more times. If all entries in our array
 contain a different identifier, the *path* is loop-free.
 
-To make the following explanation a bit simpler we will remove some corner
-cases where e.g. the starting *node* `S` or its target counterpart `T` can be
-part of loops. To do this, we will introduce two *fictious* endoints `S'` and
-`T'` respectively before `S` and after `T`, with the convention that these are
-two additional nodes to the graph that do not appear anywhere in the whole
-*path* from `S` to `T`. We will call this new *path* with the additional nodes
-the *extended path*.
-
-These additional items in the path can be later removed after the
-simplified, loop-free path has been computed.
-
-
 ## Erasing loops
 
 Erasing loops in our representation means producing a new array that is
 loop-free, i.e. where all items are different from one another and, of
 course, appear in the same "connected" order as the starting *path*.
 
-By assumption, both the first *node* and the last one do not appear
-anywhere in the "inner" part of the *path*, so they cannot possibly be
-part of a loop. This means that `S'` is part of the simplified, loop-free
-extended *path* and we will thus say that the index of the first item in
-the computed loop-free path comes from position `0` of the original array:
-
-$$ i_0 = 0 $$
-
-Now, let's consider the item immediately following it, i.e. the one at
-index `1` in the array. There are two cases:
-
-- the identifier at that position does *not* appear later in the *path*,
-  which means that it does not participate in a loop, OR
-- the identifier does indeed appear other times in the path, which makes
-  that *node* a crossing of one or more loops.
-
-This latter case can be represented as follows, where `X` is the
-identifier in position `1` of the array:
+Any sub-path that starts with a node identifier `X` and ends in a node
+identifier `X` is a loop. Hence, all *sub-path*s in the following picture
+are also loops
 
 ```
-S' X   ...     X   ...     X    ...      X   ...     T'
-   |---------->|---------->|------------>|---------->|
-    sub-path-1  sub-path-2  sub-paths...  sub-path-N
+... X   ...     X   ...     X    ...      X ...     
+    |           |           |             |
+    |---------->|---------->|------------>|
+    |sub-path-1 |sub-path-2 |sub-paths... |
+    |                       |             |
+    |---------------------->|------------>|
+    |sub-path-1 |sub-path-2 |sub-paths... |
 ```
 
-It's clear that all sub-paths up to and including $N-1$ are loops, because
-the start with `X` and end with `X`, which means that all of them can be
-eliminated to just keep `sub-path-N` and we will still have a *path* from
-`S'` to `T'`.
-
-At this point, we have skipped all items in the array from the first
-occurrence of `X` and before the *last* occurrence of `X`, and we are sure
-that there are no more `X` identifier in the remaining part of the
-original path. We will mark the position of this last `X` with index
-$i_1$.
-
-The situation is the following:
+The longest of such *sub-paths* starts at the first occurrence of `X`
+and ends at the last occurrence of `X` and is a loop itself:
 
 ```
-S' X   ...     X   ...     X    ...      X   ...     T'
-   |---------->|---------->|------------>|---------->|
-    sub-path-1  sub-path-2  sub-paths...  sub-path-N
-^                                        ^
-|                                        |
-+-- i_0                                  +-- i_1
+      +-- first occurrence of X     +-- last occurrence of X
+      |                             |
+      v                             v
+... w X     ...     X     ...     v X y ...     
+      |                             |
+      |---------------------------->|
+        longest loop crossing at X
 ```
 
-Removing loop sub-paths means that we will continue our analysis of the
-*path* starting from position $i_1$ and looking at the immediately
-following element, which we will assume will have identifier `Y`:
+We can remove from the first `X` up to the element immediately before the
+last one:
 
 ```
-S' ...   X Y   ...     Y   ...     Y    ...      Y   ...     T'
-           |---------->|---------->|------------>|---------->|
-            sub-path-1  sub-path-2  sub-paths...  sub-path-M
-^        ^
-|        |
-+-- i_0  +-- i_1
+      +-- first occurrence of X     +-- last occurrence of X
+      |                             |
+      v                             v
+... w X     ...     X     ...     v X y ...     
+      |                           |
+      |-------------------------->|
+            removed elements
+\_________________________________________/
+
+                   |
+                   |
+                   V
+ _________________________________________
+/                                         \
+... w                               X y ...
+                                    ^
+                                    |
+                                    +-- only occurrence of X left
 ```
 
-By construction, `Y` *surely* does not appear anywhere before position
-$i_1$, simply because loop-erasure means that we will ignore any item
-strictly included between $i_0$ and $i_1$. Again, we will toss away all
-sub-paths that connect `Y` to `Y` and just keep the last one, marking the
-position of the last `Y` with index $i_2$:
+This guarantees:
+
+- the elimination of all loops crossing at `X`, because we're only leaving
+  one single `X`;
+- that the output *path* is unbroken, because `w` is still followed by `X`
+  and `X` is still followed by `y` as in the original *path*.
+
+Repeating this until each identifier only appears once will eventually
+guarantee that the final *path* is loop-free.
+
+Sweeping the path from the beginning and erasing loops as described above
+follows a *chronological order*. This terminology stems from the fact that
+loop erasure is often associated to random walks, in which the initial
+*path* (potentially containing loops) is generated by doing a random,
+step-wise visit of the graph (so there's an association between the position
+of an identifier in the sequence and the time it was inserted).
+
+## Pseudo-code time!
+
+Let's see the pseudo-code for the loop-erasure algorithm:
 
 ```
-S' ...   X Y   ...     Y   ...     Y    ...      Y   ...     T'
-           |---------->|---------->|------------>|---------->|
-            sub-path-1  sub-path-2  sub-paths...  sub-path-M
-^        ^                                       ^
-|        |                                       |
-+-- i_0  +-- i_1                                 +-- i_2
+ 1 # input_path  is a sequence of node identifiers, 0-based
+ 2 # output_path is a (loop-free) sequence of node identifiers, 0-based
+ 3 # i, j, N are integers
+ 4
+ 5 output_path = ()
+ 6 N = size of input_path
+ 7 i = 0
+ 8 while (i < N)
+ 9    j = i + 1
+10    while j < N
+11       if input_path[i] is the same as input_path[j]
+12          i = j
+13       j = j + 1
+14    output_path = (output_path, input_path[i])
+15    i = i + 1
 ```
 
-Our search now restarts from $i_2$ and moves on just like before, until we
-reach `T'`, where our loop-erasure sweep stops.
+The `input_path` is sweeped from the beginning, always going on until it
+hits the last element. This is done using the integer indexing variable `i`,
+that starts from `0` (first index inside `input_path`) up to one less than
+`N` (number of elements in `input_path`).
 
-The sequence of indexes $i_0, i_1, ..., i_J, i_{J+1}$ indicates the
-positions in the original *path*'s array of items that participate into
-the simplified, loop-free extended *path*. We now only have to remove the
-first (corresponding to the fictious node `S'`) and the last
-(corresponding to the fictious node `T'`) to obtain the simplified,
-loop-free path.
+When we are at position `i`, we are pointing at identifier `X` of the
+previous section. To remove loops crossing at `X`, we have to find the
+latest occurrence of `X`, which is done in the sub-`while` in lines 9 to 13.
+At the end of this loop, `i` will be the index of the last occurrence of `X`
+in the `input_path` sequence.
 
+As we saw in the previous section, we can at this point include the element
+in the `output_path` (line 14) and move on to look for other loops starting
+from the following position (line 15, increasing `i` by 1).
 
-## An example implementation
+It's easy to see that moving incrementally from the beginning of the
+`input_sequence` guarantees that the identifier `input_path[i]` in lines 9
+to 13 is **not** already contained in `output_path`, thus ensuring that
+there will be no residual loop at the end of the main `while` at lines 8 to
+15.
+
+## An example implementation in Perl
 
 The following [Perl][] subroutine implements the algorithm:
 
@@ -167,16 +179,18 @@ sub path_loop_erasure ($input_path) {
 }
 ```
 
-This implementation does not rely on fictious items but it is otherwise a
-direct application of the algorithm seen before.
+This implementation assumes that identifiers are strings (we're using `eq`),
+you might want to adapt it to your needs. It is mostly a direct translation
+of the pseudo-code in the previous section, apart for a couple stylistic
+differences (mainly in how indexes are initialized and incremented).
 
 ## Time's up
 
 The path loop-erasure algorithm can be a bit daunting when you read it in
-its full abstract, formal shape, but it can start to make a lot of sense
-as soon as you jot down a couple examples to understand what does it mean
-for a *path* to have loops. I hope the explanation above is clear,
-otherwise please comment!
+its full abstract, formal shape, but it starts to make a lot of sense as
+soon as you jot down a couple examples to understand what does it mean for a
+*path* to have loops. I hope the explanation above is clear, otherwise
+please comment!
 
 
 [wikipedia-maze]: https://en.wikipedia.org/wiki/Maze_generation_algorithm
