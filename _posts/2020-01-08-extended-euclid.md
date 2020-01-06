@@ -1,7 +1,7 @@
 ---
-title: A RANDOM Maze with Curses
+title: The extended Euclid's algorithm
 type: post
-tags: [ perl, curses, game, maze, algorithm ]
+tags: [ perl, algorithm, maths ]
 comment: true
 date: 2020-01-08 08:00:00
 mathjax: true
@@ -71,8 +71,9 @@ explain the algorithm.
 
 Another thing popped while reading the tweet and skimming through the video,
 this time directly in my mind... *does she touch on the extended version of
-the algorithm too?*. No she doesn't, because she decided to show *another*
-interesting evolution of the algorithm (towards polynomials).
+the algorithm too?* No, she doesn't, because she decided to show *another*
+interesting evolution of the algorithm (towards polynomials). Watch the
+video if you don't believe it!
 
 The [extended Euclid's algoritm][eeuclid-wiki] computes the greater common
 divisor *and* something more within the same complexity bounds. Yes, it has
@@ -83,17 +84,17 @@ $$a \cdot x + b \cdot y = gcd(a, b)$$
 
 Why should we care?
 
-Sometimes we might want to do operations modulo a prime $a$ and find the
-inverse of $b < a$ in the field $Z_a$. The greatest commond divisor between
+Sometimes we might want to do operations modulo some prime $a$ and find the
+inverse of $b < a$ in the field $\mathbb{Z}_a$. The greatest commond divisor between
 them is 1 by definition ($a$ is prime!) so the identity becomes:
 
 $$a \cdot x + b \cdot y = 1$$
 
 Going modulo $a$ simply yields:
 
-$$b \cdot y =_{mod\ a} 1$$
+$$b \cdot y = 1\ (mod\ a)$$
 
-i.e. $y$ from the algorithm is the inverse of $b$ in $Z_a$. Yay!
+i.e. $y$ from the algorithm is the inverse of $b$ in $\mathbb{Z}_a$. Yay!
 
 ## The two algorithms, in Perl
 
@@ -119,3 +120,4 @@ check them out because they are amazing!
 [code-local]: {{ '/assets/code/egcd.pl' | prepend: site.baseurl | prepend: site.url }}
 [bezout]: https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity
 [zines]: https://wizardzines.com/
+[GitLab]: https://www.gitlab.com/
