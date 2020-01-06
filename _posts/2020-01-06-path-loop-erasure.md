@@ -123,7 +123,7 @@ Let's see the pseudo-code for the loop-erasure algorithm:
  5 output_path = ()
  6 N = size of input_path
  7 i = 0
- 8 while (i < N)
+ 8 while i < N
  9    j = i + 1
 10    while j < N
 11       if input_path[i] is the same as input_path[j]
