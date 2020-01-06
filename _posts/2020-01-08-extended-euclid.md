@@ -117,7 +117,7 @@ Both implementations are iterative, which helps keeping the number of
 function calls to a minimum and avoid bloating `perl`'s stack.
 
 These functions are part of [cglib-perl][], my library of copy-and-paste
-functions for [Codingame][].
+functions for [CodinGame][].
 
 ## So long!
 
@@ -135,4 +135,4 @@ check them out because they are amazing!
 [GitLab]: https://www.gitlab.com/
 [video]: https://www.youtube.com/watch?v=WIbbd_usHo8
 [cglib-perl]: https://github.com/polettix/cglib-perl
-[Codingame]: https://www.codingame.com/
+[CodinGame]: https://www.codingame.com/
