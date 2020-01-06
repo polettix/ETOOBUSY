@@ -72,8 +72,8 @@ explain the algorithm.
 Another thing popped while reading the tweet and skimming through the video,
 this time directly in my mind... *does she touch on the extended version of
 the algorithm too?* No, she doesn't, because she decided to show *another*
-interesting evolution of the algorithm (towards polynomials). Watch the
-video if you don't believe it!
+interesting evolution of the algorithm (towards polynomials). [Watch the
+video][video] if you don't believe it!
 
 The [extended Euclid's algoritm][eeuclid-wiki] computes the greater common
 divisor *and* something more within the same complexity bounds. Yes, it has
@@ -121,3 +121,4 @@ check them out because they are amazing!
 [bezout]: https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity
 [zines]: https://wizardzines.com/
 [GitLab]: https://www.gitlab.com/
+[video]: https://www.youtube.com/watch?v=WIbbd_usHo8
