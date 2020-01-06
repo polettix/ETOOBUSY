@@ -41,21 +41,24 @@ loop-free, i.e. where all items are different from one another and, of
 course, appear in the same "connected" order as the starting *path*.
 
 Any sub-path that starts with a node identifier `X` and ends in a node
-identifier `X` is a loop. Hence, all *sub-path*s in the following picture
-are also loops
+identifier `X` is a loop. Hence, all *sub-path*s marked with arrows the
+following picture are also loops:
 
 ```
-... X   ...     X   ...     X    ...      X ...     
-    |           |           |             |
-    |---------->|---------->|------------>|
-    |sub-path-1 |sub-path-2 |sub-paths... |
-    |                       |             |
-    |---------------------->|------------>|
-    |sub-path-1 |sub-path-2 |sub-paths... |
+... X ...  X ...  X ...  X ...     
+    |      |      |      |
+    |----->|----->|----->|
+    | loop | loop | loop |
+    |             |      |
+    |------------>|      |
+    | a loop too         |
+    |                    |
+    |------------------->|
+       and also this...
 ```
 
-The longest of such *sub-paths* starts at the first occurrence of `X`
-and ends at the last occurrence of `X` and is a loop itself:
+The longest *sub-path* that starts at the first occurrence of `X` and ends
+at the last occurrence of `X` and is a loop itself:
 
 ```
       +-- first occurrence of X     +-- last occurrence of X
