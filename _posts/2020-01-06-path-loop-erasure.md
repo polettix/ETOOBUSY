@@ -24,19 +24,19 @@ we are.
 
 ## A data structure for the path
 
-Our *path* will be defined as an ordered, finite sequence of *vertices*,
-starting from a *source vertex* `S` and ending in a *target vertex* `T`.
-In practical terms, we can think of an array of *vertex* identifiers (in
-the following we will "confuse" these identifiers with the *vertices*
+Our *path* will be defined as an ordered, finite sequence of *nodes*,
+starting from a *source node* `S` and ending in a *target node* `T`.
+In practical terms, we can think of an array of *node* identifiers (in
+the following we will "confuse" these identifiers with the *nodes*
 themselves).
 
 This path may have loops or not. In our representation, it's alway
-possible to detect a loop in the path, because at least one *vertex*
+possible to detect a loop in the path, because at least one *node*
 identifier will be repeated two or more times. If all entries in our array
 contain a different identifier, the *path* is loop-free.
 
 To make the following explanation a bit simpler we will remove some corner
-cases where e.g. the starting *vertex* `S` or its target counterpart `T`
+cases where e.g. the starting *node* `S` or its target counterpart `T`
 can be part of loops. To do this, we will introduce two *fictious*
 endoints `S'` and `T'` respectively before `S` and after `T`, with the
 convention that these are two additional nodes to the graph that do not
@@ -52,7 +52,7 @@ Erasing loops in our representation means producing a new array that is
 loop-free, i.e. where all items are different from one another and, of
 course, appear in the same "connected" order as the starting *path*.
 
-By assumption, both the first *vertex* and the last one do not appear
+By assumption, both the first *node* and the last one do not appear
 anywhere in the "inner" part of the *path*, so they cannot possibly be
 part of a loop. This means that `S'` is part of the simplified, loop-free
 extended *path* and we will thus say that the index of the first item in
@@ -66,7 +66,7 @@ index `1` in the array. There are two cases:
 - the identifier at that position does *not* appear later in the *path*,
   which means that it does not participate in a loop, OR
 - the identifier does indeed appear other times in the path, which makes
-  that *vertex* a crossing of one or more loops.
+  that *node* a crossing of one or more loops.
 
 This latter case can be represented as follows, where `X` is the
 identifier in position `1` of the array:
