@@ -1,7 +1,7 @@
 ---
 title: The extended Euclid's algorithm
 type: post
-tags: [ perl, algorithm, maths ]
+tags: [ perl, algorithm, maths, cglib ]
 comment: true
 date: 2020-01-08 08:00:00
 mathjax: true
@@ -116,12 +116,14 @@ choice to change some variables' names.
 Both implementations are iterative, which helps keeping the number of
 function calls to a minimum and avoid bloating `perl`'s stack.
 
+These functions are part of [cglib-perl][], my library of copy-and-paste
+functions for [Codingame][].
+
 ## So long!
 
 Nothing much to wrap up this time, only a suggestion: if you don't know
 [Julia Evans][] and her [programming zines][zines] you SHOULD definitely
 check them out because they are amazing!
-
 
 [euclid-wiki]: https://en.wikipedia.org/wiki/Euclidean_algorithm
 [eeuclid-wiki]: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
@@ -132,3 +134,5 @@ check them out because they are amazing!
 [zines]: https://wizardzines.com/
 [GitLab]: https://www.gitlab.com/
 [video]: https://www.youtube.com/watch?v=WIbbd_usHo8
+[cglib-perl]: https://github.com/polettix/cglib-perl
+[Codingame]: https://www.codingame.com/
