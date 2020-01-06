@@ -36,11 +36,12 @@ identifier will be repeated two or more times. If all entries in our array
 contain a different identifier, the *path* is loop-free.
 
 To make the following explanation a bit simpler we will remove some corner
-cases where e.g. the starting *node* `S` or its target counterpart `T`
-can be part of loops. To do this, we will introduce two *fictious*
-endoints `S'` and `T'` respectively before `S` and after `T`, with the
-convention that these are two additional nodes to the graph that do not
-appear anywhere in the whole *path* from `S` to `T`.
+cases where e.g. the starting *node* `S` or its target counterpart `T` can be
+part of loops. To do this, we will introduce two *fictious* endoints `S'` and
+`T'` respectively before `S` and after `T`, with the convention that these are
+two additional nodes to the graph that do not appear anywhere in the whole
+*path* from `S` to `T`. We will call this new *path* with the additional nodes
+the *extended path*.
 
 These additional items in the path can be later removed after the
 simplified, loop-free path has been computed.
