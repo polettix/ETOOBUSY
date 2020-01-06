@@ -140,13 +140,13 @@ that starts from `0` (first index inside `input_path`) up to one less than
 
 When we are at position `i`, we are pointing at identifier `X` of the
 previous section. To remove loops crossing at `X`, we have to find the
-latest occurrence of `X`, which is done in the sub-`while` in lines 9 to 13.
-At the end of this loop, `i` will be the index of the last occurrence of `X`
-in the `input_path` sequence.
+latest occurrence of `X`, which is done in the `while` in lines 9 to 13.  At
+the end of this loop, `i` will be the index of the last occurrence of `X` in
+the `input_path` sequence.
 
-As we saw in the previous section, we can at this point include the element
-in the `output_path` (line 14) and move on to look for other loops starting
-from the following position (line 15, increasing `i` by 1).
+As we saw in the previous section, we can at this point include this last
+element in the `output_path` (line 14) and move on to look for other loops
+starting from the following position (line 15, increasing `i` by 1).
 
 It's easy to see that moving incrementally from the beginning of the
 `input_sequence` guarantees that the identifier `input_path[i]` in lines 9
