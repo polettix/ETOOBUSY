@@ -105,6 +105,16 @@ The two algorithms above, written in Perl:
 In case [GitLab][] does not work, you can find also a [local
 version][code-local].
 
+As promised, the [basic algorithm][euclid-wiki] is 5 lines long, including
+the input parameters unwrapping line and the closing brace - otherwise it
+would be 2 😁.
+
+The [extended algorithm][eeuclid-wiki] is more or less a direct translation
+of what explained in the Wikipedia page, apart from taking the stylistic
+choice to change some variables' names.
+
+Both implementations are iterative, which helps keeping the number of
+function calls to a minimum and avoid bloating `perl`'s stack.
 
 ## So long!
 
