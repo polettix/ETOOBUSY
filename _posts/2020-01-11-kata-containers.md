@@ -1,6 +1,6 @@
 ---
 title: Kata Containers
-type: post
+type: preview
 tags: [ container, linux, kubernetes, gist ]
 comment: true
 published: true
