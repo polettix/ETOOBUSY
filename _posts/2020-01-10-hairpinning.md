@@ -3,8 +3,8 @@ title: Hairpinning
 type: post
 tags: [ ]
 comment: true
-date: 1972-11-09 07:30:00
-published: true
+date: 2020-01-10 08:00:00
+published: false
 ---
 
 **TL;DR**
