@@ -48,8 +48,6 @@ example, *Server 1* might discover about *srv2* in the same way as external
 clients would, hence it might not know that *srv2* is also accessible from
 the internal network.
 
-## Hairpinning
-
 The situation in which *Server 1* tries to reach *srv2* from its *externally
 visible* endpoint (i.e. 1.0.0.1:1234) instead of the directly connected one
 is called **hairpinning**. Yes, it's as simple as this.
