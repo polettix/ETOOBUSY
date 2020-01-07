@@ -5,7 +5,7 @@ tags: [ perl, algorithm, maths, cglib ]
 comment: true
 date: 2020-01-08 08:00:00
 mathjax: true
-published: false
+preview: true
 ---
 
 **TL;DR**
