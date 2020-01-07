@@ -4,6 +4,7 @@ type: preview
 tags: [ container, linux, kubernetes, gist ]
 comment: true
 published: true
+preview: true
 date: 2020-01-11 08:00:00
 ---
 
