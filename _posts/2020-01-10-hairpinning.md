@@ -56,6 +56,6 @@ Depending on the load balancer/proxy, this might actually work or not. In
 other terms, hairpinning must be supported by it, and possibly also be
 configured to work. Beware!
 
-## That's it
+## Enough said...
 
-Enough said. Comments welcome!
+... comments welcome!
