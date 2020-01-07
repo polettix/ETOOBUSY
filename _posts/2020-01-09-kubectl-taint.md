@@ -26,7 +26,7 @@ the documentation:
 Basically:
 
 - you set *taints* on nodes to mark them as having some "bad disease" that
-  everyone should keep away from
+  everyone should keep away from;
 - you set *tolerations* onto resources that are allowed to deal with those
   "diseases" and should therefore be admitted in the node even though it has
   the *taint*.
@@ -45,19 +45,19 @@ The generic syntax of a *taint* is the following:
 key=value:effect
 ```
 
-The `key` is like the name of the disease on the node. It can be further
-specialized with a `value`, to allow for finer selection granularity,
-although setting a `value` is optional (i.e. you can leave it empty).
+The *key* is like the name of the disease on the node. It can be further
+specialized with a *value*, to allow for finer selection granularity,
+although setting it is optional (i.e. you can leave it empty).
 
-The `effect` is what consequence the *taint* has. You can set *taints* to
-inhibit two kind of behaviours:
+The *effect* is what consequence the *taint* has. You can set the following
+effects:
 
-- prevent scheduling of new Pods, with *taint effect* `NoSchedule`
-- avoid as much as possible scheduling of new Pods, with *taint effect*
-  `PreferNoSchedule`
-- prevent execution of Pods, with *taint effect* `NoExecute`.
+- `NoSchedule`: prevent scheduling of new Pods;
+- `PreferNoSchedule`: avoid as much as possible scheduling of new Pods (this
+  is a *soft* alternative of the previous effect);
+- `NoExecute`: prevent execution of Pods.
 
-So the main goal of setting a *taint* is to prevent either scheduling or
+So the main goal of setting a *taint* is to affect either scheduling or
 execution, nothing more.
 
 For example, setting the following *taint* on a node:
@@ -66,16 +66,16 @@ For example, setting the following *taint* on a node:
 has-feature=sriov:NoSchedule
 ```
 
-means that, unless Pods are able to deal with `has-feature=sriov`, they will
-not be scheduled on the node. Something similar would happen with this
-*taint*:
+means that, unless Pods are able to deal with `has-feature=sriov` (via a
+suitable *toleration*), they will not be scheduled on the node. Something
+similar would happen with this *taint*:
 
 ```
 has-sriov=:NoSchedule
 ```
 
-only that in this case there's an empty `value` associated to the
-`has-sriov`. How you want to use all of this (i.e. with a `value` or not) is
+only that in this case there's an empty value associated to the
+`has-sriov`. How you want to use all of this (i.e. with a value or not) is
 totally up to you.
 
 ## Setting taints
@@ -84,7 +84,7 @@ You can set a *taint* with the [kubectl taint][man-taint] command. The
 generic syntax is as follows:
 
 ```
-kubectl taint node <node> <key>=[value]:effect [...]
+kubectl taint node <node> <key>=[<value>]:<effect> [...]
 ```
 
 You can use `nodes` instead of `node` if you wish.
@@ -106,15 +106,16 @@ Setting a taint with an empty value always requires the equal sign:
 # THIS GIVES AN ERROR
 kubectl taint node "$NODE" has-feature:NoSchedule
 
-# this is correct and sets an empty value to key 'has-feature'
+# this is correct and associates an empty value to key 'has-feature'
 kubectl taint node "$NODE" has-feature=:NoSchedule
 ```
 
 ## Removing taints
 
-Removing a *taint* can be as easy as setting it, just append a `-` sign at
-the end of the effect to indicate that you want to get rid of it. The
-following gets rid of the first *taint* set in the previous section:
+Removing a *taint* can be as easy as setting it, just append a minus sign
+(`-`) at the end of the effect to indicate that you want to get rid of it.
+
+The following gets rid of the first *taint* set in the previous section:
 
 ```
 kubectl taint node "$NODE" has-feature=sriov:NoSchedule-
@@ -127,25 +128,25 @@ kubectl taint node "$NODE" has-feature=:NoSchedule-
 ```
 
 While you must be very precise when setting a *taint* (i.e. you always have
-to put an value, even if it's empty, and always specify an effect), you can
-be more liberal when removing them. Suppose you set the following two
+to put a value, even if it's empty, and always specify an effect), you
+can be more liberal when removing them. Suppose you set the following two
 *taints* associated to key `somekey`:
 
 ```
 kubectl taint node "$NODE" somekey=val1:NoSchedule somekey=val2:NoExecute
 ```
 
-You can remove all of them in a single sweep by just "removing" the `key`:
+You can remove all of them in a single sweep by just "removing" the key:
 
 ```
 kubectl taint node "$NODE" somekey-
 ```
 
-This will work whatever `value` and/or `effect` you set.
+This will work whatever value and/or effect were set for that key.
 
 ## A real world example
 
-This post started from reading the [ovn-kubernetes][] `README.md` file, that
+This post started from reading the [ovn-kubernetes][] documentation, that
 contains the following:
 
     On Kubernetes master, label it to run daemonsets.
@@ -157,10 +158,10 @@ contains the following:
 Now I understand that:
 
 - by default, *master* nodes are set with *taint*
-  `node-role.kubernetes.io/master=:NoSchedule`, i.e. with `key` set to
-  `node-role.kubernetes.io/master`, empty `value` and `effect of
+  `node-role.kubernetes.io/master=:NoSchedule`, i.e. with key
+  `node-role.kubernetes.io/master`, empty value and effect of
   `NoSchedule`;
-- the command above removes all *taints* with the specific `key`, including
+- the command above removes all *taints* with the specific key, including
   the default one above;
 - removing that *taint* means that everything can be scheduled on all nodes
   (unless there are additional *taints* resulting in `NoSchedule`, of
