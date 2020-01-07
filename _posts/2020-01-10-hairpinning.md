@@ -50,7 +50,7 @@ the internal network.
 
 The situation in which *Server 1* tries to reach *srv2* from its *externally
 visible* endpoint (i.e. 1.0.0.1:1234) instead of the directly connected one
-is called **hairpinning**. Yes, it's as simple as this.
+is called [hairpinning][]. Yes, it's as simple as this.
 
 Depending on the load balancer/proxy, this might actually work or not. In
 other terms, hairpinning must be supported by it, and possibly also be
@@ -59,3 +59,5 @@ configured to work. Beware!
 ## Enough said...
 
 ... comments welcome!
+
+[hairpinning]: https://en.wikipedia.org/wiki/Hairpinning
