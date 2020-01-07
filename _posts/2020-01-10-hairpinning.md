@@ -1,7 +1,7 @@
 ---
 title: Hairpinning
 type: post
-tags: [ ]
+tags: [ networking, gist ]
 comment: true
 date: 2020-01-10 08:00:00
 published: false
