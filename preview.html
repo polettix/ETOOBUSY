@@ -5,7 +5,7 @@ layout: default
    {% include nav.html %}
    <section>
       <ul class="post-list">
-         {% for post in site.previews %}
+         {% for post in site.posts %}
          <li>
             [<time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}]
             <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>

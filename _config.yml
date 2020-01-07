@@ -7,6 +7,14 @@ url: ""
 author: "polettix"
 timezone: Europe/Rome
 
+#defaults:
+#   -
+#      scope:
+#         path: ""
+#         type: "posts"
+#      values:
+#         preview: false
+
 # Build settings
 permalink: pretty
 
