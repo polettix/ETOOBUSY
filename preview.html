@@ -6,12 +6,10 @@ layout: default
    <section>
       <ul class="post-list">
          {% for post in site.posts %}
-            {% unless post.preview %}
          <li>
             [<time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}]
             <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
          </li>
-            {% endif %}
          {% endfor %}
       </ul>
    </section>
