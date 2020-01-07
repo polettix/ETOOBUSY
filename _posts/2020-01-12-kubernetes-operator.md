@@ -1,5 +1,5 @@
 ---
-title: Kubernetes operator
+title: Kubernetes operators
 type: post
 tags: [ kubernetes, operator, gist ]
 comment: true
@@ -69,7 +69,7 @@ resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/c
 are extensions of the Kubernetes API, which usually address two different
 halves, i.e. defining how the API is extended (in terms of endpoints) and
 what actions should be done to ensure that the new resources follow the same
-principles of *declarative behavior* as all built-in resources.
+principles of *declaration-based behavior* as all built-in resources.
 
 ## So... packing applications? Again?
 
