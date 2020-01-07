@@ -3,9 +3,8 @@ title: Kata Containers
 type: post
 tags: [ container, linux, kubernetes, gist ]
 comment: true
-date: 2010-01-11 08:00:00
 published: true
-preview: true
+date: 2010-01-11 08:00:00
 ---
 
 **TL;DR**
