@@ -3,7 +3,7 @@ title: Urist McLumberjack
 type: post
 tags: [ trees, planet ]
 comment: true
-date: 2019-12-07 15:43:44
+date: 2019-12-07 15:43:44 +01:00
 ---
 
 I'm an enthusiast (although totally newbie) player of [Dwarf

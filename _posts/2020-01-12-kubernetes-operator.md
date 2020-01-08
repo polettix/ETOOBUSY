@@ -3,7 +3,7 @@ title: Kubernetes operators
 type: post
 tags: [ kubernetes, operator, gist ]
 comment: true
-date: 2020-01-12 08:00:00
+date: 2020-01-12 08:00:00 +01:00
 preview: true
 ---
 

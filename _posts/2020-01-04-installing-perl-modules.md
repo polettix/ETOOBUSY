@@ -3,7 +3,7 @@ title: Installing Perl Modules
 type: post
 tags: [ perl, module, carton, cpanm, toolbox ]
 comment: true
-date: 2020-01-04 02:03:04
+date: 2020-01-04 02:03:04 +01:00
 published: true
 ---
 

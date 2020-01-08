@@ -3,7 +3,7 @@ title: Curses boilerplate starter
 type: post
 tags: [ perl, curses ]
 comment: true
-date: 2020-01-03 08:40:19
+date: 2020-01-03 08:40:19 +01:00
 ---
 
 **TL;DR**

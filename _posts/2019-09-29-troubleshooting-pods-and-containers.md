@@ -3,7 +3,7 @@ title: Troubleshooting Pods and Containers
 type: post
 tags: [ kubernetes, docker, container, toolbox ]
 comment: true
-date: 2019-09-29 19:33:44
+date: 2019-09-29 19:33:44 +02:00
 ---
 
 Sometimes looking at a few logs provided by [Docker][] or [Kubernetes][]

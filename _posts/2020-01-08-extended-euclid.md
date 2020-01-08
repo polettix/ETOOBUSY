@@ -3,9 +3,8 @@ title: The extended Euclid's algorithm
 type: post
 tags: [ perl, algorithm, maths, cglib ]
 comment: true
-date: 2020-01-08 08:00:00
+date: 2020-01-08 01:44:11 +01:00
 mathjax: true
-preview: true
 ---
 
 **TL;DR**

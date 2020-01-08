@@ -3,7 +3,7 @@ title: Quick note on kubectl taint
 type: post
 tags: [ kubernetes, taint ]
 comment: true
-date: 2020-01-09 08:00:00
+date: 2020-01-09 08:00:00 +01:00
 preview: true
 ---
 

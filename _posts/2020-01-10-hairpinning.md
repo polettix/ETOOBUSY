@@ -3,7 +3,7 @@ title: Hairpinning
 type: post
 tags: [ networking, gist ]
 comment: true
-date: 2020-01-10 08:00:00
+date: 2020-01-10 08:00:00 +01:00
 preview: true
 ---
 
