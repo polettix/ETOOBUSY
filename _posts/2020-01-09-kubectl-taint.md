@@ -4,7 +4,6 @@ type: post
 tags: [ kubernetes, taint ]
 comment: true
 date: 2020-01-09 00:21:25 +01:00
-preview: true
 ---
 
 **TL;DR**
