@@ -42,6 +42,7 @@ Let's see an example.
 This is [ETOOBUSY's `index.html`][ETOOBUSY-index] as of this writing:
 
 ```
+{% raw %}
 ---
 layout: default
 ---
@@ -60,6 +61,7 @@ layout: default
 13       </ul>
 14    </section>
 15 </div>
+{% endraw %}
 ```
 
 As you can see, lines 7-10 print out an item for a post, but only *unless*
@@ -71,6 +73,7 @@ posts with `preview` set to `true` are *not* shown here.
 This is [ETOOBUSY's `preview.html`][ETOOBUSY-preview] as of this writing:
 
 ```
+{% raw %}
 ---
 layout: default
 ---
@@ -87,6 +90,7 @@ layout: default
 11       </ul>
 12    </section>
 13 </div>
+{% endraw %}
 ```
 
 This is what the *previous* version of `index.html` was, before the
