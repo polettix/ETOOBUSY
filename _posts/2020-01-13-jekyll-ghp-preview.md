@@ -5,6 +5,7 @@ tags: [ jekyll, github, blog ]
 comment: true
 date: 2020-01-13 08:00:00 +0100
 preview: true
+published: true
 ---
 
 **TL;DR**
@@ -94,9 +95,11 @@ layout: default
 {% endraw %}
 
 This is what the *previous* version of `index.html` was, before the
-exclusion of `preview` posts. Hence, the
-[preview][ETOOBUSY-preview-rendered] page includes all posts, including the
-draft ones. Yes! You can get a sneak peek!
+exclusion of `preview` posts, and can be accessed as a page at `/preview/`.
+
+For example, [this is this blog's preview page][ETOOBUSY-preview-rendered],
+including the draft ones when I want to revise them. Yes! You can get a
+sneak peek, occasionally!
 
 ### Mark posts as `preview`
 
