@@ -116,6 +116,27 @@ like this example at line 7:
 10 Yadda yadda...
 ```
 
+## Don't want to spoiler?
+
+Of course your `/preview/` link in your blog will show drafts and might
+spoiler your hard work. What to do about it? A few ideas:
+
+- if you're fine with some occasional spoilering, leave things as above and
+  set `published: false` in the YAML front matter after you have
+  double-checked how your post will look like. You will still benefit from
+  the ease of clicking a link in the `/preview/` page, while at the same
+  time limiting the spoilering time;
+
+- if you are a bit more paranoid, you can just get rid of the `/preview/`
+  page and guess the direct link to the article. This is the sort of
+  *security by obscurity* that would not work for your bank transactions,
+  but to keep a post at bay for a few days should be fine enough;
+
+- last, if you don't want to expose your brand new draft in any way...
+  install [Jekyll][] and look at the draft locally! Beware that if you push
+  your drafts in [GitHub][] people might still be able to look at the
+  sources, so you might want to avoid doing that!
+
 ## This is it!
 
 That's right, when you push the changes above, you will be able to get the
