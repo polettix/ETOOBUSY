@@ -3,9 +3,7 @@ title: Preview for Jekyll blog on GitHub Pages
 type: post
 tags: [ jekyll, github, blog ]
 comment: true
-date: 2020-01-13 08:00:00 +0100
-preview: true
-published: false
+date: 2020-01-13 00:05:00 +0100
 ---
 
 **TL;DR**
