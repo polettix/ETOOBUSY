@@ -10,7 +10,7 @@ published: true
 
 **TL;DR**
 
-> Aspen Mesh provides a simpler and more powerful distribution of Istio.
+> [Aspen Mesh][] provides a simpler and more powerful distribution of Istio.
 
 As I understand it, it's basically some company that decided to provide a
 pre-packaged and commercially supported distribution of the open source
