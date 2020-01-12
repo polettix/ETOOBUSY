@@ -28,16 +28,18 @@ suitable place/format before going on, so here we are.
 ## The slow, clean and correct way
 
 Not much to say, the *slow*, *clean* and *correct* way to get the thread
-of tweets would be consuming the [Twitter API][]. Alas, it's not
-straightforward as you're required to apply for credentials, answer a bunch
-of questions and *wait for approval*. So yes I did that, but I'm waiting.
+of tweets would be consuming the [Twitter API][].
+
+Alas, it's not straightforward as you're required to apply for credentials,
+answer a bunch of questions and *wait for approval*. So yes I did that, but
+I'm waiting.
 
 Just as a side note, one question you have to answer is whether your
 application or output data will be available to *the government*. As I code
 mostly open source stuff that anybody can take from [GitHub][], and not
 knowing *which specific government they're talking about*, I thought it fair
 to just state that yes, it will be available to *the government*. I'm not
-sure that's what they meant, but words have a meaning folks.
+sure that's what they meant, but words have a meaning, folks.
 
 ## The quick, dirty and brittle way
 
@@ -59,13 +61,15 @@ Before going on, a word of caution. This way is:
   unrolling applications/bots is subject to change at the developer's will
   and likely to break everything I'm writing here without notice.
 
+You have been warned.
 
 ### The page structure
 
 It turns out that the [Thread reader][] application output is extremely
 scrape-friendly: all tweets in a thread are put in their own individual
 `div` block, each of them with a unique identifier of the form `tweet_N`
-(`N` here indicates the sequence number of the tweet in the thread).
+(`N` here indicates the sequence number of the tweet in the thread, i.e.
+`1`, `2`, and so on).
 
 For example, this is the very first tweet:
 
@@ -76,8 +80,8 @@ Okay. For every retweet this gets (TO A POINT!) I'll add a thought / tip / obser
 </div>
 ```
 
-So, anything that allows us to traverse the page's [Document Object
-Model][DOM] will be fine!
+Anything that allows us to traverse the page's [Document Object Model][DOM]
+(or *DOM* as a shorthand) will be fine!
 
 ### A script to scrape it
 
@@ -92,7 +96,7 @@ The script itself is fairly straighforward. After the boilerplate to import
 all relevant helpers from the excellent [Mojo][] web development toolkit
 (part of the [Mojolicious][] distribution), we first make sure to get the
 page's DOM, either from a locally saved copy, or directly from the URL
-(either one provided as a command-line parameter, i.e. `$ARGV[0]`):
+(either one provided as a command-line parameter):
 
 ```perl
 my $ua    = Mojo::UserAgent->new;
@@ -117,7 +121,7 @@ The chaining interface is so nice.
 Last, we only have to print out the JSON encoding of the array:
 
 ```perl
-say j \@tweets
+say j \@tweets;
 ```
 
 And this is really all!
