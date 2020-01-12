@@ -4,8 +4,7 @@ type: post
 tags: [ kubernetes, istio, mesh ]
 comment: true
 date: 2020-01-15 08:00:00 +0100
-preview: true
-published: true
+published: false
 ---
 
 **TL;DR**
