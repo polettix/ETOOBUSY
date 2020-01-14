@@ -3,8 +3,7 @@ title:  Scrape a Thread of Tweets
 type: post
 tags: [ Mojolicious, perl, web, client, twitter ]
 comment: true
-date: 2020-01-14 08:00:00 +0100
-published: false
+date: 2020-01-14 06:56:24 +0100
 ---
 
 **TL;DR**
