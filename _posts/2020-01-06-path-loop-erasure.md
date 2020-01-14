@@ -195,10 +195,10 @@ soon as you jot down a couple examples to understand what does it mean for a
 *path* to have loops. I hope the explanation above is clear, otherwise
 please comment!
 
-> I have to confess that this post is actually a preparation for another one
-> - [A RANDOM Maze with Curses][a-maze-ing-2] - providing algorithmic
-> generation of mazes and extending the previous post [A Maze with
-> Curses][a-maze-ing-1]. Don't miss them!
+> I have to confess that this post is actually a preparation - [A RANDOM
+> Maze with Curses][a-maze-ing-2] - providing algorithmic generation of
+> mazes and extending the previous post [A Maze with Curses][a-maze-ing-1].
+> Don't miss them!
 
 
 [wikipedia-maze]: https://en.wikipedia.org/wiki/Maze_generation_algorithm
