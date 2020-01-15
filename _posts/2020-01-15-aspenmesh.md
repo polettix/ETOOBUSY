@@ -3,8 +3,7 @@ title: Aspen Mesh
 type: post
 tags: [ kubernetes, istio, mesh ]
 comment: true
-date: 2020-01-15 08:00:00 +0100
-published: false
+date: 2020-01-15 12:25:13 +0100
 ---
 
 **TL;DR**
