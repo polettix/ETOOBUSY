@@ -130,3 +130,4 @@ if you want!
 [MojoX::Twitter]: https://metacpan.org/pod/MojoX::Twitter
 [apply for a developer account]: https://developer.twitter.com/en/apply
 [polettix]: https://github.com/polettix/
+[jq]: https://stedolan.github.io/jq/
