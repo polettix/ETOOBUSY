@@ -3,8 +3,8 @@ title: Quotes-O-Matic
 type: post
 tags: [ Mojolicious, perl, web, server ]
 comment: true
-date: 2020-01-20 08:00:00 +0100
-published: false
+date: 2020-01-20 00:35:29 +0100
+published: true
 ---
 
 **TL;DR**
