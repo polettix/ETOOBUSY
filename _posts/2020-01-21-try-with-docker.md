@@ -3,8 +3,7 @@ title: Try with Docker
 type: post
 tags: [ docker ]
 comment: true
-date: 2020-01-21 08:00:00 +0100
-published: false
+date: 2020-01-21 06:30:29 +0100
 ---
 
 **TL;DR**
