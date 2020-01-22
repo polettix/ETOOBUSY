@@ -67,9 +67,9 @@ $on-:              800px;
 .announceable {
   font-size: $small-font-size;
   font-family: $code-font-family;
-  p {
-    color: $grey-color;
-    text-indent: 0;
-    border-bottom: 1px solid red;
-  }
+  color: $grey-color;
+  text-indent: 0;
+  border-left: 1px solid $grey-color;
+  margin-left: 3rem;
+  padding-left: 0.5rem;
 }
