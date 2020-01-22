@@ -4,7 +4,7 @@ type: post
 tags: [ perl, text, dwarf fortress ]
 comment: true
 date: 2020-01-24 08:00:00 +0100
-published: false
+preview: true
 ---
 
 **TL;DR**
@@ -12,6 +12,8 @@ published: false
 > In [A Public Domain List of Adjectives][list-of-adjectives] we found about
 > how you can get some words out of [Dwarf Fortress][]. Now let's turn all
 > of that in a JSON file.
+
+{{ title }} {{ date | date: '%Y/%m/%d' }}
 
 ## What word types are available?
 
