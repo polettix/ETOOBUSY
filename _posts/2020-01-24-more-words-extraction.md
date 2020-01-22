@@ -14,14 +14,16 @@ preview: true
 > of that in a JSON file.
 
 
-Mer 22 Gen 2020 20:05:27 CET
+Mer 22 Gen 2020 20:08:49 CET
 
-{{ page.title }} {{ site.url }}{{ site.baseurl}}{{ page.url }} 
+<pre>
+{{ page.title }} ~ {{ site.url }} ~ {{ site.baseurl }} ~ {{ page.url }} ~
 {% if page.tags.size > 0 %}
-	{% for post_tag in post.tags %}
-		#{{ post_tag | slugify }}
+	{% for page_tag in page.tags %}
+		#{{ page_tag | slugify }}
 	{% endfor %}
 {% endif %}
+</pre>
 
 ## What word types are available?
 
