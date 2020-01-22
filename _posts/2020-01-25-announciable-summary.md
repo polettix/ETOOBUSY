@@ -23,6 +23,7 @@ usually the *title*, the *URL* and the *tags*.
 So I figured... why not make [Jekyll][] do that for me? Please meet the new
 *preview page*:
 
+{% raw %}
 ```html
  1 ---
  2 layout: default
@@ -42,6 +43,7 @@ So I figured... why not make [Jekyll][] do that for me? Please meet the new
 16    </section>
 17 </div>
 ```
+{% endraw %}
 
 The new *stuff* is in line 12: an added paragraph with the summary as
 describe before. The styling is simple, in `main.scss`:
