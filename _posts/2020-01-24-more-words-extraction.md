@@ -13,7 +13,7 @@ preview: true
 > how you can get some words out of [Dwarf Fortress][]. Now let's turn all
 > of that in a JSON file.
 
-{{ title }} {{ date | date: '%Y/%m/%d' }}
+{{ page.title }} {{ page.date | date: '%Y/%m/%d' }}
 
 ## What word types are available?
 
