@@ -14,20 +14,13 @@ preview: true
 > of that in a JSON file.
 
 
+Mer 22 Gen 2020 20:05:27 CET
 
-Mer 22 Gen 2020 20:01:17 CET
-
-{{ page.title }} {{ page.url | prepend: site.baseurl | prepend: site.url }} 
-{% assign post = page %}
-{% if post.tags.size > 0 %}
-  		{% assign tags_content = "" %}
-  		{% for post_tag in post.tags %}
-  			{% capture tags_content_temp %}
-  				{{ tags_content }}<a href="{{ site.url }}{{ site.baseurl }}/tagged#{{ post_tag | slugify }}">#{{ post_tag }}</a>
-  			{% endcapture %}
-  			{% assign tags_content = tags_content_temp %}
-  		{% endfor %}
-{{ tags_content }}
+{{ page.title }} {{ site.url }}{{ site.baseurl}}{{ page.url }} 
+{% if page.tags.size > 0 %}
+	{% for post_tag in post.tags %}
+		#{{ post_tag | slugify }}
+	{% endfor %}
 {% endif %}
 
 ## What word types are available?
