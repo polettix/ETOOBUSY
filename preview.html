@@ -9,7 +9,7 @@ layout: default
          <li>
             [<time datetime="{{ post.date | date_to_xmlschema }}"></time>{{ post.date | date: "%Y-%m-%d" }}]
             <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
-<p class="announceable" style="border:1px; text-indent: 0;">{{ post.title }} {{ post.url | prepend: site.baseurl | prepend: site.url }}{% if post.tags.size > 0 %}{% for post_tag in post.tags %} #{{ post_tag | slugify | replace: "-", "_" }}{% endfor %}{% endif %}</p>
+<p class="announceable" style="text-indent: 0; margin-left: 3em">{{ post.title }} {{ post.url | prepend: site.baseurl | prepend: site.url }}{% if post.tags.size > 0 %}{% for post_tag in post.tags %} #{{ post_tag | slugify | replace: "-", "_" }}{% endfor %}{% endif %}</p>
 
          </li>
          {% endfor %}
