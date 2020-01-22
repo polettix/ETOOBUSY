@@ -13,7 +13,23 @@ preview: true
 > how you can get some words out of [Dwarf Fortress][]. Now let's turn all
 > of that in a JSON file.
 
-{{ page.title }} {{ page.date | date: '%Y/%m/%d' }}
+
+Mer 22 Gen 2020 19:56:51 CET
+{{ page.title }} {{ page.url | prepend: site.baseurl | prepend: site.url }} 
+      {% assign post = page %}
+  		{% if post.tags.size > 0 %}
+
+  		{% assign tags_content = "" %}
+  		{% for post_tag in post.tags %}
+  			{% capture tags_content_temp %}
+  				{{ tags_content }}<a href="{{ site.url }}{{ site.baseurl }}/tagged#{{ post_tag | slugify }}">#{{ post_tag }}</a>
+  			{% endcapture %}
+  			{% assign tags_content = tags_content_temp %}
+  		{% endfor %}
+
+  		&middot;	<span class="tags" itemprop="tags">{{ tags_content }}</span>
+
+  	  {% endif %}
 
 ## What word types are available?
 
