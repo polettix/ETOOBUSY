@@ -3,8 +3,7 @@ title: A Public Domain List of Words
 type: post
 tags: [ perl, text, dwarf fortress ]
 comment: true
-date: 2020-01-24 08:00:00 +0100
-published: false
+date: 2020-01-24 08:14:43 +0100
 ---
 
 **TL;DR**
