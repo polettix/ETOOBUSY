@@ -1,5 +1,5 @@
 ---
-title: Generate and example "name"
+title: Generate an example "name"
 type: post
 tags: [ generative, Perl, text ]
 comment: true
