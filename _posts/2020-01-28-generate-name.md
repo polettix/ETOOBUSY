@@ -3,8 +3,7 @@ title: Generate and example "name"
 type: post
 tags: [ generative, Perl, text ]
 comment: true
-date: 2020-01-28 08:00:00 +0100
-published: false
+date: 2020-01-28 21:08:16 +0100
 ---
 
 **TL;DR**
