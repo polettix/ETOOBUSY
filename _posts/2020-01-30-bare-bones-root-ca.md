@@ -4,7 +4,7 @@ type: post
 tags: [ security ]
 comment: true
 date: 2020-01-30 07:06:48 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -19,10 +19,10 @@ The script below aims at easing this task.
 
 Also found [locally][].
 
-Easy to use, just 1 setup command and then only signing and certificate
+Easy to use, just one setup command and then only signing and certificate
 creation.
 
-Setup:
+## Setup
 
 ```shell
 ./root-ca.sh create
@@ -32,12 +32,16 @@ This will generate files `ca.key` (private key for the CA) and `ca.crt`
 (certificate, with the public key inside). Keep `ca.key`, distribute
 `ca.crt` to clients and make them *trust* it.
 
-Certificates signing/generation:
+## Certificates signing/generation
 
 ```shell
 # some-server.csr comes from a need to generate a certificate
 ./root-ca.sh sign some-server.csr
 ```
+
+Again, remember that your clients will need to trust `ca.crt`...
+
+## Anything else
 
 If you need to generate a server certificate on the fly, `openssl` can be
 your friend again:
@@ -50,4 +54,4 @@ openssl req -new -out server.csr -days 3650 \
 
 Cheers!
 
-[local-carton]: {{ '/assets/code/root-ca.sh' | prepend: site.baseurl | prepend: site.url }}
+[locally]: {{ '/assets/code/root-ca.sh' | prepend: site.baseurl | prepend: site.url }}
