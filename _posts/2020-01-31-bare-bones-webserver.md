@@ -53,7 +53,7 @@ following:
 
 ```shell
 perl -I local/lib/perl5 sample-server.pl daemon \
-   -l 'https://*:3000?cert=./srv.crt&key=./srv.key'
+   -l 'https://*:3000?cert=./server.crt&key=./server.key'
 ```
 
 At this point we're ready to start experimenting... or are we? Let's see:
@@ -80,26 +80,27 @@ certificate*, but we're not there yet:
 
 ```shell
 $ curl --cacert ca.crt https://localhost:3000/
-curl: (51) SSL: certificate subject name 'srv.example.com' does not match target host name 'localhost'
+curl: (51) SSL: certificate subject name 'server.example.com' does not match target host name 'localhost'
 ```
 
-Our example certificate here is for `srv.example.com`, but we're sending our
-query to `localhost` (i.e. a different name). We can do two things:
+Our example certificate here is for `server.example.com`, but we're sending
+our query to `localhost` (i.e. a different name). We can do two things:
 
 - re-generate the certificate for the server, putting `localhost` instead of
-  `srv.example.com`, OR
-- fiddle with `/etc/hosts` to add an entry for `srv.example.com`, like this:
+  `server.example.com`, OR
+- fiddle with `/etc/hosts` to add an entry for `server.example.com`, like
+  this:
 
 ```shell
 $ cat /etc/hosts
-127.0.0.1	localhost srv.example.com
+127.0.0.1	localhost server.example.com
 # ...
 ```
 
 Now we're finally ready:
 
 ```shell
-curl --cacert ca.crt https://srv.example.com:3000/
+curl --cacert ca.crt https://server.example.com:3000/
 Hello, World!
 ```
 
@@ -107,7 +108,7 @@ Brilliant!
 
 [Mojo]: https://metacpan.org/pod/Mojo
 [Mojolicious]: https://metacpan.org/pod/Mojolicious
-[mojox-twitter-post]: {{ '/2020/01/30/bare-bones-root-ca' | prepend: site.baseurl | prepend: site.url }}
+[Bare Bones Root CA]: {{ '/2020/01/30/bare-bones-root-ca' | prepend: site.baseurl | prepend: site.url }}
 [Installing Perl Modules]: {{ '/2020/01/04/installing-perl-modules' | prepend: site.baseurl | prepend: site.url }}
 [Carton]: https://metacpan.org/pod/Carton
 [Local version here]: {{ '/assets/code/sample-server.pl' | prepend: site.baseurl | prepend: site.url }}
