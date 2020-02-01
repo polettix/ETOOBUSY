@@ -40,7 +40,7 @@ openssl req -new -x509 -out rca.crt -days 3650 \
 ```
 
 Now the Intermediate CA, *without* the `-x509` option that would otherwise
-generate a self-signed certificate:
+generate a self-signed certificate, and with a different prefix `i`:
 
 ```shell
 openssl req -new -out ica.csr -days 3650 \
@@ -84,13 +84,13 @@ There are two things to keep in mind:
   (that the client *trusts* because of the previous bullet) and the Server
   certificate.
 
-So let's do this concatenation (from the most specific to the most generic):
+Let's start with the server side, do the concatenation first:
 
 ```shell
 cat srv.crt ica.crt > srv-ica.chain.crt
 ```
 
-and let's use this certificates bundle to start our sample server:
+and then use this certificates bundle to start our sample server:
 
 ```shell
 perl -I local/lib/perl5 sample-server.pl daemon \
@@ -105,9 +105,8 @@ curl: (60) SSL certificate problem: unable to get local issuer certificate
 ...
 ```
 
-What was I thinking? After repeating it multiple times, I forgot to set the
-Root CA certificate in the client. It's pretty easy with [curl][], let's try
-again:
+D'ho! After repeating it multiple times, I forgot to set the Root CA
+certificate in the client. It's pretty easy with [curl][], let's try again:
 
 ```shell
 $ curl --cacert rca.crt https://localhost:3000/
@@ -115,11 +114,9 @@ curl: (60) SSL certificate problem: invalid CA certificate
 ...
 ```
 
-Well... now the problem is more serious. There's something fishy with one of
-the certificates (there are three of them in this chain), and we have to
-find out what... but not this time.
-
-Stay tuned!!!
+Well... *Houston we have a problem*. There's something fishy with one of the
+certificates (there are three of them in this chain), the title of this post
+somehow gives out which and we have to find out what... stay tuned!!!
 
 
 [Bare-bones Root CA]: {{ '/2020/01/30/bare-bones-root-ca' | prepend: site.baseurl | prepend: site.url }}
