@@ -12,7 +12,7 @@ published: true
 > Need a bare-bones web server to do some testing? Look no further than
 > [Mojolicious][]!
 
-In the previous post [Bare Bones Root CA][] we looked into generating a
+In the previous post [Bare-bones Root CA][] we looked into generating a
 certificate just a bit further the self-signed one: create a Certification
 Authority and have it generate the certificate from a certificate request.
 
@@ -108,7 +108,7 @@ Brilliant!
 
 [Mojo]: https://metacpan.org/pod/Mojo
 [Mojolicious]: https://metacpan.org/pod/Mojolicious
-[Bare Bones Root CA]: {{ '/2020/01/30/bare-bones-root-ca' | prepend: site.baseurl | prepend: site.url }}
+[Bare-bones Root CA]: {{ '/2020/01/30/bare-bones-root-ca' | prepend: site.baseurl | prepend: site.url }}
 [Installing Perl Modules]: {{ '/2020/01/04/installing-perl-modules' | prepend: site.baseurl | prepend: site.url }}
 [Carton]: https://metacpan.org/pod/Carton
 [Local version here]: {{ '/assets/code/sample-server.pl' | prepend: site.baseurl | prepend: site.url }}
