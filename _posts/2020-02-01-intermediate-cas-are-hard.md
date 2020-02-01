@@ -3,8 +3,8 @@ title: Intermediate CAs are hard!
 type: post
 tags: [ security ]
 comment: true
-date: 2020-02-01 08:00:00 +0100
-preview: true
+date: 2020-02-01 07:56:04 +0100
+published: true
 ---
 
 **TL;DR**
