@@ -12,7 +12,7 @@ preview: true
 > In the recent posts we discussed certificates a bit. Curious to try that
 > suff out? There's a [Docker][] image for that!
 
-[![asciicast](https://asciinema.org/a/297368.svg)](https://asciinema.org/a/297368)
+<script id="asciicast-297368" src="https://asciinema.org/a/297368.js" async></script>
 
 If the recent posts about certificates ([Bare-bones Root CA][], [Bare-bones
 Web Server][] and [Intermediate CAs are hard!][]) tickled you, you're just a
