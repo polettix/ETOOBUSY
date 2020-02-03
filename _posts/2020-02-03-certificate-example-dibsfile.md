@@ -1,9 +1,9 @@
 ---
-title: 
+title: Generating "Example on Certificates"
 type: post
-tags: [ ]
+tags: [ security, docker, dibs ]
 comment: true
-date: 
+date: 2020-02-03 01:39:01 +0100
 preview: true
 ---
 
