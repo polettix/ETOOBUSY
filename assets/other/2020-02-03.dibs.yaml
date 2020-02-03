@@ -1,0 +1,211 @@
+---
+name: certificates-example
+
+variables:
+   - &base_image        'alpine:3.8'
+   - &target_image_name 'polettix/certificate-example'
+   - &username          'user'
+   - &groupname         'user'
+   - &appdir            '/app'
+   - &version           '1.0.0'
+
+   - &bases_reference_tag '1.0'
+
+   - &builder_image_name  'ce-builder'
+   - &builder_image ['join', ':', *builder_image_name, *bases_reference_tag]
+
+   - &bundler_image_name  'ce-bundler'
+   - &bundler_image ['join', ':', *bundler_image_name, *bases_reference_tag]
+
+   - unexpanded:
+      tags: &version_tags ['*', 'latest']
+
+packs:
+   basic:
+      type:   git
+      origin: https://github.com/polettix/dibspack-basic.git
+
+actions:
+
+   # Some "umbrella" actions
+   default: quick
+   quick: [build-quick, bundle-quick]
+   full:  [build, bundle]
+   boot:  [bases, quick]
+   bases: [build-base, bundle-base]
+
+
+   ##################################################
+   #                                                #
+   # BUILDER                                        #
+   #                                                #
+   ##################################################
+
+   # base image, saved so that we don't have to re-install main
+   # pre-requisites over and over.
+   build-base:
+      envile:
+         DIBS_PREREQS: build
+      actions:
+         - base-layers
+         - name: save builder image
+           image_name: *builder_image_name
+           tags: *bases_reference_tag
+
+   # actual building operations "build" and "build-quick". They
+   # produce the same artifact, the quick one skips going through
+   # pre-requisites assuming they are already in place.
+   build:
+      envile:
+         DIBS_PREREQS: build
+      actions:
+         - from: *builder_image
+         - ensure-prereqs
+         - build-operations
+
+   build-quick:
+      envile:
+         DIBS_PREREQS: build
+      actions:
+         - from: *builder_image
+         - build-operations
+
+   # the bulk of building operations is factored into this action
+   # so that it's reused by both "build" and "build-quick"
+   build-operations:
+      - src-in-app
+      - build-perl-modules
+      - cache-application
+
+
+   ##################################################
+   #                                                #
+   # BUNDLER                                        #
+   #                                                #
+   ##################################################
+
+   # base image, saved so that we don't have to re-install main
+   # pre-requisites over and over.
+   bundle-base:
+      envile:
+         DIBS_PREREQS: bundle
+      actions:
+         - base-layers
+         - name: save bundler image
+           image_name: *bundler_image_name
+           tags: *bases_reference_tag
+
+   # actual bundling operations "bundle" and "bundle-quick". They
+   # produce the same artifact, the quick one skips going through
+   # pre-requisites assuming they are already in place.
+   bundle:
+      envile:
+         DIBS_PREREQS: bundle
+      actions:
+         - from: *bundler_image
+         - ensure-prereqs
+         - bundle-operations
+
+   bundle-quick:
+      envile:
+         DIBS_PREREQS: bundle
+      actions:
+         - from: *bundler_image
+         - bundle-operations
+
+   # the bulk of bundling operations is factored into this action
+   # so that it's reused by both "bundle" and "bundle-quick"
+   bundle-operations:
+      - install-application
+      - save-bundle
+
+
+   ##################################################
+   #                                                #
+   # SUPPORTING ACTIONS                             #
+   #                                                #
+   ##################################################
+
+   # this is how base images are built
+   base-layers:
+      - from: *base_image
+      - add-normal-user
+      - ensure-prereqs
+
+   # add a non-root user to the lot. Probably overkill here.
+   add-normal-user:
+      name: add a regular, unprivileged user
+      pack: basic
+      path: wrapexec/suexec
+      args: ['-u', *username, '-g', *groupname, '-h', *appdir]
+      user: root
+
+   # install prereqs from src/prereqs/*
+   ensure-prereqs:
+      name: install OS-level prerequisites
+      pack: basic
+      path: prereqs
+      user: root
+
+   # copy all src inside *appdir, assigning ownership to the
+   # unprivileged user
+   src-in-app:
+      name: 'copy source in directory for build'
+      args: [ *username, *groupname, *appdir ]
+      user: root
+      pack:
+         run: |
+            #!/bin/sh
+            exec >&2
+            username="${1:-"user"}"
+            groupname="${2:-"user"}"
+            app_dir="${3:-"/app"}"
+            src_dir="$(cat DIBS_DIR_SRC)"
+            rm -rf "$app_dir"
+            cp -a "$src_dir" "$app_dir"
+            rm -rf "$app_dir/local"
+            mkdir -p "$app_dir/.profile.d"
+            cat >"$app_dir/.profile" <<'END'
+            #!/bin/sh
+            for f in "$HOME/.profile.d"/*.sh ; do
+               . "$f"
+            done
+            END
+            set -x
+            chown -R "$username:$groupname" "$app_dir"
+
+   # invoke building of Perl modules, from the "basic" pack
+   build-perl-modules:
+      name: 'build perl modules'
+      pack: basic
+      path: perl/build
+      args: ['-w', *appdir, '-V', *version]
+      user: *username
+
+   # save the compiled application in the cache, usually it's the
+   # final step of a build process
+   cache-application:
+      name: 'copy build application in cache'
+      pack: basic
+      path: install/with-dibsignore
+      args: ['--src', *appdir, '--dst', {path_cache: 'perl-app'}]
+      user: root
+
+   # install a built application from the cache to the final place
+   # inside the bundle image.
+   install-application:
+      name: 'install application to target path'
+      pack: basic
+      path: install/plain-copy
+      args: [{path_cache: 'perl-app'}, *appdir]
+      user: root
+      commit:
+         entrypoint: [ "/bin/sh" ]
+         cmd: [ "-l" ]
+         workdir: *appdir
+
+   # when the application is in place, we can save the target image
+   save-bundle:
+      name: 'save bundle image'
+      image_name: *target_image_name
+      tags: *version_tags
