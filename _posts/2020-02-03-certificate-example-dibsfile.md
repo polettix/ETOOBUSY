@@ -9,8 +9,11 @@ preview: true
 
 **TL;DR**
 
-> Curious how the [Docker][] image [polettix/certificates-example][] was
-> generated? I used [dibs][] with a possibly overkill [configuration file][].
+> Curious how the [Docker][] image [polettix/certificate-example][],
+> referred in [Example on Certificates][], was generated? I used [dibs][]
+> with a possibly overkill [configuration file][].
+
+<script src="https://gitlab.com/polettix/notechs/snippets/1935716.js"></script>
 
 [Local version here][].
 
