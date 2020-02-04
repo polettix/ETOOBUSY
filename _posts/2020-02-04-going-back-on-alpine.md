@@ -1,9 +1,9 @@
 ---
 title: Going Back on Alpine Linux 3.6
 type: post
-tags: [ ]
+tags: [ linux, alpine, docker ]
 comment: true
-date: 
+date: 2020-02-04 20:25:37 +0100
 preview: true
 ---
 
