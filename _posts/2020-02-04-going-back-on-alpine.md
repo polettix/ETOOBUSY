@@ -4,7 +4,7 @@ type: post
 tags: [ linux, alpine, docker ]
 comment: true
 date: 2020-02-04 20:25:37 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -29,8 +29,8 @@ that the issue I wanted to show is not visible any more (still there,
 though!).
 
 So... I reverted back to version 3.6, and generated the image that is
-available now on [Docker Hub][] (which is [here][dimage], currently
-available as `polettix/certificate-example:1.1.0`).
+available now on [Docker Hub][] (currently available as
+[polettix/certificate-example][dimage], tag `1.1.0`).
 
 Sometimes you have to go back to go forward!
 
