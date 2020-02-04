@@ -20,7 +20,7 @@ repeatable way, if anyone (read: most probably future me) is interested.
 Fact is that what I had previously experienced - which also set me on the
 right path to the solution - didn't happen in the Docker image I generated
 (which is still available for historical reasons, by the way, as
-`polettix/certificate-example:20200202-232014-29867`).
+[polettix/certificate-example][dimage], tag `20200202-232014-29867`).
 
 So... an investigation inside the investigation! It turns out that moving
 from [Alpine Linux][] 3.6 to 3.7, the installation of the [OpenSSL][]
