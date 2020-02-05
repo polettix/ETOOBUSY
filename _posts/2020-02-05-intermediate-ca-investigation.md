@@ -4,7 +4,7 @@ type: post
 tags: [ security, openssl ]
 comment: true
 date: 2020-02-05 22:48:20 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -98,11 +98,14 @@ Certificate:
 ```
 
 So *it seems* that CAs should have the x509v3 extension that marks them
-as... CAs to be considered valid by the client (at least, by `curl`).
+as... CAs to be considered valid by the client.
 
-It turns out that the story is a bit more complicated than this, but the
-bottom line is that the Intermediate CA certificate is missing this
-indication and this is indeed the problem with it!
+It turns out that the story is a bit more complicated than this: at least
+for `curl`, self-signed certificates (like the Root CA certificate) are also
+considered valid for signing other certificates, independently of the
+`CA:TRUE` presence or not. In the case of the Intermediate CA certificate
+this does not apply any more, so we have to explicitly mark it as `CA:TRUE`
+or we will get the error message.
 
 Now we have found the culprit... we will shortly find a solution, stay
 tuned!
