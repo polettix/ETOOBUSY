@@ -1,7 +1,7 @@
 ---
 title: Bare-bones Root CA
 type: post
-tags: [ security ]
+tags: [ security, openssl ]
 comment: true
 date: 2020-01-30 07:06:48 +0100
 published: true

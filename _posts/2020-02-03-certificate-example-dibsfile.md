@@ -1,7 +1,7 @@
 ---
 title: Generating "Example on Certificates"
 type: post
-tags: [ security, docker, dibs ]
+tags: [ security, openssl, docker, dibs ]
 comment: true
 date: 2020-02-03 01:39:01 +0100
 published: true

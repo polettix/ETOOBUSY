@@ -1,7 +1,7 @@
 ---
 title: Example on Certificates
 type: post
-tags: [ security, docker ]
+tags: [ security, openssl, docker ]
 comment: true
 date: 2020-02-02 16:36:07 +0100
 published: true
