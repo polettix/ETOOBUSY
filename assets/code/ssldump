@@ -1,0 +1,35 @@
+#!/bin/sh
+
+__ssldump() {
+   openssl "$1" -noout -text -in "$2"
+}
+
+_ssldump() {
+   local input="$1"
+   local type="$(sed -n '/^-*BEGIN/{s/-*BEGIN *//;s/--*//;p;q}' "$input")"
+   case "$type" in
+      (CERTIFICATE)
+         __ssldump x509 "$input"
+         ;;
+      (CERTIFICATE\ REQUEST)
+         __ssldump req "$input"
+         ;;
+      (PRIVATE\ KEY)
+         __ssldump rsa "$input"
+         ;;
+      (*)
+         printf >&2 '%s\n' "unhandled type '$type'"
+         return 1
+         ;;
+   esac
+   return 0
+}
+
+main() {
+   local input
+   for input in "$@"; do
+      _ssldump "$input"
+   done
+}
+
+main "$@"
