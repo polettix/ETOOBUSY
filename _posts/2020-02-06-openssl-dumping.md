@@ -4,7 +4,7 @@ type: post
 tags: [ openssl, shell ]
 comment: true
 date: 2020-02-06 19:53:21 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
