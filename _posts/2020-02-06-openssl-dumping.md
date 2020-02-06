@@ -1,9 +1,9 @@
 ---
-title: 
+title: Easy dumping of OpenSSL "stuff"
 type: post
-tags: [ ]
+tags: [ openssl, shell ]
 comment: true
-date: 
+date: 2020-02-06 19:53:21 +0100
 preview: true
 ---
 
