@@ -308,7 +308,8 @@ keyUsage               = critical,digitalSignature,keyEncipherment
 This will make sure that the certificate cannot sign other certificates
 (i.e. it's a *leaf* in our tree of signatures). This isn't sufficient,
 though: we also have to make sure that other extensions in the request (like
-the `subjectAltName` we saw above), which is why we have this in `ica.cnf`:
+the `subjectAltName` we saw above) make their way into the generated
+certificate, which is why we have this in `ica.cnf`:
 
 ```text
 [ CA_default ]
