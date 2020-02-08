@@ -110,4 +110,7 @@ or we will get the error message.
 Now we have found the culprit... we will shortly find a solution, stay
 tuned!
 
+*Want to know more? Read on to [Intermediate CA Solution][] 😎*
+
 [Intermediate CAs are hard!]: {{ '/2020/02/01/intermediate-cas-are-hard' | prepend: site.baseurl | prepend: site.url }}
+[Intermediate CA Solution]: {{ '/2020/02/07/intermediate-ca-solution' | prepend: site.baseurl | prepend: site.url }}

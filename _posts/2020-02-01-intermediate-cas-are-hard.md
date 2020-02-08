@@ -118,7 +118,9 @@ Well... *Houston we have a problem*. There's something fishy with one of the
 certificates (there are three of them in this chain), the title of this post
 somehow gives out which and we have to find out what... stay tuned!!!
 
+*Want to know what's going on? Read on to [Intermediate CA Investigation][] 😎*
 
 [Bare-bones Root CA]: {{ '/2020/01/30/bare-bones-root-ca' | prepend: site.baseurl | prepend: site.url }}
 [Bare-bones Web Server]: {{ '/2020/01/31/bare-bones-web-server' | prepend: site.baseurl | prepend: site.url }}
 [curl]: https://curl.haxx.se/
+[Intermediate CA Investigation]: {{ '/2020/02/05/intermediate-ca-investigation' | prepend: site.baseurl | prepend: site.url }}
