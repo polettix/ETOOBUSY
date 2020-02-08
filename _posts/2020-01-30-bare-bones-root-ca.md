@@ -55,7 +55,7 @@ openssl req -new -out server.csr -days 3650 \
 Cheers!
 
 *Want to know more? [Intermediate CAs are hard!][] is a follow-up post on
-this topic 😎*
+this topic.* 😎
 
 [locally]: {{ '/assets/code/root-ca.sh' | prepend: site.baseurl | prepend: site.url }}
 [Intermediate CAs are hard!]: {{ '/2020/02/01/intermediate-cas-are-hard' | prepend: site.baseurl | prepend: site.url }}
