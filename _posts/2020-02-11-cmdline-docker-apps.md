@@ -64,7 +64,7 @@ line too... we cannot just rely upon luck and hope that the user identifiers
 in the *host* and in the *container* match, can we?!?
 
 In case you're wondering, you can repeat the whole experience above using
-the [Docker][] image [polettix/docker-mismatch][]. Enjoy!
+the [Docker][] image [polettix/docker-mismatch][] and tag `1.0`. Enjoy!
 
 [Docker]: https://www.docker.com/
 [polettix/docker-mismatch]: https://hub.docker.com/repository/docker/polettix/docker-mismatch
