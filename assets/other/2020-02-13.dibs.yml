@@ -1,0 +1,39 @@
+---
+actions:
+   default:
+      - from: alpine:3.6
+      - name: set stuff up
+        pack:
+           run: |
+              #!/bin/sh
+              adduser -DHs /bin/sh ada
+              adduser -DHs /bin/sh charles
+        commit:
+           entrypoint: ['/bin/sh']
+           cmd: ['-l']
+           user: ada
+           workdir: /tmp
+      - name: save image for further usage
+        tags: polettix/docker-mismatch:1.0
+   alt:
+      - from: alpine:3.6
+      - name: set stuff up
+        pack:
+           run: |
+              #!/bin/sh
+              apk --no-cache update
+              apk --no-cache add --update su-exec
+              adduser -DHs /bin/sh foo
+              adduser -DHs /bin/sh ada
+              adduser -DHs /bin/sh charles
+              deluser foo
+              DIBS_DIR_SRC="$(cat DIBS_DIR_SRC)"
+              cp "$DIBS_DIR_SRC"/suexec /
+              chmod +x /suexec
+        commit:
+           entrypoint: ['/bin/sh']
+           cmd: ['-l']
+           user: ada
+           workdir: /tmp
+      - name: save image for further usage
+        tags: polettix/docker-mismatch:alt-1.0
