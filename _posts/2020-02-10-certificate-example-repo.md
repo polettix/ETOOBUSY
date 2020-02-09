@@ -3,7 +3,7 @@ title: Certificate example on GitHub
 type: post
 tags: [ security, openssl, github ]
 comment: true
-date: 2020-02-10 08:00:00 +0100
+date: 2020-02-10 00:00:01 +0100
 published: false
 ---
 
