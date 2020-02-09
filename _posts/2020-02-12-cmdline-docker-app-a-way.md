@@ -1,9 +1,9 @@
 ---
 title: Command-line Docker Applications - A way forward
 type: post
-tags: [ ]
+tags: [ docker, command line ]
 comment: true
-date: 
+date: 2020-02-12 08:00:00 +0100
 preview: true
 ---
 
