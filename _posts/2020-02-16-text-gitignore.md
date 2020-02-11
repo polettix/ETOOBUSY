@@ -17,26 +17,27 @@ utility function to copy files from a *build* phase, preparing them for the
 *bundling* phase.
 
 If you don't know what I'm talking about, a little recap: [dibs][] is a
-utility to streamline producing [Docker][] images, and my process is usually
-with a double step:
+utility to streamline producing [Docker][] images, and my process usually
+takes two steps:
 
 - in the *build* step, I work in an image where I install all tools that
   support the build process, e.g. a compiler, development versions of
-  libraries, ancillary tools, etc.
+  libraries, ancillary tools, etc., without worrying too much about bloat;
 
 - in the *bundle* step, I strive to create the tightiest image possible,
   only including artifacts that are strictly necessary *at runtime*.
 
 Communication across these two steps happens through a shared *cache*
 directory where the *build* process saves compiled artifacts, and the
-*bundle* process copies them to the final destination.
+*bundle* process takes them to the final destination.
 
 If I start from a distribution e.g. on GitHub, I might not want to include
 everything in the distribution inside the final [Docker][] image. As an
-example, a `cpanfile`/`cpanfile.snapshot` pair of files only makes sense at
-build time, not at runtime; the `.git` subdirectory, too, is not necessary
-inside the target container. Hence, I needed a mechanism that allowed me to
-*exclude* unwanted files/directories.
+example, the `.git` directory used by [git][] to track files is not
+necessary; for [Perl][] programs, a `cpanfile`/`cpanfile.snapshot` pair of
+files only makes sense at build time, not at runtime. Hence, for
+[dibspack-basic][] I needed a mechanism that allowed me to *exclude*
+unwanted files/directories.
 
 I was about to code something when something hit me: there must be already
 something in [CPAN][]! And sure there is: [Text::Gitignore][]. To be fair,
@@ -112,6 +113,11 @@ were created in the first place (line 26).
 If the file is allowed to pass, it's added to `@output` (line 29) and, if a
 directory, the whole process is recursed within it (line 32).
 
+One caveat about `build_gitignore_matcher`: if you want to pass a *list* of
+lines, pass it as a reference to an array. Otherwise, only the first will be
+considered, for a good 10 minutes of confusion and puzzling!
+
+
 # What *might* be missing
 
 The behavior show in the previous section is not 100% the same as what you
@@ -152,3 +158,5 @@ Maybe a patch is due... Let me know your thinking!
 [dibs]: https://github.com/polettix/dibs
 [Docker]: https://www.docker.com
 [CPAN]: https://metacpan.org/
+[git]: https://git-scm.com/
+[Path::Tiny]: https://metacpan/pod/Path::Tiny
