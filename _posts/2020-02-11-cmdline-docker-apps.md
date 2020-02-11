@@ -3,8 +3,8 @@ title: Command-line Docker Applications
 type: post
 tags: [ docker, command-line ]
 comment: true
-date: 2020-02-11 08:00:00 +0100
-published: false
+date: 2020-02-11 08:45:59 +0100
+published: true
 ---
 
 **TL;DR**
