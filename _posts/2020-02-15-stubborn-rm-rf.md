@@ -1,5 +1,5 @@
 ---
-title: Stubborn `rm -rf`
+title: Stubborn rm -rf
 type: post
 tags: [ perl ]
 comment: true
