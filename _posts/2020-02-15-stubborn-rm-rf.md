@@ -20,7 +20,7 @@ stubborn_rm_rf($dst) if $dst->exists && ! PRESERVE;
 
 I have to say... I think the line says what it does pretty well, and future
 me congratulates with past me for writing it. I was intrigued though... why
-name the function `stubborn_rm_rf`?!?
+*stubborn*?!?
 
 It turns out that sometimes permissions can get in the way when asking
 [Perl][] to remove stuff. Which is a feature, not a bug! Alas, sometimes you
@@ -99,10 +99,10 @@ Now there can be two cases:
   remained the same after line 9, OR
 - there were children and `@queue` grew a bit.
 
-In the first case, we can safely get rid of the directory (it's empty, after
-all!), in the second case we just re-add the directory to the queue, so that
-it will be processed again in the future, but *after* all of its children
-have been removed.
+In the first case, we can safely get rid of the directory (line 10), in the
+second case we just re-add the directory to the queue (line 11), so that it
+will be processed again in the future, but *after* all of its children have
+been removed.
 
 So... it should just work. 🙄
 
