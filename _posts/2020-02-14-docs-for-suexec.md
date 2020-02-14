@@ -3,8 +3,8 @@ title: Documentation for suexec
 type: post
 tags: [ dibs, docker ]
 comment: true
-date: 2020-02-14 08:00:00 +0100
-published: false
+date: 2020-02-14 18:27:45 +0100
+published: true
 ---
 
 **TL;DR**
