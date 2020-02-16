@@ -3,8 +3,8 @@ title: Text::Gitignore
 type: post
 tags: [ perl, git ]
 comment: true
-date: 2020-02-16 08:00:00 +0100
-published: false
+date: 2020-02-16 07:25:47 +0100
+published: true
 ---
 
 **TL;DR**
