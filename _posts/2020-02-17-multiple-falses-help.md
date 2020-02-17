@@ -4,7 +4,7 @@ type: post
 tags: [ perl ]
 comment: true
 date: 2020-02-17 08:03:21 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -164,6 +164,18 @@ In this way:
   all-true strings like `matched`, `unmatched`, `excluded`.
 
 This seems better, although a little too flexible than needed maybe?
+
+
+## In conclusion
+
+These were only two alternatives, other exist of course:
+
+- set a global option to trigger the first behaviour
+
+- default to the value of `$match` unless a different *truth value* is
+  passed explicitly
+
+- anything else...
 
 Comments welcome!
 
