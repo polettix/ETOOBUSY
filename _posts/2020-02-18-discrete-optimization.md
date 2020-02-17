@@ -3,7 +3,7 @@ title: Discrete Optimization
 type: post
 tags: [ algorithm, coursera ]
 comment: true
-date: 2020-02-17 08:00:00 +0100
+date: 2020-02-18 08:00:00 +0100
 published: false
 ---
 
