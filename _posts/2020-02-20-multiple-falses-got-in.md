@@ -1,10 +1,10 @@
 ---
 title: Unmatched is indeed not the same as Excluded
 type: post
-tags: [ perl, git ]
+tags: [ perl ]
 comment: true
 date: 2020-02-20 00:44:53 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
