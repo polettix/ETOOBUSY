@@ -79,7 +79,11 @@ my $graph_adjacencies = graph_adjacencies_sub(%graph);
 
 Now `$graph_adjacencies` encapsulates our representation of the graph: when
 provided a *node*, it gives out the list of *nodes* that can be reached from
-it.
+it:
+
+```perl
+my @nodes_from_home = $graph_adjacencies->('home');
+```
 
 # Another example?
 
@@ -98,9 +102,15 @@ sub new {
    return bless {name => $name, neighbors => {}}, $package;
 };
 
-sub name { return $_[0]->{name} }
+sub name {
+   my $self = shift;
+   return $self->{name};
+}
 
-sub neighbors { return @{$_[0]->{neighbors}} }
+sub neighbors {
+   my $self = shift;
+   return @{$self->{neighbors}};
+}
 
 sub add_neighbors {
    my $self = shift;
@@ -128,14 +138,14 @@ my $graph_adjacencies = \&Graph::neighbors;
 ```
 
 Of course if you intend to inherit from `Graph` this will break, so the more
-robust thing to do is to create a wrapper:
+robust thing to do is to use a wrapper:
 
 ```perl
 sub graph_dependencies_sub {
    return sub {
       my ($node) = @_;
       return $node->neighbors;
-   }
+   };
 }
 my $graph_adjacencies = graph_adjacencies_sub();
 ```
@@ -148,7 +158,7 @@ elements, e.g.:
 - *nodes* are strings;
 - *edges* are represented as pairs of nodes in anonymous arrays `[$from, $to]`.
 
-Something like this:
+Something like this (for the same graph):
 
 ```perl
 my @edges = (
@@ -180,7 +190,7 @@ sub graph_adjacencies_sub {
    my %graph;
    for my $edge (@_) {
       my ($from, $to) = @$edge;
-      $succ_for{$from} = $to;
+      $graph{$from} = $to;
    }
    return sub {
       my ($node) = @_;
@@ -201,7 +211,7 @@ The representation that we introduced basically requires us to decide on
 what we mean by *node* and provide a function that computes the list of
 other *nodes* that can be reached from it. It allows us to represent
 whatever graph, and it's fairly easy to adapt to... which we will leverage
-in the future discussing a few [#algoritm][]s about graphs.
+in the future discussing a few [#algorithm][]s about graphs.
 
 Cheers!
 
