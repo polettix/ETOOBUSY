@@ -4,12 +4,12 @@ type: post
 tags: [ perl, algorithm, coding ]
 comment: true
 date: 2020-02-24 08:00:00 +0100
-preview: true
+published: false
 ---
 
 **TL;DR**
 
-> One fundamental [algorithm][] for visiting graphs.
+> One fundamental [#algorithm][] for visiting graphs.
 
 One [#algorithm][] implemented in [cglib-perl][] is the depth-first visit of
 a graph. The implementation leverages the graph representation explained in
