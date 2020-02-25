@@ -3,8 +3,8 @@ title: Basic Priority Queue with Heaps
 type: post
 tags: [ perl, algorithm, coding ]
 comment: true
-date: 2020-02-25 08:00:00 +0100
-published: false
+date: 2020-02-25 06:07:24 +0100
+published: true
 ---
 
 **TL;DR**
