@@ -126,7 +126,7 @@ Time to generate some graphics, this is the first try:
 
 with this output:
 
-![nice-image-wrong]({{ 'assets/images/nice-web-plot.notext.png' | prepend: site.baseurl | prepend: site.url }})
+![nice-image-wrong]({{ '/assets/images/nice-web-plot.notext.png' | prepend: site.baseurl | prepend: site.url }})
 
 Ouch!
 
@@ -163,7 +163,7 @@ Time to generate some graphics, this is the first try:
 
 The image is bigger, which is promising. Let's see:
 
-![nice-image-wrong]({{ 'assets/images/nice-web-plot.png' | prepend: site.baseurl | prepend: site.url }})
+![nice-image-right]({{ '/assets/images/nice-web-plot.png' | prepend: site.baseurl | prepend: site.url }})
 
 Yay!
 
