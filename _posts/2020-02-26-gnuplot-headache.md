@@ -4,7 +4,7 @@ type: post
 tags: [ gnuplot, graphics, docker, alpine ]
 comment: true
 date: 2020-02-26 22:33:03 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
