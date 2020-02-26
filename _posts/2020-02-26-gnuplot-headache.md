@@ -184,4 +184,4 @@ sweat a bit, it eventually worked fine!
 [Try with Docker]: {{ '/2020/01/21/try-with-docker' | prepend: site.baseurl | prepend: site.url }}
 [attractive plot]: http://www.gnuplotting.org/attractive-plots/
 [nice-code]: http://www.gnuplotting.org/code/nice_web_plot.gnu
-[nice-data]: http://www.gnuplotting.org/code/nice_web_plot.dat
+[nice-data]: http://www.gnuplotting.org/data/nice_web_plot.dat
