@@ -41,6 +41,8 @@ Executing glib-2.58.1-r3.trigger
 OK: 32 MiB in 47 packages
 ```
 
+[Alpine Linux][] is attractive here because of its low footprint.
+
 Everything's right? Right? Well... not so fast!
 
 # An example plot
@@ -175,6 +177,7 @@ sweat a bit, it eventually worked fine!
 
 
 
+[Alpine Linux]: https://www.alpinelinux.org/
 [Gnuplot]: http://gnuplot.info/
 [Debian]: https://www.debian.org/
 [Docker]: https://www.docker.com/
