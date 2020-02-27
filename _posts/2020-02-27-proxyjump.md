@@ -1,7 +1,7 @@
 ---
 title: ProxyJump
 type: post
-tags: [ security ]
+tags: [ security, ssh ]
 comment: true
 date: 2020-02-27 23:13:50 +0100
 published: true
