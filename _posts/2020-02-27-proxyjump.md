@@ -4,7 +4,7 @@ type: post
 tags: [ security ]
 comment: true
 date: 2020-02-27 23:13:50 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -45,9 +45,10 @@ not have too much available storage.
 # How old is `ssh`?
 
 If you happen to have a version of [OpenSSH][] that is [release-7.3][]
-or later, then enter `ProxyJump`:
+or later, then enter `ProxyJump`. From the [release note for
+7.3][release-7.3]:
 
-> Add a ProxyJump option and corresponding -J command-line flag to allow
+> [...] ProxyJump option and corresponding -J command-line flag to allow
 > simplified indirection through a one or more SSH bastions or "jump
 > hosts".
 
@@ -82,7 +83,7 @@ foo@laptop$ ssh target
 
 and *voilà*, we are logged into *target*.
 
-# Then, with a key...
+# One key to rule them all...
 
 If you happen to use the same key for both `bar@jumphost.local` and
 `galook@target.internal`, it can be even simpler! Forget about
