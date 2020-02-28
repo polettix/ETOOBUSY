@@ -4,7 +4,7 @@ type: post
 tags: [ toolbox, ssh, tmux ]
 comment: true
 date: 2020-03-01 08:00:00 +0100
-preview: true
+published: false
 ---
 
 **TL;DR**
@@ -104,7 +104,7 @@ foo@laptop$ ssh -t target tmux new -A -s my-missing-session
 So, going back to the original example, the *right* alias would be:
 
 ```shell
-alias target='ssh -t tmux new -A -s mysession'
+alias target='ssh -t target tmux new -A -s mysession'
 ```
 
 And this is it for today, cheers!
