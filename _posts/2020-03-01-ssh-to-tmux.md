@@ -1,7 +1,7 @@
 ---
 title: SSH into tmux
 type: post
-tags: [ #toolbox, ssh, tmux ]
+tags: [ toolbox, ssh, tmux ]
 comment: true
 date: 2020-03-01 08:00:00 +0100
 preview: true
