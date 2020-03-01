@@ -98,7 +98,12 @@ After all frames are available as PNG images, they are condensed
 together in a video using [ffmpeg][] (line 38). The framerate is set to
 a fixed value of 24, but of course it can be changed.
 
-Curious of what comes out of this? Take a look at the [local video][]!
+Curious of what comes out of this? Take a look at the [local video][]:
+
+<video controls>
+  <source src="{{ '/assets/other/20200304-gnuplot-video.mp4' | prepend: site.baseurl | prepend: site.url }}" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
 
 [Local version]: {{ '/assets/code/20200304-sequencer.sh' | prepend: site.baseurl | prepend: site.url }}
 [local video]: {{ '/assets/other/20200304-gnuplot-video.mp4' | prepend: site.baseurl | prepend: site.url }}
