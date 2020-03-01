@@ -4,7 +4,7 @@ type: post
 tags: [ gnuplot, docker, alpine, dibs ]
 comment: true
 date: 2020-03-01 00:31:41 +0100
-preview: true
+publish: true
 ---
 
 **TL;DR**
