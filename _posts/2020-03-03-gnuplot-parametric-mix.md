@@ -94,5 +94,5 @@ And I guess it's all for today!
 
 [Gnuplot]: http://gnuplot.info/
 [Fortune's algorithm]: {{ '/2019/10/12/voronoi-1' | prepend: site.baseurl | prepend: site.url }}
-[other post]: {{ '/2019/10/13/voronoi-2' | prepend: site.baseurl | prepend: site.url }}
+[other post]: {{ '/2019/10/12/voronoi-2' | prepend: site.baseurl | prepend: site.url }}
 [Local version]: {{ '/assets/code/20200303-parametric.gnuplot' | prepend: site.baseurl | prepend: site.url }}
