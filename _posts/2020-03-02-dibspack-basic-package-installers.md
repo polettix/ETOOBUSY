@@ -32,9 +32,9 @@ install [suexec][] while we're at it.
 In particular, they accept as command-line options a list of packages to
 be installed. If the initial element(s) of the list is(/are) one of the
 three strings `--suexec`, `--dockexec`, or `--profilexec`, then the
-corresponding program from [install][] will be installed. You can insist
-on passing one of these strings by tossing a `--`, which will interrupt
-the scanning.
+corresponding program from [wrapexec][] will be installed. You can
+insist on passing one of these strings by tossing a `--`, which will
+interrupt the scanning.
 
 Examples:
 
@@ -75,4 +75,4 @@ You get the idea... cheers!
 [dibspack-basic]: https://github.com/polettix/dibspack-basic
 [prereqs]: https://github.com/polettix/dibspack-basic#prereqs
 [package]: https://github.com/polettix/dibspack-basic/tree/master/package
-[install]: https://github.com/polettix/dibspack-basic/tree/master/install
+[wrapexec]: https://github.com/polettix/dibspack-basic/tree/master/wrapexec
