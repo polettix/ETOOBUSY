@@ -4,7 +4,8 @@ type: post
 tags: [ gnuplot, graphics, coding ]
 comment: true
 date: 2020-03-04 08:00:00 +0100
-published: false
+preview: true
+#published: false
 ---
 
 **TL;DR**
@@ -97,7 +98,10 @@ After all frames are available as PNG images, they are condensed
 together in a video using [ffmpeg][] (line 38). The framerate is set to
 a fixed value of 24, but of course it can be changed.
 
+Curious of what comes out of this? Take a look at the [local video][]!
+
 [Local version]: {{ '/assets/code/20200304-sequencer.sh' | prepend: site.baseurl | prepend: site.url }}
+[local video]: {{ '/assets/other/20200304-gnuplot-video.mp4' | prepend: site.baseurl | prepend: site.url }}
 [Gnuplot]: http://gnuplot.info/
 [Gnuplot Parametric Mix]: {{ '/2020/03/03/gnuplot-parametric-mix' | prepend: site.baseurl | prepend: site.url }}
 [ffmpeg]: https://ffmpeg.org/
