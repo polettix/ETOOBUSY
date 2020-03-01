@@ -16,6 +16,7 @@ publish: true
 The [dibs][dibs] file is pretty straightforward:
 
 ```
+# vim: ts=2 sts=2 sw=2 et ai :
 ---
 name: gnuplotter
 
@@ -28,17 +29,14 @@ actions:
   default:
     - from: alpine:3.9
     - pack: basic
-      path: wrapexec/install
-      args: ['suexec']
-    - pack: basic
-      path: prereqs-fromlist
-      args: ['alpine', 'gnuplot', 'ttf-freefont', 'ffmpeg', 'su-exec']
+      path: package/apk
+      args: ['--suexec', 'gnuplot', 'ttf-freefont', 'ffmpeg', 'su-exec']
       commit:
         entrypoint: ['/suexec', '--reference', '/mnt', '--']
         cmd: ['/bin/sh', '-l']
         workdir: /mnt
     - image_name: polettix/gnuplotter
-      tags: ['latest', '1.0']
+      tags: ['latest', '1.1']
 ```
 
 As usual, invoked as:
@@ -68,6 +66,9 @@ All of this thanks to [suexec][], which you might remember from
 [Documentation for suexec][].
 
 That's all folks!
+
+**Update**: updated `dibs.yml` file with new way of installing modules
+and [suexec][].
 
 [Alpine Linux]: https://www.alpinelinux.org/
 [Gnuplot]: http://gnuplot.info/
