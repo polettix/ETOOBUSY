@@ -16,8 +16,8 @@ When packaging stuff with [dibs][], I often stumble(d) in the following
 pattern with [dibspack-basic][]:
 
 - install pre-requisites;
-- install [suexec][] (see [Documentation for suexec][] for the reason
-  why I include it in many container images).
+- install [suexec][] (see [Command-line Docker Applications - A way
+  forward][] for the reason why I include it in many container images).
 
 The pre-requisites installation method via [prereqs][] works fine and is
 very general - you basically provide scripts for managing
@@ -76,5 +76,5 @@ You get the idea... cheers!
 [prereqs]: https://github.com/polettix/dibspack-basic#prereqs
 [package]: https://github.com/polettix/dibspack-basic/tree/master/package
 [wrapexec]: https://github.com/polettix/dibspack-basic/tree/master/wrapexec
-[Documentation for suexec]: {{ '/2020/02/14/docs-for-suexec' | prepend: site.baseurl | prepend: site.url }}
 [suexec]: https://github.com/polettix/dibspack-basic/#wrapexecsuexec
+[Command-line Docker Applications - A way forward]: {{ '/2020/02/12/cmdline-docker-app-a-way' | prepend: site.baseurl | prepend: site.url }}
