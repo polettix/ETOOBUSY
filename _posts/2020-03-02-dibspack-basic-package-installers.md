@@ -1,10 +1,10 @@
 ---
 title: Package Installers for dibspack-basic
 type: post
-tags: [ dibs, Docker ]
+tags: [ dibs, docker ]
 comment: true
-date: 2020-03-02 08:00:00 +0100
-published: false
+date: 2020-03-02 07:32:02 +0100
+published: true
 ---
 
 **TL;DR**
