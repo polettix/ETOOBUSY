@@ -1,7 +1,7 @@
 ---
 title:  Scrape a Thread of Tweets
 type: post
-tags: [ Mojolicious, perl, web, client, twitter ]
+tags: [ mojolicious, perl, web, client, twitter ]
 comment: true
 date: 2020-01-14 06:56:24 +0100
 ---

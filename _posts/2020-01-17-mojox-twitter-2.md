@@ -1,7 +1,7 @@
 ---
 title: Tweets from a user
 type: post
-tags: [ Mojolicious, perl, web, client, twitter ]
+tags: [ mojolicious, perl, web, client, twitter ]
 comment: true
 date: 2020-01-17 00:01:02 +0100
 ---

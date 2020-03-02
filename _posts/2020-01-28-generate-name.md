@@ -1,7 +1,7 @@
 ---
 title: Generate an example "name"
 type: post
-tags: [ generative, Perl, text ]
+tags: [ generative, perl, text ]
 comment: true
 date: 2020-01-28 21:08:16 +0100
 ---

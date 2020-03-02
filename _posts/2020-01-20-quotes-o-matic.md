@@ -1,7 +1,7 @@
 ---
 title: Quotes-O-Matic
 type: post
-tags: [ Mojolicious, perl, web, server ]
+tags: [ mojolicious, perl, web, server ]
 comment: true
 date: 2020-01-20 00:35:29 +0100
 published: true
