@@ -76,3 +76,5 @@ You get the idea... cheers!
 [prereqs]: https://github.com/polettix/dibspack-basic#prereqs
 [package]: https://github.com/polettix/dibspack-basic/tree/master/package
 [wrapexec]: https://github.com/polettix/dibspack-basic/tree/master/wrapexec
+[Documentation for suexec]: {{ '/2020/02/14/docs-for-suexec' | prepend: site.baseurl | prepend: site.url }}
+[suexec]: https://github.com/polettix/dibspack-basic/#wrapexecsuexec
