@@ -4,7 +4,7 @@ type: post
 tags: [ docker, command line ]
 comment: true
 date: 2020-03-05 21:07:06 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
