@@ -1,0 +1,2 @@
+#!/bin/sh
+${DOCKER_COMMAND:-"docker"} run --rm -itv "$PWD:/mnt" "$@"
