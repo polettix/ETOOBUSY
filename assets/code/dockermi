@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ "$#" -eq 0 ] ; then
+   docker images \
+      | perl -nale 'print $F[2] if $F[0] eq "<none>"' \
+      | while read imageid ; do
+         docker rmi "$imageid"
+      done
+else
+   for target in "$@" ; do
+      docker images \
+         | grep "^$target " \
+         | while read repo tag rest ; do
+            docker rmi "$repo:$tag"
+         done
+   done
+fi
