@@ -21,10 +21,11 @@ I recently discovered (well, maybe re-discovered) that projects in
 way to host a [dibs][] project and also the produced images.
 
 By the way, installing [dibs][] is really, *really*, **really** easy: just
-download the driver script described in [dibs 0.5.4][] and you are all set!
+download the driver script described in [dibs update to 0.5.4][] and you are
+all set!
 
 [dibs]: http://blog.polettix.it/hi-from-dibs/
 [Docker]: https://www.docker.com/
 [Docker Hub]: https://hub.docker.com/
-[dibs 0.5.4]: {{ '/2020/03/07/dibs-update' | prepend: site.baseurl | prepend: site.url }}
+[dibs update to 0.5.4]: {{ '/2020/03/07/dibs-update' | prepend: site.baseurl | prepend: site.url }}
 [GitLab]: https://gitlab.com/
