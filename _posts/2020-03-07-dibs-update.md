@@ -41,4 +41,4 @@ in [Command-line Docker Applications - A way forward][].
 [dibs-hub]: https://hub.docker.com/repository/docker/polettix/dibs
 [Local version here]: {{ '/assets/code/dibs' | prepend: site.baseurl | prepend: site.url }}
 [Command-line Docker Applications - A way forward]: {{ '/2020/02/12/cmdline-docker-app-a-way' | prepend: site.baseurl | prepend: site.url }}
-[suexec]: https://github.com/polettix/dibspack-basic/blob/master/wrapexec/suexec
+[suexec]: https://github.com/polettix/dibspack-basic#wrapexecsuexec
