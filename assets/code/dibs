@@ -1,0 +1,6 @@
+#!/bin/sh
+docker run --rm \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   -v "$PWD:/mnt" \
+   -e "DIBS_HOST_REMAP_DIR=/mnt:$PWD" \
+   -- polettix/dibs:0.5 "$@"
