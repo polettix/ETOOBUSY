@@ -1,10 +1,10 @@
 ---
-title: Dibs Update to 0.5.4
+title: dibs update to 0.5.4
 type: post
 tags: [ dibs, docker ]
 comment: true
 date: 2020-03-07 17:52:47 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -30,9 +30,10 @@ docker run --rm \
 
 [Local version here][] - save as `dibs` somewhere in `PATH`, set the
 execution bit, and you're done - you have a wrapper around [dibs][] that
-will work in the current directory. Requires `root` permissions to run - but
-only to run [suexec][] as described in [Command-line Docker Applications - A
-way forward][].
+will work in the current directory.
+
+Requires `root` permissions to run - but only to run [suexec][] as described
+in [Command-line Docker Applications - A way forward][].
 
 [dibs]: http://blog.polettix.it/hi-from-dibs/
 [Docker]: https://www.docker.com/
