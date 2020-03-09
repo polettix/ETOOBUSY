@@ -3,8 +3,8 @@ title: GitLab Registry
 type: post
 tags: [ gitlab, docker, dibs ]
 comment: true
-date: 2020-03-09 08:00:00 +0100
-published: false
+date: 2020-03-09 07:35:08 +0100
+published: true
 ---
 
 **TL;DR**
