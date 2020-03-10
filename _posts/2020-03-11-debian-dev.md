@@ -4,7 +4,7 @@ type: post
 tags: [ coding, debian ]
 comment: true
 date: 2020-03-11 00:43:06 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
