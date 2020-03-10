@@ -3,8 +3,8 @@ title: ssh and LD_IDENTIFICATION
 type: post
 tags: [ ssh, security ]
 comment: true
-date: 2020-03-10 07:00:00 +0100
-preview: true
+date: 2020-03-10 23:42:03 +0100
+published: true
 ---
 
 **TL;DR**
@@ -82,7 +82,13 @@ LC_ALL
 
 I guess most of them aren't really used if not by some program I don't have,
 and I'm particularly intrigued by `LC_IDENTIFICATION` because it resonates
-so well with what I want to do! So here's how the thing is modified:
+so well with what I want to do!
+
+Don't get me wrong: I *know* that this variable is meant for other, and
+using it would be *abusing* it. It just happens that this variable is not
+used by any program I know of, and I'm willing to take the risk.
+
+So here's how the thing is modified:
 
 ```shell
 if [ "$LC_IDENTIFICATION" = 'polettix' ] ; then
