@@ -85,7 +85,7 @@ This is really just the gist of it, every real security consideration aside.
 If you want to do this *in production*, consult an expert that will tell you
 how to protect your CA *secret* key and all these amenities.
 
-## Generate a CA
+## Generate a CA keypair
 
 First of all, you have to be able to impersonate a CA, so generate a key
 pair for it:
@@ -110,10 +110,22 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-This will leave you with files `ca-key` (*private) and `ca-key.pub`
+This will leave you with files `ca-key` (*private*) and `ca-key.pub`
 (*public*) in the current directory. You might need to set the permissions
 of the directory to something like `rwx------` (i.e. only accessible by the
 user) to make things work down the road.
+
+## Distribute the CA public key
+
+Now let's configure the CA *public* key in the target host (assuming that
+you can *already* access that host, of course!):
+
+```shell
+$ { printf '%s' 'cert-authority ' ; cat ca-key.pub ; } \
+   | ssh remote-user@remote-host /bin/sh -c 'cat - >>~/.ssh/authorized_keys'
+```
+
+## Generate a user keypair
 
 Now we can generate a user key, much like the CA:
 
@@ -137,8 +149,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-Now, we have files `user-key` (*private*) and `user-key.pub` (*public) in
+Now, we have files `user-key` (*private*) and `user-key.pub` (*public*) in
 the current directory.
+
+## Sign user's public key
 
 To sign the user's *public* key with the CA's *private* key we would need to
 transfer the user's *public* key where the CA is... but in this example it's
@@ -158,19 +172,17 @@ Option `-s` tells `ssh` which *private* key to use for signing, and option
 This leaves you with file `user-key-cert.pub`, which corresponds to the
 *private* key file `user-key`.
 
-Now let's configure the CA *public* key in the target host (assuming that
-you can *already* access that host, of course!):
-
-```shell
-$ { printf '%s' 'cert-authority ' ; cat ca-key.pub ; } \
-   | ssh remote-user@remote-host /bin/sh -c 'cat - >>~/.ssh/authorized_keys'
-```
+## Try it!
 
 We are done! Now we can use our *private* key `user-key` as usual, but `ssh`
 will use also the certificate `user-key-cert.pub` to perform the
 authentication, because we just configured the CA *public* key, not the
 user's *public key*. Moreover, the certificate is valid until tomorrow... so
 hurry up!
+
+```shell
+$ ssh -i user-key remote-user@remote-host
+```
 
 # Summing up
 
@@ -188,3 +200,5 @@ least:
   some *trusty* way.
 
 Cheers!
+
+[OpenSSH]: https://www.openssh.com/
