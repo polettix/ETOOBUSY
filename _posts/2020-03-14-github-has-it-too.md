@@ -4,7 +4,7 @@ type: post
 tags: [ github, docker, dibs ]
 comment: true
 date: 2020-03-14 23:03:19 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
