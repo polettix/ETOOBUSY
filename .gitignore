@@ -1,2 +1,4 @@
 *.swp
 .DS_store
+/_bundle/
+/_site/
