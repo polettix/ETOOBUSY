@@ -4,7 +4,8 @@ type: post
 tags: [ jekyll, docker, dibs, gitlab ]
 comment: true
 date: 2020-03-16 07:00:00 +0100
-published: true
+preview: true
+published: false
 ---
 
 **TL;DR**
