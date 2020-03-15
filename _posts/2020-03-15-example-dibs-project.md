@@ -4,7 +4,7 @@ type: post
 tags: [ dibs, docker, gitlab ]
 comment: true
 date: 2020-03-15 01:12:16 +0100
-preview: true
+published: true
 ---
 
 **TL;DR**
@@ -151,3 +151,4 @@ Cheers!
 [Alpine Linux]: https://www.alpinelinux.org/
 [nginx]: https://www.nginx.com/
 [git]: https://www.git-scm.com/
+[GitLab]: https://gitlab.com/
