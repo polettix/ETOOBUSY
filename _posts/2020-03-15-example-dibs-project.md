@@ -1,5 +1,5 @@
 ---
-title: Example dibs project: Hello Web World
+title: Example dibs project - Hello Web World
 type: post
 tags: [ dibs, docker, gitlab ]
 comment: true
