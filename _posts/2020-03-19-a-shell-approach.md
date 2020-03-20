@@ -57,7 +57,7 @@ main() {
 ```
 
 The `main` function is called only if the script is run directly (i.e. it is
-*not* sourced), and is passed the whole argument list. It this list is
+*not* sourced), and is passed the whole argument list. If this list is
 empty, it sets it to a default value (in this case, `help`); in any case, it
 executes the list as a command.
 
@@ -71,7 +71,7 @@ this is some help
 $ ./modulino.sh help   # calls help explicitly 
 this is some help
 
-$ ./modulino.sh module_function  @ calls other function
+$ ./modulino.sh module_function  # calls other function
 module function here
 ```
 Neat, uh?
