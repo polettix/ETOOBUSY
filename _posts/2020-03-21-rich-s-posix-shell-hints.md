@@ -4,7 +4,7 @@ type: post
 tags: [ shell, coding ]
 comment: true
 date: 2020-03-21 08:00:00 +0100
-published: false
+published: true
 ---
 
 **TL;DR**
