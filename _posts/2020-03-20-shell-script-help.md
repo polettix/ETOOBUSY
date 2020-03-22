@@ -37,7 +37,8 @@ help() { #<command>
 #<help> usage: help
 #<help> print help for all available commands
    {
-      printf '\nUsage: %s <command> [<arg> [...]]\n\nAvailable (sub-)commands:\n' "$0"
+      printf '\nUsage: %s <command> [<arg> [...]]\n\n' "$0"
+      printf 'Available (sub-)commands:\n'
       sed -ne '
          /#<command> *$/s/\([a-zA-Z0-9_]*\).*/\n- \1/p
          s/^#<help> /    /p
