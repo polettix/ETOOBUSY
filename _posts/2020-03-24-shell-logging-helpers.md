@@ -22,12 +22,12 @@ functionality (i.e. `_LOG` is quite crude but effective):
 _LOG() {
    : ${LOGLEVEL:='INFO'}
    LEVELS='
-TRACE TRACE DEBUG INFO WARN ERROR FATAL
-DEBUG       DEBUG INFO WARN ERROR FATAL
-INFO              INFO WARN ERROR FATAL
-WARN                   WARN ERROR FATAL
-ERROR                       ERROR FATAL
-FATAL                             FATAL
+TRACE  TRACE DEBUG INFO WARN ERROR FATAL
+DEBUG        DEBUG INFO WARN ERROR FATAL
+INFO               INFO WARN ERROR FATAL
+WARN                    WARN ERROR FATAL
+ERROR                        ERROR FATAL
+FATAL                              FATAL
    '
    local timestamp="$(date '+%Y-%m-%dT%H%M%S%z')"
    if printf '%s' "$LEVELS" \
