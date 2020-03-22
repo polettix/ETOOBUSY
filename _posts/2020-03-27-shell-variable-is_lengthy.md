@@ -22,10 +22,7 @@ is_var_lengthy() {
    eval 'value="${'"$1"':-""}"'
    [ -n "$value" ]
 }
-is_value_lengthy() {
-   [ $# -gt 0 ] || return 1    # empty input list -> false
-   [ -n "${1:-""}" ]
-}
+is_value_lengthy() { [ $# -gt 0 ] && [ -n "$1" ] ; }
 ```
 
 If they seem similar to the functions in [Shell variables tests: is it
