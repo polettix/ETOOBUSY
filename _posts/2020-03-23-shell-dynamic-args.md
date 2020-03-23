@@ -3,8 +3,8 @@ title: Building shell arguments list dynamically
 type: post
 tags: [ shell, coding ]
 comment: true
-date: 2020-03-23 08:00:00 +0100
-published: false
+date: 2020-03-23 19:01:03 +0100
+published: true
 ---
 
 **TL;DR**
