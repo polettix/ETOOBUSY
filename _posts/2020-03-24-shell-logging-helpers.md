@@ -3,8 +3,8 @@ title: Shell logging helpers
 type: post
 tags: [ shell, coding ]
 comment: true
-date: 2020-03-24 08:00:00 +0100
-published: false
+date: 2020-03-24 07:33:12 +0100
+published: true
 ---
 
 **TL;DR**
