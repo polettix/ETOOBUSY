@@ -3,8 +3,8 @@ title: 'Shell variables tests: is it true?'
 type: post
 tags: [ shell, coding ]
 comment: true
-date: 2020-03-26 08:00:00 +0100
-published: false
+date: 2020-03-26 23:33:01 +0100
+published: true
 ---
 
 **TL;DR**
