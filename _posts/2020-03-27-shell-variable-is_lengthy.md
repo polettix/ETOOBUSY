@@ -3,8 +3,8 @@ title: 'Shell variables tests: is it lengthy?'
 type: post
 tags: [ shell, coding]
 comment: true
-date: 2020-03-27 08:00:00 +0100
-published: false
+date: 2020-03-27 01:50:05 +0100
+published: true
 ---
 
 **TL;DR**
