@@ -14,6 +14,8 @@ published: false
 > *constraints* that allow us to tell a good - if partial - solution from an
 > evidently wrong one.
 
+The code for this stage can be found in [stage 3][].
+
 # Let's start from the rules
 
 The rules for [aquarium][] are simple, from the site:

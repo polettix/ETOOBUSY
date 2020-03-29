@@ -233,6 +233,5 @@ does nothing at cutting out impossible situations before testing them.
 
 There's definitely space for improvement.
 
-[Aquarium - constraints]: {{ '/2020/04/01/aquarium-constraints/' | prepend:
-site.baseurl | prepend: site.url }}
-[stage 3]: https://gitlab.com/polettix/aquarium-solver/-/blob/master/04-search/aquarium.pl
+[Aquarium - constraints]: {{ '/2020/04/01/aquarium-constraints/' | prepend: site.baseurl | prepend: site.url }}
+[stage 4]: https://gitlab.com/polettix/aquarium-solver/-/blob/master/04-search/aquarium.pl
