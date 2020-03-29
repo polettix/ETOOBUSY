@@ -1,9 +1,9 @@
 ---
-title: Aquarium - cooperating constraint
+title: Aquarium - search differently
 type: post
 tags: [ aquarium puzzle game, coding, perl, constraint programming ]
 comment: true
-date: 2020-04-03 08:00:00 +0200
+date: 2020-04-05 08:00:00 +0200
 preview: true
 published: false
 ---
