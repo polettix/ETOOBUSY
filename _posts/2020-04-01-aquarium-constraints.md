@@ -147,5 +147,5 @@ Until next time... happy coding!
 [Aquarium - parse puzzle input]: {{ '/2020/03/30/aquarium-parse-puzzle/' | prepend: site.baseurl | prepend: site.url }}
 [aquarium]: https://www.puzzle-aquarium.com/
 [aquarium-solver]: https://gitlab.com/polettix/aquarium-solver/
-[stage 3]: https://gitlab.com/polettix/aquarium-solver/-/blob/master/03-print/aquarium.pl
+[stage 3]: https://gitlab.com/polettix/aquarium-solver/-/blob/master/03-constraints/aquarium.pl
 [asciinema]: https://asciinema.org/
