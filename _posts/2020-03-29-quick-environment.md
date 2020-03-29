@@ -3,8 +3,8 @@ title: 'quenv - quick environment'
 type: post
 tags: [ docker, alpine ]
 comment: true
-date: 2020-03-29 08:00:00 +0100
-published: false
+date: 2020-03-29 08:05:40 +0200
+published: true
 ---
 
 **TL;DR**
