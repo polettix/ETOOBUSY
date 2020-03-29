@@ -3,7 +3,7 @@ title: Aquarium - constraints
 type: post
 tags: [ aquarium puzzle game, coding, perl, constrained programming ]
 comment: true
-date: 2020-04-01 08:00:00 +0100
+date: 2020-04-01 08:00:00 +0200
 preview: true
 published: false
 ---
