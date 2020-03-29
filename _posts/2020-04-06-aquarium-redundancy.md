@@ -16,7 +16,7 @@ published: false
 
 In the last post about [aquarium][] ([Aquarium - search differently][]), we
 left with a working solution that is capable of solving even the most
-insidious puzzles on the website (also knowns as the [Special Montly][]).
+insidious puzzles on the website (also knowns as the [Special Monthly][]).
 The time was not too bad, but nothing to brag about either:
 
 ```shell
