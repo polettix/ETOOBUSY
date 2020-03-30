@@ -3,10 +3,10 @@ title: Aquarium - parse puzzle input
 type: post
 tags: [ aquarium puzzle game, coding, perl, constraint programming ]
 comment: true
-date: 2020-03-30 08:00:00 +0200
+date: 2020-03-30 19:36:01 +0200
 mathjax: true
 preview: true
-published: false
+published: true
 ---
 
 **TL;DR**
