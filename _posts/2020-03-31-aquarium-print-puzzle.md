@@ -4,7 +4,6 @@ type: post
 tags: [ aquarium puzzle game, coding, perl, constraint programming ]
 comment: true
 date: 2020-03-31 08:59:23 +0200
-preview: true
 published: true
 ---
 
