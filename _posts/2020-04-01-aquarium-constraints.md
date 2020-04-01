@@ -3,9 +3,8 @@ title: Aquarium - constraints
 type: post
 tags: [ aquarium puzzle game, coding, perl, constraint programming ]
 comment: true
-date: 2020-04-01 08:00:00 +0200
-preview: true
-published: false
+date: 2020-04-01 18:54:17 +0200
+published: true
 ---
 
 **TL;DR**
