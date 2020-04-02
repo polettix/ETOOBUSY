@@ -3,9 +3,8 @@ title: Aquarium - search the solution space
 type: post
 tags: [ aquarium puzzle game, coding, perl, constraint programming ]
 comment: true
-date: 2020-04-02 08:00:00 +0200
-preview: true
-published: false
+date: 2020-04-02 23:42:44 +0200
+published: true
 ---
 
 **TL;DR**
