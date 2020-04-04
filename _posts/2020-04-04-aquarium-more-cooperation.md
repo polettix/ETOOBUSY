@@ -3,9 +3,9 @@ title: Aquarium - more cooperation from constraints
 type: post
 tags: [ aquarium puzzle game, coding, perl, constraint programming ]
 comment: true
-date: 2020-04-04 08:00:00 +0200
-preview: true
-published: false
+date: 2020-04-04 09:18:12 +0200
+preview: false
+published: true
 ---
 
 TL;DR
