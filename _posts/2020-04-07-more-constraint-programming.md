@@ -1,7 +1,7 @@
 ---
 title: More constraint programming
 type: post
-tags: [ algorithm, cglib, coding, perl ]
+tags: [ algorithm, constraint programming, cglib, coding, perl ]
 comment: true
 date: 2020-04-07 08:00:00 +0200
 published: false
