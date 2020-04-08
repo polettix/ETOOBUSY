@@ -162,8 +162,8 @@ In this case, each level addresses one slot.
 14    return sub ($status) {                         # get "next" solution
 15       return unless @candidates;
 16       $amount = shift @candidates;
-17       $solution->[$slot_id] = {$amount => 1};
-18       $status->{solution} = $solution;
+17       $status->{solution} = dclone($solution);
+18       $status->{solution}[$slot_id] = {$amount => 1};
 19       return 1;
 20    };
 21 } ## end sub explore ($status)
@@ -176,8 +176,10 @@ in `$slot_id`, we take all of its alternatives and populate `@candidates`,
 which we will use for iterating different alternatives *inside* the iterator
 function.
 
-At each step, we will set the specific slot to a hash that has one single
-choice among the candidates (line 17).
+At each step, we will first of all restore the status as in the beginning
+(line 17, to *undo* any pruning that was attempted in the previous step),
+then set the specific slot to a hash that has one single choice among the
+candidates (line 18). 
 
 
 # Curious?
