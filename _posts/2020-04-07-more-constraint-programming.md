@@ -36,7 +36,7 @@ Let's take a look at the function:
 15          } ## end while ($changed != 0)
 16          $done->($state) || (push(@stack, $factory->($state)) && undef);
 17       };
-18       $logger->(backtrack => $state) if $logger;
+18       $logger->(backtrack => $state, $@) if $logger;
 19       while (@stack) {
 20          last if $stack[-1]->($state);
 21          pop @stack;
@@ -86,6 +86,10 @@ happen:
 In the latter case, the search is not over and the *backtrack* in lines 18
 to 23 kicks in. I know, I know... the very first time is not really
 *backtracking*, but we have to do exactly the same operations, so why not?
+Moreover, it's possible to understand whether it's the first time we call
+the iterator, or it is a real backtracking, by looking at the third
+parameter of the invoked logger function: upon backtracking it will contain
+the exception!
 
 If we find something more to investigate (line 20) then we can continue,
 otherwise `@stack` will be depleted and we will return... *nothing* (line
@@ -94,6 +98,10 @@ otherwise `@stack` will be depleted and we will return... *nothing* (line
 This is the skeleton... if you want to use it, you have to provide the
 *meat*! Look at [ConstraintSolver.pod][] to look at the API, and wait some
 more time... for an example 🙄 Until next time... happy coding!
+
+
+**Update**: aligned code to latest version, which includes the exception in
+invoking the logger upon backtracking.
 
 [aquarium]: https://www.puzzle-aquarium.com/
 [Aquarium - exploiting redundant constraints]: {{ '/2020/04/06/aquarium-redundancy/' | prepend: site.baseurl | prepend: site.url }}
