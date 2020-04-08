@@ -83,7 +83,7 @@ Let's use [ConstraintSolver.pm][] then:
 11       is_done        => \&is_done,
 12       search_factory => \&explore,
 13       start          => {solution => $solution},
-14       logger         => \&printout,
+14       logger         => ($ENV{VERBOSE} ? \&printout : undef),
 15    );
 16 } ## end sub autobiographical_numbers ($n)
 ```
@@ -111,20 +111,33 @@ maximum element. As anticipated, I'm not exactly proud of this code!
 The logger functions is quite simple:
 
 ```perl
-sub printout ($phase, $status) {
-   say $phase, ' => ', encode_json [
-      map {
-         my @candidates = sort { $a <=> $b } keys $_->%*;
-         @candidates > 1 ? \@candidates : 0 + $candidates[0]
-      } $status->{solution}->@*
-   ];
-} ## end sub printout
+ 1 sub printout ($phase, $status, $exception = undef) {
+ 2    if ($phase eq 'backtrack') {
+ 3       if ($@) {
+ 4          (my $e = $@) =~ s{\sat\s.*?\sline\s[0-9]+\.\s+\z}{}mxs;
+ 5          $phase = "backtrack[$e]";
+ 6       }
+ 7       else {
+ 8          $phase = 'explore';
+ 9       }
+10    }
+11    say $phase, ' => ', encode_json [
+12       map {
+13          my @candidates = sort { $a <=> $b } keys $_->%*;
+14          @candidates > 1 ? \@candidates
+15          : @candidates > 0 ? 0 + $candidates[0]
+16          : '[]'
+17       } $status->{solution}->@*
+18    ];
+19 } ## end sub printout
 ```
 
 Each hash reference is transformed back to a sorted array before being put
 in the output array, whose reference is encoded with json and then printed
 out. The logging function receives the *step* as the first argument, so we
-print that too.
+print that too; additionally, when backtracking, the function also receives
+the exception that was thrown, so we make sure to include it (line 5) or to
+mark this as a simple search start (line 8).
 
 Function `is_done` tells us whether our quest is complete or not:
 
@@ -185,7 +198,10 @@ candidates (line 18).
 # Curious?
 
 We're at the end of this post now... if you're curious about the
-constraints, please hold on until the next post!
+constraints, please hold on until the next post, or take a sneak peek at the
+[repository][].
+
+**Update** fix code with latest changes, and add reference to repository.
 
 
 [cglib]: https://github.com/polettix/cglib-perl/
@@ -199,3 +215,4 @@ constraints, please hold on until the next post!
 [Professor Pascal Van Hentenryck]: https://www.coursera.org/instructor/~1289035
 [Dr. Carleton Coffrin]: https://www.coursera.org/instructor/carletoncoffrin
 [Douglas Richard Hofstadter]: https://en.wikipedia.org/wiki/Douglas_Hofstadter
+[repository]: https://gitlab.com/polettix/autobiographical-numbers
