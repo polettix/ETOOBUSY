@@ -42,7 +42,7 @@ where $v_i$ represents the value contained in slot `i`.
 
 # One more thing: N > 3
 
-The autobiographical numbers puzzle can't be solved for $N \leq 2$:
+The autobiographical numbers puzzle can't be solved for $N \leq 3$:
 
 - $N = 0$ means that there is no slot.
 - $N = 1$ means that there is only slot `0`. It cannot contain $0$ because
