@@ -3,9 +3,9 @@ title: Autobiographical numbers constraints - last is zero
 type: post
 tags: [ constraint programming, cglib, perl, algorithm ]
 comment: true
-date: 2020-04-10 08:00:00 +0200
+date: 2020-04-10 09:35:23 +0200
 mathjax: true
-preview: true
+published: true
 ---
 
 **TL;DR**
