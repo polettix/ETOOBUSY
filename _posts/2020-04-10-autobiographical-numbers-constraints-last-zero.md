@@ -63,8 +63,8 @@ The autobiographical numbers puzzle can't be solved for $N \leq 3$:
 
 - $N = 3$ is equally impossible. Allowed values for quantities are $0$, $1$
   and $2$ because there are only slots `0`, `1` and `2`.
-  - We already established that slot `0` cannot contain $0`
-  - in the previous section, we saw that slot `2` cannot contain `2` (it
+  - We already established that slot `0` cannot contain $0$
+  - in the previous section, we saw that slot `2` cannot contain $2$ (it
     would mean that we need to have 4 slots, but we have only three)
   - so we are left with:
 
@@ -74,7 +74,7 @@ The autobiographical numbers puzzle can't be solved for $N \leq 3$:
 120 not a solution, slot 1 should be 1
 121 not a solution, there is no 0
 2*0 not a solution, the value of slot 2 cannot be less than 1
-201 not a solution, there value of slot 1 should be 1
+201 not a solution, the value of slot 1 should be 1
 211 not a solution, the value of slot 1 should be 2 
 22* not a solution, the value of slot 2 should be 2 but it can't
 ```
