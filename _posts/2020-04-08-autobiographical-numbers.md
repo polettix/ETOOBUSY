@@ -11,7 +11,7 @@ published: true
 **TL;DR**
 
 > Let's look at an example of using [ConstraintSolver.pm][], introduced in
-> previous post [More constrint programming][].
+> previous post [More constraint programming][].
 
 But first... a confession: I'm quite *not* satisfied with the code that I'm
 going to show... but time is a limited resource, so I'll stick with it
