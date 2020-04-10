@@ -56,9 +56,9 @@ The autobiographical numbers puzzle can't be solved for $N \leq 3$:
     the previous section;
   - slot `0` cannot contain $0$ for the same reasons as the previous case
     where $N = 1$, so it can only contain a $1$ (if anything);
-  - `1|0` is not a solution because there is one $1$ and the slot for `1` is
+  - `10` is not a solution because there is one $1$ and the slot for `1` is
     $0$
-  - `1|1` is not a solution because there are two values $1$, but slot `1`
+  - `11` is not a solution because there are two values $1$, but slot `1`
     contains a $1$.
 
 - $N = 3$ is equally impossible. Allowed values for quantities are $0$, $1$
