@@ -103,9 +103,25 @@ user	0m0.068s
 sys	0m0.008s
 ```
 
-But there will be more... stay tuned!
+# So long...
+
+Curious about the whole series? Here it is:
+
+- [Autobiographical numbers][]
+- [Autobiographical numbers constraints - basic][]
+- [Autobiographical numbers constraints - last is zero][]
+- [Autobiographical numbers constraints - weighted sum][]
+- [Autobiographical numbers constraints - luckier weighted sum][]
+- [Code repository][repository]
+
+Comments? Please comment below!
 
 [Autobiographical numbers]: {{ '/2020/04/08/autobiographical-numbers/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - basic]: {{ '/2020/04/09/autobiographical-numbers-constraints-basic/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - last is zero]: {{ '/2020/04/10/autobiographical-numbers-constraints-last-zero/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - weighted sum]: {{ '/2020/04/11/autobiographical-numbers-constraints-weighted-sum/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - luckier weighted sum]: {{ '/2020/04/12/autobiographical-numbers-constraints-luckier-sum/' | prepend: site.baseurl | prepend: site.url }}
+[repository]: https://gitlab.com/polettix/autobiographical-numbers
 [autobiographical-numbers]: https://gitlab.com/polettix/autobiographical-numbers
 [stage 1]: https://gitlab.com/polettix/autobiographical-numbers/-/blob/master/01-basic/autobiographical-numbers.pl
 [YouTube video]: https://www.youtube.com/watch?v=lRfdMiURV4s

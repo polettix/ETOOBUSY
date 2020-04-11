@@ -203,7 +203,25 @@ constraints, please hold on until the next post, or take a sneak peek at the
 
 **Update** fix code with latest changes, and add reference to repository.
 
+# So long...
 
+Curious about the whole series? Here it is:
+
+- [Autobiographical numbers][]
+- [Autobiographical numbers constraints - basic][]
+- [Autobiographical numbers constraints - last is zero][]
+- [Autobiographical numbers constraints - weighted sum][]
+- [Autobiographical numbers constraints - luckier weighted sum][]
+- [Code repository][repository]
+
+Comments? Please comment below!
+
+[Autobiographical numbers]: {{ '/2020/04/08/autobiographical-numbers/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - basic]: {{ '/2020/04/09/autobiographical-numbers-constraints-basic/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - last is zero]: {{ '/2020/04/10/autobiographical-numbers-constraints-last-zero/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - weighted sum]: {{ '/2020/04/11/autobiographical-numbers-constraints-weighted-sum/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - luckier weighted sum]: {{ '/2020/04/12/autobiographical-numbers-constraints-luckier-sum/' | prepend: site.baseurl | prepend: site.url }}
+[repository]: https://gitlab.com/polettix/autobiographical-numbers
 [cglib]: https://github.com/polettix/cglib-perl/
 [CodinGame]: https://www.codingame.com/
 [ConstraintSolver.pm]: https://github.com/polettix/cglib-perl/blob/master/ConstraintSolver.pm

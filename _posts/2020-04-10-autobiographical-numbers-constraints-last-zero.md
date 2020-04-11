@@ -189,8 +189,21 @@ Not bad!
 
 # So long...
 
-Curious about more constraints? By all means wait for new posts!
+Curious about the whole series? Here it is:
 
+- [Autobiographical numbers][]
+- [Autobiographical numbers constraints - basic][]
+- [Autobiographical numbers constraints - last is zero][]
+- [Autobiographical numbers constraints - weighted sum][]
+- [Autobiographical numbers constraints - luckier weighted sum][]
+- [Code repository][repository]
+
+Comments? Please comment below!
 
 [Autobiographical numbers]: {{ '/2020/04/08/autobiographical-numbers/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - basic]: {{ '/2020/04/09/autobiographical-numbers-constraints-basic/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - last is zero]: {{ '/2020/04/10/autobiographical-numbers-constraints-last-zero/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - weighted sum]: {{ '/2020/04/11/autobiographical-numbers-constraints-weighted-sum/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers constraints - luckier weighted sum]: {{ '/2020/04/12/autobiographical-numbers-constraints-luckier-sum/' | prepend: site.baseurl | prepend: site.url }}
+[repository]: https://gitlab.com/polettix/autobiographical-numbers
 [stage 2]: https://gitlab.com/polettix/autobiographical-numbers/-/blob/master/02-last-is-zero/autobiographical-numbers.pl
