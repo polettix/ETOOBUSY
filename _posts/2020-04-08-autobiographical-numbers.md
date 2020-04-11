@@ -212,6 +212,7 @@ Curious about the whole series? Here it is:
 - [Autobiographical numbers constraints - last is zero][]
 - [Autobiographical numbers constraints - weighted sum][]
 - [Autobiographical numbers constraints - luckier weighted sum][]
+- [Autobiographical numbers - step up][]
 - [Code repository][repository]
 
 Comments? Please comment below!
@@ -221,6 +222,7 @@ Comments? Please comment below!
 [Autobiographical numbers constraints - last is zero]: {{ '/2020/04/10/autobiographical-numbers-constraints-last-zero/' | prepend: site.baseurl | prepend: site.url }}
 [Autobiographical numbers constraints - weighted sum]: {{ '/2020/04/11/autobiographical-numbers-constraints-weighted-sum/' | prepend: site.baseurl | prepend: site.url }}
 [Autobiographical numbers constraints - luckier weighted sum]: {{ '/2020/04/12/autobiographical-numbers-constraints-luckier-sum/' | prepend: site.baseurl | prepend: site.url }}
+[Autobiographical numbers - step up]: {{ '/2020/04/13/autobiographical-numbers-step-up/' | prepend: site.baseurl | prepend: site.url }}
 [repository]: https://gitlab.com/polettix/autobiographical-numbers
 [cglib]: https://github.com/polettix/cglib-perl/
 [CodinGame]: https://www.codingame.com/
