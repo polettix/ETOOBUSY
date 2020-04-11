@@ -222,7 +222,9 @@ If you want to take a look at all posts, here's the list:
 - [Allocating games in tournaments - 3 players practicalities][]
 - [Allocating games in tournaments - 6 players matches][]
 - [Allocating games in tournaments - 6 players matches, again][]
+- [Allocating games in tournaments - 6 players matches, premium][]
 
+[Allocating games in tournaments - 6 players matches, premium]: {{ '/2020/04/20/tournaments-6-players-premium' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - 6 players matches, again]: {{ '/2020/04/19/tournaments-6-players-again' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - 6 players matches]: {{ '/2020/04/18/tournaments-6-players' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - 3 players practicalities]: {{ '/2020/04/17/tournaments-3-practical' | prepend: site.baseurl | prepend: site.url }}
