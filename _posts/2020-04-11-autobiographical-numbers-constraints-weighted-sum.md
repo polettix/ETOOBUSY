@@ -3,9 +3,9 @@ title: Autobiographical numbers constraints - weighted sum
 type: post
 tags: [ constraint programming, cglib, perl, algorithm ]
 comment: true
-date: 2020-04-11 08:00:00 +0200
+date: 2020-04-11 09:05:55 +0200
 mathjax: true
-published: false
+published: true
 ---
 
 **TL;DR**
