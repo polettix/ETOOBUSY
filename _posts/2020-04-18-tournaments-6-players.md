@@ -317,7 +317,11 @@ If you want to take a look at all posts, here's the list:
 - [Allocating games in tournaments - 6 players matches][]
 - [Allocating games in tournaments - 6 players matches, again][]
 - [Allocating games in tournaments - 6 players matches, premium][]
+- [Allocating games in tournaments - a program][]
+- [Code repository][tournange]
 
+[tournange]: https://gitlab.com/polettix/tournange
+[Allocating games in tournaments - a program]: {{ '/2020/04/21/tournaments-program' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - 6 players matches, premium]: {{ '/2020/04/20/tournaments-6-players-premium' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - 6 players matches, again]: {{ '/2020/04/19/tournaments-6-players-again' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - 6 players matches]: {{ '/2020/04/18/tournaments-6-players' | prepend: site.baseurl | prepend: site.url }}
