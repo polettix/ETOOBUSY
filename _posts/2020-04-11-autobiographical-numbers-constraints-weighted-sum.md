@@ -76,7 +76,7 @@ from `$available_slots`, and divide by $i$ (line 13). Then, everything past
 this maximum value is removed (lines 14 to 16).
 
 
-# How does it got?
+# How does it go?
 
 The improvement is tangible:
 
