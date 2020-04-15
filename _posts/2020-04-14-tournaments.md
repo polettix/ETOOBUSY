@@ -218,9 +218,11 @@ If you want to take a look at all posts, here's the list:
 
 - [Allocating games in tournaments][]
 - [Allocating games in tournaments - example][]
+- [Allocating games in tournaments - premium games and players][]
 
 [Allocating games in tournaments]: {{ '/2020/04/14/tournaments' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - example]: {{ '/2020/04/15/tournaments-example' | prepend: site.baseurl | prepend: site.url }}
+[Allocating games in tournaments - premium games and players]: {{ '/2020/04/16/tournaments-premium' | prepend: site.baseurl | prepend: site.url }}
 [BoardGameArena]: https://boardgamearena.com/
 [Tokaido]: https://boardgamearena.com/gamepanel?game=tokaido
 [Block Designs]: https://en.wikipedia.org/wiki/Block_design

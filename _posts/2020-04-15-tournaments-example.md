@@ -1,7 +1,7 @@
 ---
 title: Allocating games in tournaments - example
 type: post
-tags: [ algorithm, game, maths, boardgamearena, perl ]
+tags: [ algorithm, game, maths, boardgamearena ]
 comment: true
 date: 2020-04-15 07:00:00 +0200
 mathjax: true
@@ -106,7 +106,9 @@ If you want to take a look at all posts, here's the list:
 
 - [Allocating games in tournaments][]
 - [Allocating games in tournaments - example][]
+- [Allocating games in tournaments - premium games and players][]
 
 [Allocating games in tournaments]: {{ '/2020/04/14/tournaments' | prepend: site.baseurl | prepend: site.url }}
 [Allocating games in tournaments - example]: {{ '/2020/04/15/tournaments-example' | prepend: site.baseurl | prepend: site.url }}
+[Allocating games in tournaments - premium games and players]: {{ '/2020/04/16/tournaments-premium' | prepend: site.baseurl | prepend: site.url }}
 [Math::GF]: https://metacpan.org/pod/Math::GF
