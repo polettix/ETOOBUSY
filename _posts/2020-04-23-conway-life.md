@@ -4,7 +4,7 @@ type: post
 tags: [ maths, perl, curses ]
 comment: true
 date: 2020-04-23 07:00:00 +0200
-preview: true
+published: true
 ---
 
 **TL;DR**
