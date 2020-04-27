@@ -191,8 +191,9 @@ which is exactly [Bayes's Theorem][].
 
 # Enough!
 
-I guess I abused enough of your patience at this point. Want more? Stay
-tuned, we will discuss about the errors we can do!
+I guess I abused enough of your patience at this point. Want more? Take
+a look at the second post on this topic: [Some Bayes helps - more][].
 
 [Covid-19]: https://en.wikipedia.org/wiki/Coronavirus_disease_2019
 [Bayes's Theorem]: https://en.wikipedia.org/wiki/Bayes%27_theorem
+[Some Bayes helps - more]: {{ '/2020/04/29/some-bayes-helps-more/' | prepend: site.baseurl | prepend: site.url }}
