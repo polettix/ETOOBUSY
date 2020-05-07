@@ -1,7 +1,7 @@
 ---
 title: 'Resolving a (Steiner) design - constraints and search'
 type: post
-tags: [ algorithm, game, maths, boardgamearena, perl, mojolicious, dokku ]
+tags: [ algorithm, constraint programming, cglib, coding, perl ]
 comment: true
 date: 2020-05-07 20:47:43 +0200
 published: true
