@@ -45,10 +45,7 @@ inline:
 Actually, I'm going to include it right here, but you can't see it
 unless you take a look at the page source.
 
-<script src="{{ '/assets/js/vue.js'
-    | prepend: site.baseurl
-    | prepend: site.url }}">
-</script>
+<script src="{* link assets/js/vue.js *}"></script>
 
 OK, we're set at this point.
 
