@@ -45,7 +45,7 @@ inline:
 Actually, I'm going to include it right here, but you can't see it
 unless you take a look at the page source.
 
-<script src="{* link assets/js/vue.js *}"></script>
+<script src="{% link assets/js/vue.js %}"></script>
 
 OK, we're set at this point.
 
