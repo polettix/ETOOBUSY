@@ -15,8 +15,9 @@ published: true
 Here's a way to play it online with some effort on your side:
 
 0. read the [rules][]!
-1. hit the right button depending on your choice for the turn
-2. execute the action on the radio buttons
+1. select the kind of action for the four slots and press the `Roll`
+button
+2. execute the action on the relevant radio buttons
 
 Have fun!
 
