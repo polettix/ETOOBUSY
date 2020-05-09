@@ -9,8 +9,12 @@ published: true
 
 **TL;DR**
 
-> [Escape of the dead][] (sic) is a little *print-and-play* game that I
-> never played but I find amusing.
+> [Escape of the dead][] is a little *print-and-play* game that I never
+> played but I find amusing.
+
+The game was designed by [Jason Sondoh][], illustrated by [Robertson
+Sondoh, Jr][], and published by [Experimental Playground][]. Every
+praise goes to them!
 
 Here's a way to play it online with some effort on your side:
 
@@ -19,7 +23,7 @@ Here's a way to play it online with some effort on your side:
 button
 2. execute the action on the relevant radio buttons
 
-Have fun!
+Every bug and rules misinterpretation is on me! Have fun!
 
 <div id="app" style="border: 1px solid gray">
 <table>
@@ -207,3 +211,6 @@ Have fun!
 
 [Escape of the dead]: https://boardgamegeek.com/boardgame/87632/escape-dead-minigame
 [rules]: https://boardgamegeek.com/filepage/62886/escape-dead-contest-entry-version-or-v102
+[Jason Sondoh]: https://boardgamegeek.com/boardgamedesigner/11032/jason-sondoh
+[Robertson Sondoh, Jr]: https://boardgamegeek.com/boardgameartist/11031/robertson-sondoh-jr
+[Experimental Playground]: http://experimentalplayground.blogspot.com/
