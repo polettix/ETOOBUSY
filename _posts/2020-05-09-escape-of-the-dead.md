@@ -1,7 +1,7 @@
 ---
 title: Escape of the dead
 type: post
-tags: [ print-and-play, board game, blog ]
+tags: [ print and play, board game, blog ]
 comment: true
 date: 2020-05-09 01:34:31 +0200
 published: true

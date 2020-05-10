@@ -1,7 +1,7 @@
 ---
 title: Conway's Game of Life - Sweeping counting
 type: post
-tags: [ math, algorithm, perl, curses ]
+tags: [ maths, algorithm, perl, curses ]
 comment: true
 date: 2020-04-24 06:09:33 +0200
 published: true
