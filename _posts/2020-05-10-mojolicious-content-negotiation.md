@@ -86,9 +86,12 @@ $ curl 'https://ordeal.introm.it/e?expression=d6g@1&format=json'
 
 Very good!
 
+For all the details, look in the [detailed documentation][].
+
 [invent stories]: https://blog.polettix.it/invent-stories/
 [ordeal]: https://ordeal.introm.it/
 [code is available]: https://github.com/polettix/ordeal-webapp
 [Content negotiation]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
 [MDN]: https://developer.mozilla.org/en-US/
 [Mojolicious]: https://metacpan.org/pod/Mojolicious
+[detailed documentation]: https://mojolicious.org/perldoc/Mojolicious/Guides/Rendering#Content-negotiation
