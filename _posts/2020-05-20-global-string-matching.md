@@ -113,5 +113,18 @@ being `undef` as expected.
 
 I. Don't. Want. To. Capture. This. Stuff.
 
+# The whole series
+
+Want to look at the other parts of this series? Here's a list of them:
+
+- [Global string matching quirks][] is not strictly in the series, but
+  it's our first quest in [Ordeal::Model::Parser][] and it's possibly
+  the one giving a one single useful advice!
+- [A parser for Ordeal::Model][] is where the series start, introducing
+  the motivations for the parser package.
+
+[A parser for Ordeal::Model]: {{ '/2020/05/21/a-parser-for-ordeal-model' | prepend: site.baseurl }}
+[Global string matching quirks]: {{ '/2020/05/20/global-string-matching' | prepend: site.baseurl }}
+
 [Perl]: https://www.perl.org/
 [Ordeal::Model::Parser]: https://metacpan.org/pod/Ordeal::Model::Parser
