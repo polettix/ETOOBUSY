@@ -83,7 +83,10 @@ Want to look at the other parts of this series? Here's a list of them:
   generic helpers to build parsing functions.
 - [Ordeal::Model::Parser: parsing generics, 2][] describes the *hard
   stuff* like sequences, alternations, and the star operator.
+- [Ordeal::Model::Parser: parsing][] gives an overview of the actual
+  implementation of the grammar for [Ordeal::Model][].
 
+[Ordeal::Model::Parser: parsing]: {{ '/2020/05/26/omd-parsing' | prepend: site.baseurl }}
 [Ordeal::Model::Parser: parsing generics, 2]: {{ '/2020/05/25/omd-parsing-generics-2' | prepend: site.baseurl }}
 [Ordeal::Model::Parser: parsing generics]: {{ '/2020/05/24/omd-parsing-generics' | prepend: site.baseurl }}
 [Ordeal::Model::Parser: entry point]: {{ '/2020/05/23/omd-entry-point' | prepend: site.baseurl }}
