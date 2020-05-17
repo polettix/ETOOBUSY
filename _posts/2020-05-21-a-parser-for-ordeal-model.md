@@ -75,7 +75,9 @@ Want to look at the other parts of this series? Here's a list of them:
   the one giving a one single useful advice!
 - [A parser for Ordeal::Model][] is where the series start, introducing
   the motivations for the parser package.
+- [Ordeal::Model::Parser: grammar][] introduces the grammar.
 
+[Ordeal::Model::Parser: grammar]: {{ '/2020/05/22/omd-grammar' | prepend: site.baseurl }}
 [A parser for Ordeal::Model]: {{ '/2020/05/21/a-parser-for-ordeal-model' | prepend: site.baseurl }}
 [Global string matching quirks]: {{ '/2020/05/20/global-string-matching' | prepend: site.baseurl }}
 [Perl]: https://www.perl.org/
