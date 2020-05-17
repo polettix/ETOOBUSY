@@ -76,7 +76,11 @@ Want to look at the other parts of this series? Here's a list of them:
 - [A parser for Ordeal::Model][] is where the series start, introducing
   the motivations for the parser package.
 - [Ordeal::Model::Parser: grammar][] introduces the grammar.
+- [Ordeal::Model::Parser: entry point][] discusses the package's main
+  entry point `PARSE`, which acts as a thin wrapper around
+  `_expression`.
 
+[Ordeal::Model::Parser: entry point]: {{ '/2020/05/23/omd-entry-point' | prepend: site.baseurl }}
 [Ordeal::Model::Parser: grammar]: {{ '/2020/05/22/omd-grammar' | prepend: site.baseurl }}
 [A parser for Ordeal::Model]: {{ '/2020/05/21/a-parser-for-ordeal-model' | prepend: site.baseurl }}
 [Global string matching quirks]: {{ '/2020/05/20/global-string-matching' | prepend: site.baseurl }}
