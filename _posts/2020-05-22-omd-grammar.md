@@ -79,7 +79,10 @@ Want to look at the other parts of this series? Here's a list of them:
 - [Ordeal::Model::Parser: entry point][] discusses the package's main
   entry point `PARSE`, which acts as a thin wrapper around
   `_expression`.
+- [Ordeal::Model::Parser: parsing generics][] deals with the starting
+  generic helpers to build parsing functions.
 
+[Ordeal::Model::Parser: parsing generics]: {{ '/2020/05/24/omd-parsing-generics' | prepend: site.baseurl }}
 [Ordeal::Model::Parser: entry point]: {{ '/2020/05/23/omd-entry-point' | prepend: site.baseurl }}
 [Ordeal::Model::Parser: grammar]: {{ '/2020/05/22/omd-grammar' | prepend: site.baseurl }}
 [A parser for Ordeal::Model]: {{ '/2020/05/21/a-parser-for-ordeal-model' | prepend: site.baseurl }}
