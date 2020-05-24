@@ -27,5 +27,5 @@ That's all!
 
 [dokyll]: https://gitlab.com/polettix/dokyll
 [Jekyll in Docker]: {{ '/2020/03/16/jekyll-in-docker' | prepend: site.baseurl }}
-[Jekyll]: https://hub.docker.com/r/jekyll/jekyll
-[GitLab]: https://gitlab.com/
+[Jekyll]: https://jekyllrb.com/
+[Docker]: https://www.docker.com/
