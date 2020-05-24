@@ -1,9 +1,9 @@
 ---
-title: 
+title: A shell helper for dokyll
 type: post
-tags: [ ]
+tags: [ jekyll, docker, shell, coding ]
 comment: true
-date: 
+date: 2020-05-27 07:00:00
 mathjax: false
 published: true
 ---
