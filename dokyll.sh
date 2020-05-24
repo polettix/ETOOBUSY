@@ -23,7 +23,8 @@ case "$1" in
       ;;
 
    (build)
-      DOKYLL_PRE='' dokyll bundle exec jekyll build $multiconfig --watch
+      DOKYLL_PRE='' dokyll bundle exec jekyll build \
+         $multiconfig --watch --future
       exit $?
       ;;
 
