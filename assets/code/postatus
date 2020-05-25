@@ -1,0 +1,24 @@
+#!/usr/bin/env perl
+use 5.024;
+use warnings;
+use experimental qw< postderef signatures >;
+no warnings qw< experimental::postderef experimental::signatures >;
+use HTTP::Tiny;
+use Data::Dumper;
+
+my $uri   = $ENV{MASTODON_URI} // 'https://octodon.social/api/v1/statuses';
+my $token = $ENV{MASTODON_TOKEN} or die 'no token';
+say Dumper mastodon_post_status($uri, $token, shift // 'whatevah!');
+
+sub mastodon_post_status ($uri, $token, $status, $visibility = 'private') {
+   return HTTP::Tiny->new->post_form(
+      $uri,
+      { # form data
+         status => $status,
+         visibility => $visibility,
+      },
+      { # options
+         headers => { Authorization => "Bearer $token" },
+      }
+   );
+}
