@@ -1,0 +1,7 @@
+---
+layout: null
+---
+{% for post in site.posts limit:1 %}
+{{ post.date | date: "%Y-%m-%d"}}
+{{ post.title }} {{ post.url | prepend: site.baseurl | prepend: site.url }}{% if post.tags.size > 0 %}{% for post_tag in post.tags %} #{{ post_tag | slugify | replace: "-", "_" }}{% endfor %}{% endif %}
+{% endfor %}
