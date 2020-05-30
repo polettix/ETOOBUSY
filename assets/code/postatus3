@@ -1,0 +1,24 @@
+#!/usr/bin/env perl
+use 5.024;
+use warnings;
+use experimental qw< postderef signatures >;
+no warnings qw< experimental::postderef experimental::signatures >;
+use MojoX::Twitter;
+use Data::Dumper;
+
+my $api_key = $ENV{TWITTER_API_KEY} or die 'no API key';
+my $api_secret_key = $ENV{TWITTER_API_SECRET_KEY} or die 'no API secret key';
+my $access_token = $ENV{TWITTER_ACCESS_TOKEN} or die 'no access token';
+my $access_token_secret = $ENV{TWITTER_ACCESS_TOKEN_SECRET}
+   or die 'no access token secret';
+
+my $twitter_agent = MojoX::Twitter->new(
+   access_token        => $access_token,
+   access_token_secret => $access_token_secret,
+   consumer_key        => $api_key,
+   consumer_secret     => $api_secret_key,
+);
+say Dumper $twitter_agent->request(
+   POST => 'statuses/update',
+   {status => (shift // 'whatevah')},
+);
