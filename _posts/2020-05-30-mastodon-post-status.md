@@ -46,7 +46,7 @@ That's it for today!
 [Mastodon]: https://mastodon.social/
 [Perl]: https://www.perl.org/
 [Local version here]: {{ '/assets/code/postatus' | prepend: site.baseurl }}
-[Mojo::UserAgent]: https://metacpan.org/pod/Mojo::UserAgent.
+[Mojo::UserAgent]: https://metacpan.org/pod/Mojo::UserAgent
 [Octodon]: https://octodon.social/
 [polettix]: https://octodon.social/@polettix
 [Obtaining client app access]: https://docs.joinmastodon.org/client/token/
