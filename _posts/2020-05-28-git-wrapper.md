@@ -134,6 +134,11 @@ $git->clone('https://github.com/polettix/ekeca.git', $git->dir);
 The module is indeed interesting for a little side project... and I'm
 going to use it!
 
+# Update!
+
+Want to know what is **the** cool thing about this module? Head on to
+[The *really* interesting thing about Git::Wrapper][genehack-post] - by
+[genehack][]!
 
 
 [Git::Wrapper]: https://metacpan.org/pod/Git::Wrapper
@@ -141,3 +146,5 @@ going to use it!
 [Git]: https://www.git-scm.org/
 [Installing Perl Modules]: {{ '/2020/01/04/installing-perl-modules' | prepend: site.baseurl }}
 [Try::Catch]: https://metacpan.org/pod/Try::Catch
+[genehack]: https://genehack.org/
+[genehack-post]: https://genehack.blog/2020/06/the-really-interesting-thing-about-git-wrapper/
