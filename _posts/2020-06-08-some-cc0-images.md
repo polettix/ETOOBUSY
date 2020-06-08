@@ -30,4 +30,4 @@ Enjoy and... it's all for today!
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/
 [GitLab]: https://gitlab.com/
 [Pages]: https://docs.gitlab.com/ee/user/project/pages/
-[CC0 Images!]: https://polettix.gitlab.io/cc0s/wide/index.html
+[CC0 Images!]: https://polettix.gitlab.io/cc0s/index.html
