@@ -91,7 +91,7 @@ files][]).
 20           \%record;
 21        } ancestors_for($target);
 22     }
-23     push @files, {%$spec, destination => $target, source => $source};
+23     push @files, { %$spec, destination => $target, source => $source };
 24     $config->{files} = \@files;
 25
 26     $config->{target_dir} = path('/');
