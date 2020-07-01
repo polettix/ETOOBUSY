@@ -36,7 +36,7 @@ notes][perl5320-delta]) introduced a new option for module [feature][]
 to explicitly disable it and ease the parser's life (it is called
 [indirect][], of course).
 
-The I moved to the main documentation for [SVG][], and found this:
+Then I moved to the main documentation for [SVG][], and found this:
 
 ```text
 See the other modules in this distribution: SVG::DOM, SVG::XML, SVG::Element,
