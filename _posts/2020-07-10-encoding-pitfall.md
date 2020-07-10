@@ -38,7 +38,7 @@ This prompted me to do [this change][]:
        date   => $date,
 ```
 
-i.e. switching from considering the notification I was fetchign with
+i.e. switching from considering the notification I was fetching with
 [Mojo::UserAgent][] as sequence of bytes and start considering it...
 text made of characters.
 
