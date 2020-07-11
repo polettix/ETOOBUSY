@@ -125,7 +125,7 @@ $$
    b_x & b_y \\
    a_x & a_y
 \end{bmatrix}
-= \begin{bmatrix}
+= 3 \cdot \begin{bmatrix}
     - \mathbf{P}_1 + \mathbf{P}_2 \\
     2 \cdot (\mathbf{P}_1 - 2 \cdot \mathbf{P}_2 + 1 \cdot \mathbf{P}_3) \\
     - \mathbf{P}_1 + 3 \cdot \mathbf{P}_2 -3 \cdot \mathbf{P}_3 + \mathbf{P}_4
