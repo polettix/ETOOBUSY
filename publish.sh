@@ -34,7 +34,6 @@ publish() {
    read x
    case "$x" in
       (y|Y)
-         return 0
          git add "$@"
          git commit -m "New post: $title"
          git tag "$date"
