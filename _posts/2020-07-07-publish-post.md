@@ -29,6 +29,6 @@ into a script:
 
 I'm looking at you, future me!
 
-[ETOOBUSY automated publishing]: {{ '/2020/05/29/busypub' : prepend: site.baseurl }}
+[ETOOBUSY automated publishing]: {{ '/2020/05/29/busypub' | prepend: site.baseurl }}
 [Git]: https://www.git-scm.com/
 [local version]: https://github.com/polettix/ETOOBUSY/blob/master/publish.sh

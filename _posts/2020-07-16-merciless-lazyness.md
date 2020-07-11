@@ -39,6 +39,6 @@ Even though I feel like a lone man in the desert here in this blog...
 enjoy!
 
 
-[Posts publishing routine in a script]: {{ '/2020/07/07/publish-post' | site.baseurl }}
+[Posts publishing routine in a script]: {{ '/2020/07/07/publish-post' | prepend: site.baseurl }}
 [teepee]: http://blog.polettix.it/teepee/
 [publish.sh]: https://github.com/polettix/ETOOBUSY/blob/master/publish.sh
