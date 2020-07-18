@@ -29,13 +29,13 @@ it's about time to move on to the cubic Bézier curves:
  9       );
 10       my @candidates = (0, 1);
 11       my $det = $b2_**2 - $a_ * $c_;    # (b/2)^2 - ac
-12       if (abs($det) > THRESHOLD && abs($a_) > THRESHOLD) {
+12       if ($det > THRESHOLD && abs($a_) > THRESHOLD) {
 13          my $sdet = sqrt($det);
 14          for my $s ($sdet, -$sdet) {
 15             my $t = (-$b2_ + $s) / $a_;
 16             push @candidates, $t if 0 <= $t && $t <= 1;
 17          }
-18       } ## end if (abs($det) > THRESHOLD...)
+18       } ## end if ($det > THRESHOLD...)
 19       for my $pt (@candidates) {
 20          my $mt = 1 - $pt;
 21          my $v =
@@ -90,8 +90,13 @@ t_{\pm} = \frac{-\frac{b}{2} \pm \sqrt{\left(\frac{b}{2}\right)^2 - a \cdot c}}{
 $$
 
 Just to be paranoid, we take into account possible numerical
-instabilities and ignore the solution if the determinant is too low
-(lines 11 and 12); otherwise, it's pretty much the same approach as that
-for [quadratic curves][SVG path bounding box: quadratic Bézier curves].
+instabilities and other amenities and ignore the solution if the
+determinant is too low or negative, as well as `$a_` (lines 11 and 12);
+otherwise, it's pretty much the same approach as that for [quadratic
+curves][SVG path bounding box: quadratic Bézier curves].
+
+**Edits**
+- 2020-07-18 fixed bug, not taking absolute value of determinant and
+  ignoring negative ones!
 
 [SVG path bounding box: quadratic Bézier curves]: {{ '/2020/07/17/bbox-quadratic-bezier' | prepend: site.baseurl }}
