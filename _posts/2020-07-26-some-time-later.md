@@ -47,4 +47,5 @@ letters. It's way too big and... I'm not proud of it 🙄
 
 
 [Some Time Later]: https://github.com/ctrlcctrlv/some-time-later
+[Inkscape]: https://inkscape.org/
 [here they are]: {{ '/assets/other/some-time-later.tar.gz' | prepend: site.baseurl }}
