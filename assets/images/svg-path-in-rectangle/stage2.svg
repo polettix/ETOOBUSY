@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="148.5mm" viewBox="0 0 210 297" width="105mm" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<rect height="297" style="fill: #fff; stroke: #000; stroke-width: 1px" width="210" x="0" y="0" />
+	<rect height="90" style="fill: #ccc; stroke: #000; stroke-width: 0.1px" width="40" x="10" y="10" />
+   <g transform="translate(10 10) scale(3.044 3.796) translate(-7.43 -6.147)">
+      <path style="fill:none;stroke:#000;stroke-width:0.1px"
+         d="m 7.429860,29.751745 l 4.368800,0.101600   l 0.000000,-10.837344 l 6.265340,0.101600
+            l 0.101600,-3.725337 l -4.842940,0.000000  l 0.000000,-2.878669  l 6.807210,0.237067
+            l 0.440270,-6.604007 l -13.140280,0.000000 z" />
+   </g>
+</svg>
