@@ -51,9 +51,7 @@ publish() {
 }
 
 
-[ $# -ne 0 ] || die "$0 <path(s)>"
-
-[ "$1" != '--all' ] \
+[ $# -ne 0 -o "$1" != '--all' ] \
    || set -- $(git status --short --branch | sed -e '/^#/d;s/^...//')
 
 n_posts=0
