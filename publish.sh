@@ -51,8 +51,9 @@ publish() {
 }
 
 
-[ $# -ne 0 -o "$1" != '--all' ] \
-   || set -- $(git status --short --branch | sed -e '/^#/d;s/^...//')
+if [ "${1:-"--all"}" = '--all' ]; then
+   set -- $(git status --short --branch | sed -e '/^#/d;s/^...//')
+fi
 
 n_posts=0
 n_other=0
