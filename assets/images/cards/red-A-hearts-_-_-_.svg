@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="88mm" viewBox="0 0 210 297" width="62mm" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<rect height="100%" rx="10" style="fill: #f7f7f7; stroke: none" width="100%" x="0" y="0" />
+	<defs>
+		<g id="half" style="fill: #900; stroke: #900; stroke-width: 0">
+			<g transform="translate(39.4285714285714,24.2448979591837)">
+				<path d="m 22.652941,29.616276l -3.488270,-23.469623l -11.988811,0.812801l 0.000000,5.418672l 2.607736,-0.067733l -4.436538,16.967216l 5.012272,-0.270934l 0.000000,-4.741338l 5.757338,-0.067730l 0.000000,5.655739zm -10.126143,-9.584276l 1.151468,-8.906942l 2.607736,-0.237067l 1.862668,8.873075z" transform="matrix(1.68367346938776,0,0,1.68367346938776,0,0)" />
+			</g>
+			<g transform="translate(116.69387755102,24.2448979591837)">
+				<path d="M480.25 156.355c0 161.24-224.25 324.43-224.25 324.43S31.75 317.595 31.75 156.355c0-91.41 70.63-125.13 107.77-125.13 77.65 0 116.48 65.72 116.48 65.72s38.83-65.73 116.48-65.73c37.14.01 107.77 33.72 107.77 125.14z" transform="matrix(0.118383290816327,0,0,0.118383290816327,0,0)" />
+			</g>
+		</g>
+	</defs>
+	<use xlink:href="#half" />
+	<use transform="matrix(-1,0,0,-1,210,297)" xlink:href="#half" />
+</svg>
