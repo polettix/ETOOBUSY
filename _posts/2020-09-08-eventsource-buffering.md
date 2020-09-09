@@ -1,7 +1,7 @@
 ---
 title: EventSource and buffering
 type: post
-tags: [ mojolicious, web, perl, Dokku ]
+tags: [ mojolicious, web, perl, dokku ]
 comment: true
 date: 2020-09-08 07:00:00 +0200
 mathjax: false

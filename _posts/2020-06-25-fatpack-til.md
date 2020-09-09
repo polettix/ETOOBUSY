@@ -1,7 +1,7 @@
 ---
 title: 'Today I Learned: fatpack and PERL5LIB'
 type: post
-tags: [ skfold, fatpacker, Perl ]
+tags: [ skfold, fatpacker, perl ]
 comment: true
 date: 2020-06-25 07:00:00 +0200
 mathjax: false
