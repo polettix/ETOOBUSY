@@ -22,7 +22,7 @@ Resource Sharing*.
 So, it's time to jot down a few notes that will help my future self
 figure things out quicker this time:
 
-- [CORS][] is a protection mechanism meant to help browsers *dp the
+- [CORS][] is a protection mechanism meant to help browsers *do the
   right thing* when a page on domain `visible.to-user.com` tries to
   consume an API from `behind.the-courtains.org`.
 - By default these calls would be blocked by the browser because the two
