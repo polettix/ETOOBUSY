@@ -51,12 +51,12 @@ This can be translated into code in a quite straightforward way:
 10 }
 ```
 
-I'm calling this implementation *dumb* because it's qute inefficient.
-calculating the maximum value for all spots in both direction time and
+I'm calling this implementation *dumb* because it's quite inefficient.
+Calculating the maximum value for all spots in both direction time and
 again is... suboptimal. We are iterating over the array (external loop
 starting in line 3) and then we are iterating again on the array
 (internal loop, divided between lines 4 and 5). Overall... not an
-encouraging complexity ($N^2$). Anyway... a good benchmark.
+encouraging complexity ($O(N^2)$). Anyway... a good benchmark.
 
 So how can we make it better? Let's reverse the perspective: we can
 sweep the array from left to right and set the maximum value found for
