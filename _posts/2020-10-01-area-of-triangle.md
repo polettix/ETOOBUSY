@@ -70,7 +70,7 @@ $$
 Now the corresponding height $h$ can be calculated like this:
 
 $$
-h = |w| \cdot sin\theta = \sqrt{w_x^2 + w_y^2}
+h = |w| \cdot sin\theta = \sqrt{w_x^2 + w_y^2} \cdot sin\theta
 $$
 
 So... the area $S$ will be:
@@ -100,7 +100,7 @@ Now we just have to remember Pythagora's theorem:
 $$
 sin^2\theta + cos^2\theta = 1 \\
 sin^2\theta = 1 - cos^2\theta \\
-sin^2\theta = 1 - \frac{(\vec{v}\cdot\vec{w})^2}{|v|^2 \cdot |w|^2}
+sin^2\theta = 1 - \frac{(\vec{v}\cdot\vec{w})^2}{|v|^2 \cdot |w|^2} \\
 sin^2\theta = \frac{|v|^2 \cdot |w|^2 - (\vec{v}\cdot\vec{w})^2}{|v|^2 \cdot |w|^2}
 $$
 
