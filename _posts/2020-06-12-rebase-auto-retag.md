@@ -1,5 +1,5 @@
 ---
-title: Rebase and retag, but manually
+title: Rebase and retag, automatically
 type: post
 tags: [ git, blog, tag, rebase, coding ]
 comment: true
