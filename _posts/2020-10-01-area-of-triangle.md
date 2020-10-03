@@ -150,7 +150,7 @@ Nifty, uh?!?
 # It's easier with some code
 
 After this long ride, let's just take a look at some code. We assume
-that our points are represented by array (references) with $X$
+that our points are represented by arrays (references) with $X$
 coordinate at index `0` and $Y$ coordinate at index `1`;
 
 
@@ -162,7 +162,6 @@ sub triangle_area {
     my $vv = $v_x * $v_x + $v_y * $v_y;
     my $ww = $w_x * $w_x + $w_y * $w_y;
     my $vw = $v_x * $w_x + $v_y * $w_y;
-    say "$vv $ww $vw";
     return sqrt($vv * $ww - $vw * $vw) / 2;
 }
 ```
