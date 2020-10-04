@@ -15,6 +15,11 @@ dokyll() {
 
 case "$1" in
 
+   (bundle-update)
+      DOKYLL_PRE='' dokyll bundle update --all
+      exit $?
+      ;;
+
    (cache)
       rm -rf "$cachedir"
       mkdir -p "$cachedir"
@@ -38,6 +43,7 @@ case "$1" in
       cat <<EOF
 "$0" [cache|build|serve)
 
+bundle-update: run bundle update --all (might solve some issues)
 cache: create _bundle cache (only needed once)
 build: continuously build site as changes arise
 serve: serve built site
