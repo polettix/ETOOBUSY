@@ -1,0 +1,6 @@
+#!/bin/sh
+find "$1" -type f | while read filename; do
+   printf '%s\n' "$filename"
+   sed 's/^/ | /' "$filename"
+   printf '\n'
+done
