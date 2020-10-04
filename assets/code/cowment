@@ -1,0 +1,16 @@
+#!/bin/sh
+
+[ -n "$TYPE" ] && type="$TYPE" ||
+    type=$(cowsay -l | perl -pe '$.-1&&push@x,split/\s+/}{$_=$x[rand@x]')
+printf >&2 "type: '%s'\n\n" "$type"
+
+cat <<PREAMBLE
+########################################################################
+PREAMBLE
+
+printf '\n%s\n\n' "$*" | cowsay -n -f "$type" | sed 's/^/# '/
+
+cat <<POSTAMBLE
+#
+##########################################
+POSTAMBLE
