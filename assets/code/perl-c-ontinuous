@@ -1,0 +1,29 @@
+#!/bin/sh
+
+main () {
+   local PROGRAM=$(readlink -f "$1")
+   local COMMAND=$2
+
+   [ -n "$PROGRAM" ] || die 'no program to watch provided'
+   [ -n "$COMMAND" ] || COMMAND='perl -c'
+
+   _check
+
+   local DIRNAME="$(dirname "$PROGRAM")"
+   local BPROGRAM="$(basename "$PROGRAM")"
+   inotifywait -q -e close_write,moved_to,create -m "$DIRNAME" \
+      | while read FILENAME EVENT ; do
+         if [ "CLOSE_WRITE,CLOSE $BPROGRAM" = "$EVENT" ] ; then
+            _check
+         fi
+      done
+}
+
+die() { printf >&2 '%s\n' "$*" ; exit 1 ; }
+_check() {
+   printf  '\n'
+   $COMMAND "$PROGRAM"
+   printf  '%s\n' '-------------------'
+}
+
+main "$@"
