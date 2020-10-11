@@ -107,7 +107,7 @@ command_get() {
    local post_branch="${1:-"$(
       git branch \
          | grep ' stockpile/item-' \
-         | head -n 1 \
+         | tail -n 1 \
          | sed -e 's/^ *//;s/ *$//'
       )"}"
    [ -n "$post_branch" ] || die 'no branch to get data from...'
