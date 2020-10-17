@@ -1,5 +1,5 @@
 ---
-title: PWC082 - Interleave String
+title: 'PWC082 - Interleave String (but not really!)'
 type: post
 tags: [ perl weekly challenge ]
 comment: true
@@ -11,6 +11,10 @@ published: true
 **TL;DR**
 
 > On we go with [TASK #2][] of [Perl Weekly Challenge][] [#082][].
+
+Do you really care for the solution to this task? Myoungjin Jeon in the
+comments made me realize that I'm solving a *different* problem here, so
+I'll leave it but... I'll solve it somewhere else. Sorry 🤭
 
 # The challenge
 
