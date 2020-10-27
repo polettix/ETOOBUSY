@@ -1,0 +1,16 @@
+#!/bin/sh
+kga() {
+   local ns="${1:-"default"}"
+   local resource
+   for resource in $(
+      kubectl api-resources --verbs=list --namespaced -o name \
+      | grep -v "events.events.k8s.io" \
+      | grep -v "events" \
+      | sort -u
+   ); do
+      outcome="$(kubectl -n "$ns" get --ignore-not-found "$resource")"
+      [ -n "$outcome" ] || continue
+      printf '%s/%s\n%s\n-------\n' "$ns" "$resource" "$outcome"
+   done
+}
+grep -- kubectl-get-all-in-a-namespace "$0" >/dev/null 2>&1 && kga "$@"
