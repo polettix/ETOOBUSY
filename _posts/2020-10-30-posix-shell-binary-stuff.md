@@ -3,7 +3,7 @@ title: POSIX shell binary stuff
 type: post
 tags: [ shell, coding ]
 comment: true
-date: 2220-10-27 07:00:00 +0100
+date: 2020-10-30 07:00:00 +0100
 mathjax: false
 published: true
 ---
@@ -54,7 +54,7 @@ the printing of *NUL*s, which is something that has been solved in more
 recent version (at least the bug disappeared in version `0.5.10.2-5`.
 
 So... you might be writing POSIXly correct stuff... but you might still
-have to figth bugs!
+have to fight bugs!
 
 [Rich’s sh (POSIX shell) tricks]: {{ '/2020/03/21/rich-s-posix-shell-hints/' | prepend: site.baseurl }}
 [printf]: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/printf.html
