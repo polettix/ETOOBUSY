@@ -111,5 +111,15 @@ This barely scratched the surface of the algorithm, I'd like to move towards
 some kind of implementation to learn it better. Until next time... stay
 safe!
 
+I'll leave this post with a useful link to an article I want to investigate
+more in depth: [A survey of Monte Carlo tree search methods (2012)][survey],
+by Cameron Browne , Edward Powley , Daniel Whitehouse , Simon Lucas , Peter
+I. Cowling , Stephen Tavener , Diego Perez , Spyridon Samothrakis , Simon
+Colton, et al. The article can be found in various places, I also keep a
+[local copy here][], mirrored from [this copy on diego-perez.net][dpnet].
+
 [Monte Carlo tree search]: https://en.wikipedia.org/wiki/Monte_Carlo_tree_search
 [Wikipedia]: https://en.wikipedia.org/
+[survey]: https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.297.3086
+[local copy here]: {{ '/assets/other/MCTSSurvey.pdf' | prepend: site.baseurl }}
+[dpnet]: http://www.diego-perez.net/papers/MCTSSurvey.pdf
