@@ -1,7 +1,7 @@
 ---
 title: Monte Carlo Tree Search - basics
 type: post
-tags: [ algorithm ]
+tags: [ algorithm, monte carlo tree search ]
 comment: true
 date: 2020-11-09 07:00:00 +0100
 mathjax: true
