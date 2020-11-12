@@ -1,0 +1,45 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use JSON::PP 'decode_json';
+use List::Util 'reduce';
+
+$|++;
+
+print {*STDERR} "# persistent volumes that seem to be hanging (Delete/Released a.k.a. Terminating)\n";
+print {*STDERR} "#    together with the associated volume-attachment\n";
+print {*STDERR} "# <persistent-volume-name> <volume-attachment-name>\n";
+
+my $vas = get_data('volumeattachment')->{items};
+my $va_for = index_AoH_by_key($vas, qw< spec source persistentVolumeName >);
+my $pvs = get_data('persistentvolume')->{items};
+for my $pv (@$pvs) {
+   next unless
+      ($pv->{spec}{persistentVolumeReclaimPolicy} eq 'Delete')
+      && ($pv->{status}{phase} eq 'Released');
+   my $pv_name = $pv->{metadata}{name};
+   my $va_name = $va_for->{$pv_name}{metadata}{name};
+   print {*STDOUT} "$pv_name $va_name\n"
+}
+
+sub index_AoH_by_key {
+   my ($data, @path) = @_;
+   return {
+      map {
+         my $ref_to_key = reduce(sub { \($$a->{$b}) }, \$_, @path);
+         $$ref_to_key => $_;
+      } @$data
+   };
+}
+
+sub get_data {
+   return decode_json(slurp_utf8('-|', 'kubectl', 'get', @_, '-o', 'json'));
+}
+
+sub slurp_utf8 {
+   my ($mode, @rest) = @_;
+   open my $fh, $mode, @rest or die "open(@_): $!\n";
+   binmode $fh, ':encoding(utf-8)';
+   local $/;
+   return <$fh>;
+}
