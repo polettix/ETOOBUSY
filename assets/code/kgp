@@ -1,0 +1,50 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+$|++; # disable buffering
+my $show_last_event = $ENV{KGP_SHOW_LAST_EVENT} || $0 =~ m{kgpe\z}mxs;
+my $namespace = $show_last_event ? get_namespace(@ARGV) : undef;
+
+unshift @ARGV, qw< kubectl get pods >;
+print {*STDERR} "# Suspicious/transient Pods from:\n";
+print {*STDERR} "#    @ARGV\n";
+open my $fh, '-|', @ARGV or die "ERROR: $!\n";
+
+while (<$fh>) {
+   my ($ready, $total, $status) = m{
+      \s+ (\d+) / (\d+) \s+   # $ready / $total
+      (\S+)               # $status
+   }mxs or print && next; # e.g. header line, ...
+   next if ($status eq 'Completed') || ($ready == $total);
+   print;
+
+   next unless $show_last_event;
+   my ($time, $severity, $error, $object, $msg) = get_last_event($namespace, $_) or next;
+   print "   [$severity] $error: $msg";
+}
+
+sub get_namespace {
+   my @args = @_;
+   my $namespace;
+   for my $i (0 .. $#args) {
+      return if $args[$i] =~ m{\A (?:--all-namespaces|-A) \z}mxs;
+      $namespace = $args[$i + 1] if $args[$i] =~ m{\A (?:--namespace|-n) \z}mxs;
+   }
+   return $namespace;
+}
+
+sub get_last_event {
+   my ($namespace, $line) = @_;
+   my ($first, $second) = split m{\s+}mxs, $line;
+   my ($ns, $name) = defined $namespace ? ($namespace, $first) : ($first, $second);
+
+   open my $pfh, '-|', qw< kubectl get events -n >, $ns, '--field-selector', "involvedObject.name=$name";
+   scalar readline $pfh; # ditch first line
+   my $last_event;
+   while (<$pfh>) { $last_event = $_ }
+   close $pfh;
+
+   return unless defined $last_event;
+   return split m{\s+}mxs, $last_event, 5;
+}
