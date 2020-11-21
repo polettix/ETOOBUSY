@@ -1,0 +1,79 @@
+#!/bin/sh
+
+quote () { printf %s\\n "$1" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/'/" ; }
+
+shell_wrap() {
+   local source="$1"
+   local target="$(quote "$2")"
+
+   # we might want to avoid auto-detection of base64 in the remote system
+   if [ "$USE_EMBEDDED_BASE64" = '1' ] ; then
+      printf '%s\n' 'base64d() { base64_d ; }'
+   else
+      cat <<'END'
+base64d() {
+   if type -f base64 >/dev/null 2>&1 ; then
+      base64 -d
+   else
+      base64_d
+   fi
+}
+END
+   fi
+
+   # main part of reote script
+   cat <<'END'
+base64_d() {
+   tr -d '\n' \
+   | while true ; do
+      line="$(dd bs=64 count=1 2>/dev/null)"
+      [ -n "$line" ] || break
+      printf %s\\n "$line"
+     done \
+   | sed -e 's_A==_@@_;    s_Q==_@,_;    s_g==_,@_;    s_w==_,,_;
+             s_A=_@@@@_;   s_E=_@@@,_;   s_I=_@@,@_;   s_M=_@@,,_;
+             s_Q=_@,@@_;   s_U=_@,@,_;   s_Y=_@,,@_;   s_c=_@,,,_;
+             s_g=_,@@@_;   s_k=_,@@,_;   s_o=_,@,@_;   s_s=_,@,,_;
+             s_w=_,,@@_;   s_@=_,,@,_;   s_4=_,,,@_;   s_8=_,,,,_;
+             s_A_@@@@@@_g; s_B_@@@@@,_g; s_C_@@@@,@_g; s_D_@@@@,,_g;
+             s_E_@@@,@@_g; s_F_@@@,@,_g; s_G_@@@,,@_g; s_H_@@@,,,_g;
+             s_I_@@,@@@_g; s_J_@@,@@,_g; s_K_@@,@,@_g; s_L_@@,@,,_g;
+             s_M_@@,,@@_g; s_N_@@,,@,_g; s_O_@@,,,@_g; s_P_@@,,,,_g;
+             s_Q_@,@@@@_g; s_R_@,@@@,_g; s_S_@,@@,@_g; s_T_@,@@,,_g;
+             s_U_@,@,@@_g; s_V_@,@,@,_g; s_W_@,@,,@_g; s_X_@,@,,,_g;
+             s_Y_@,,@@@_g; s_Z_@,,@@,_g; s_a_@,,@,@_g; s_b_@,,@,,_g;
+             s_c_@,,,@@_g; s_d_@,,,@,_g; s_e_@,,,,@_g; s_f_@,,,,,_g;
+             s_g_,@@@@@_g; s_h_,@@@@,_g; s_i_,@@@,@_g; s_j_,@@@,,_g;
+             s_k_,@@,@@_g; s_l_,@@,@,_g; s_m_,@@,,@_g; s_n_,@@,,,_g;
+             s_o_,@,@@@_g; s_p_,@,@@,_g; s_q_,@,@,@_g; s_r_,@,@,,_g;
+             s_s_,@,,@@_g; s_t_,@,,@,_g; s_u_,@,,,@_g; s_v_,@,,,,_g;
+             s_w_,,@@@@_g; s_x_,,@@@,_g; s_y_,,@@,@_g; s_z_,,@@,,_g;
+             s_0_,,@,@@_g; s_1_,,@,@,_g; s_2_,,@,,@_g; s_3_,,@,,,_g;
+             s_4_,,,@@@_g; s_5_,,,@@,_g; s_6_,,,@,@_g; s_7_,,,@,,_g;
+             s_8_,,,,@@_g; s_9_,,,,@,_g; s_+_,,,,,@_g; s_/_,,,,,,_g;' \
+   | sed -e 's/\([,@]\{4\}\)/\1 /g' \
+   | sed -e 's/@@@@/0/g; s/@@@,/1/g; s/@@,@/2/g; s/@@,,/3/g;
+             s/@,@@/4/g; s/@,@,/5/g; s/@,,@/6/g; s/@,,,/7/g;
+             s/,@@@/8/g; s/,@@,/9/g; s/,@,@/a/g; s/,@,,/b/g;
+             s/,,@@/c/g; s/,,@,/d/g; s/,,,@/e/g; s/,,,,/f/g;' \
+   | tr -d ' ' \
+   | sed -e 's/\(..\)/\\0x\1 /g' \
+   | while read line ; do printf %b $(printf \\\\%04o $line) ; done
+}
+END
+
+   printf 'base64d > %s <<"END"\n' "$target"
+   base64 "$source"
+   printf 'END\n'
+   printf 'chmod %s %s\n' "$(stat -c %a "$source")" "$target"
+}
+
+main() {
+   local source="$1"
+   local target="$2"
+   shift 2
+   shell_wrap "$source" "$target" \
+   | kubectl exec -i "$@" -- /bin/sh
+}
+
+main "$@"
