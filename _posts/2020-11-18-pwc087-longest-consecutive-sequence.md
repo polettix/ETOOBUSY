@@ -13,6 +13,13 @@ published: true
 > Here we are with [TASK #1][] from the [Perl Weekly Challenge][]
 > [#087][]. Enjoy!
 
+# The update(s)
+
+As correctly pointed out by [Abigail][] in [Perl Weekly Challenge 87, Part
+1][], forgetting to remove *duplicates* in the sequence dooms any solution
+based on pre-sorting of the input data. So... consider this as an *easy task
+on the reader*!
+
 # The challenge
 
 > You are given an unsorted array of integers `@N`. Write a script to find
@@ -27,6 +34,10 @@ A meta question though is... *why print 0 if none sequence found*? Why not
 print... an empty sequence, or a sequence with only one item (which is,
 admittedly, hardly a *sequence*, but whatever). This *print 0* is really an
 itch!
+
+**Update** *Oh, by the way... one last question: can we have duplicate items
+in the input? No? Sure? Very well! Because, you know... the solutions below
+will break if there are duplicate items!* 🙄
 
 # The solution
 
@@ -320,3 +331,5 @@ Have a good one!
 [#087]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-087/
 [TASK #1]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-087/#TASK1
 [Perl]: https://www.perl.org/
+[Abigail]: https://programmingblog702692439.wordpress.com/
+[Perl Weekly Challenge 87, Part 1]: https://programmingblog702692439.wordpress.com/2020/11/19/perl-weekly-challenge-87-part-1/
