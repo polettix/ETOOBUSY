@@ -1,0 +1,7 @@
+#!/bin/sh
+peek() {
+   local pid="$(sudo docker inspect "$1" | jq -r '.[0].State.Pid')"
+   shift
+   sudo nsenter -t "$pid" -n "$@"
+}
+grep -- containers-networking-peek-ftw "$0" >/dev/null 2>&1 && peek "$@"
