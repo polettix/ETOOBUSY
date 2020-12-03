@@ -13,6 +13,9 @@ published: true
 > Where I rediscover an old piece of code and remember something about
 > [Fibonacci numbers][wikifib].
 
+**Updates**: thanks to [Andrew Solomon][] for pointing out that functions
+`fib1` should actually ercurse to `fib1` itself, not to `fib`. Thanks!
+
 # Fibonacci numbers?
 
 If you don't know what a *Fibonacci number* is, the [Wikipedia page on
@@ -37,7 +40,7 @@ Let's look at a naïve implementation in [Perl][]:
 ```perl
 sub fib1 ($n) {
     return $n if $n < 2;
-    return fib($n - 2) + fib($n - 1);
+    return fib1($n - 2) + fib1($n - 1);
 }
 ```
 
@@ -71,7 +74,7 @@ use Memoize;
 memoize('fib1');
 sub fib1 ($n) {
     return $n if $n < 2;
-    return fib($n - 2) + fib($n - 1);
+    return fib1($n - 2) + fib1($n - 1);
 }
 ```
 
@@ -241,3 +244,4 @@ look for it!
 [Math::BigInt]: https://metacpan.org/pod/Math::BigInt
 [cglib]: https://github.com/polettix/cglib-perl
 [Fibonacci.pm]: https://github.com/polettix/cglib-perl/blob/master/Fibonacci.pm
+[Andrew Solomon]: https://disqus.com/by/geekuni/
