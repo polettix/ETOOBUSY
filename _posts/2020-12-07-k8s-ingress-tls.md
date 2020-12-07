@@ -47,9 +47,9 @@ cat server.crt int-ca.crt root-ca.crt > certificates-chain.pem
 
 Certificates and the secret key have to be put inside a [Kubernetes][]'s
 [Secret][], in particular associated to keys `tls.crt` and `tlx.key`. You
-can use an *Opaque* secret, but it's just easier and more self-documenting
-to use type `kubernetes.io/tls` (which, by the way, also does some minimal
-validation that those keys are present).
+can use an [Opaque][] secret, but it's just easier and more self-documenting
+to use type [kubernetes.io/tls][TLS Secret] (which, by the way, also does
+some minimal validation that those keys are present).
 
 There's even a command for creating such a secret, so why not? Let's just
 remember to use the `certificates-chain.pem` file we generated in the last
@@ -74,10 +74,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - https-example.foo.com
+      - secure.example.com
     secretName: my-ingress-tls
   rules:
-  - host: https-example.foo.com
+  - host: secure.example.com
     ...
 ```
 
@@ -104,3 +104,4 @@ Yes, we're really done at this point! Apply the changes to the the
 [PEM format]: https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail
 [Secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [TLS Secret]: https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets
+[Opaque]: https://kubernetes.io/docs/concepts/configuration/secret/#opaque-secrets
