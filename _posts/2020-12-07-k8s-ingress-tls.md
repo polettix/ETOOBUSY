@@ -85,9 +85,10 @@ A couple of things to watch for:
 
 - make sure that the *namespace* of the [Ingress][] corresponds to the one
   for the [Secret][] (or, well, the other way around!);
-- make sure that the *hosts*'s Fully Qualified Domain Names corresponds and
-  are the same as they appear inside the *server certificate*. You can check
-  this with this command:
+- make sure that the *hosts*'s Fully Qualified Domain Names
+  (`secure.example.com` in our example above) corresponds and are the same
+  as they appear inside the *server certificate*. You can check this with
+  this command:
 
 ```shell
 openssl x509 -text -noout -in server.crt | grep Subject
