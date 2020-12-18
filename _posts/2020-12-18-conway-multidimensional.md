@@ -82,7 +82,7 @@ eventually produced as output.
 Generalizing to 4 dimensions in the "second half" of the puzzle is trivial
 with copy-paste and adaptations. I know, I know... copy and paste code is
 not a good practice. But but... it's very effective if you are in a hurry
-and you don't care about future maintenance.
+and you don't care about future maintenance!
 
 [Conway's Game of Life]: {{ '/2020/04/23/conway-life/' | prepend: site.baseurl }}
 [Advent of Code]: https://adventofcode.com/
