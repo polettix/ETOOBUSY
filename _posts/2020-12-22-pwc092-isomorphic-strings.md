@@ -1,5 +1,5 @@
 ---
-title: PWC091 - Isomorphic Strings
+title: PWC092 - Isomorphic Strings
 type: post
 tags: [ perl weekly challenge ]
 comment: true
