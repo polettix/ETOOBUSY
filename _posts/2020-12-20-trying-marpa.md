@@ -19,7 +19,7 @@ when I have to build a parser. I mean, I wrote it and I have to give it
 So far, this has prevented me doing two things:
 
 - learn *more* on what regular expressions have become in later years, and
-- learn *something* about [Marpa][] (well... relese 2 at least).
+- learn *something* about [Marpa][] (well... release 2 at least).
 
 This is usually related to the fact that I don't need to implement fancy
 grammars, hence coding a parser at a lower level is not a real issue.
