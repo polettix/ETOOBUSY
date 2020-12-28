@@ -1,0 +1,46 @@
+#!/bin/sh
+
+die() { printf >&2 '%s\n' "$*"; exit 1; }
+
+k8s_new_user() {
+   local user="$1"
+   shift
+   [ -n "$user" ] || die "provide username and (optionally) groups"
+   local csr="$user.csr"
+   local key="$user.key"
+   local crt="$user.crt"
+   local cnf="$user.kubeconfig"
+
+   local cn="/CN=$user"
+   local group
+   for group in "$@" ; do
+      cn="$cn/O=$group"
+   done
+
+   local pki="${PKI:-"/etc/kubernetes/pki"}"
+   local cacert="${CA_CERT:-"$pki/ca.crt"}"
+   [ -r "$cacert" ] || die "invalid certificate '$cacert'"
+   local cakey="${CA_KEY:-"$pki/ca.key"}"
+   [ -r "$cakey" ] || die "invalid key file '$cakey'"
+
+   openssl req -subj "$cn" -out "$csr" \
+      -nodes -newkey "rsa:${RSA_BITS:-2048}" -keyout "$key"
+
+   openssl x509 -req -in "$csr" -out "$crt" \
+      -CA "$cacert" -CAkey "$cakey" -CAcreateserial \
+      -days "${DAYS:-"$(( 365 * 10 + 3 ))"}"
+
+   cp "${KUBECONFIG:-"$HOME/.kube/config"}" "$cnf"
+   export KUBECONFIG="$cnf"
+   kubectl config unset users.admin
+   kubectl config set-credentials "$user" \
+      --client-certificate="$crt" \
+      --client-key="$key" \
+      --embed-certs=true
+   kubectl config set-context --current --user="$user"
+   chmod og-rwx "$cnf"
+
+   rm "$csr" "$crt" "$key"
+}
+
+k8s_new_user "$@"
