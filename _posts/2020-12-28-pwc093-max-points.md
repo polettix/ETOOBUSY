@@ -1,5 +1,5 @@
 ---
-title: PWC093 - GCD Sum
+title: PWC093 - Max Points
 type: post
 tags: [ perl weekly challenge ]
 comment: true
