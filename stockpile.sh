@@ -100,16 +100,22 @@ command_list() {
       | sed -ne '/^..stockpile\/item-/{s/^..//;s/  *[^ ]* */ | /p}'
 }
 
-command_get() {
-   local initial_branch="$(git rev-parse --abbrev-ref HEAD)"
-   local initial_commit="$(git rev-parse              HEAD)"
-
-   local post_branch="${1:-"$(
+_branch_or_top() {
+   if [ -n "$1" ] ; then
+      printf %s "$1"
+   else
       git branch \
          | grep ' stockpile/item-' \
          | tail -n 1 \
          | sed -e 's/^ *//;s/ *$//'
-      )"}"
+   fi
+}
+
+command_get() {
+   local initial_branch="$(git rev-parse --abbrev-ref HEAD)"
+   local initial_commit="$(git rev-parse              HEAD)"
+
+   local post_branch="$(_branch_or_top "${1:-""}")"
    [ -n "$post_branch" ] || die 'no branch to get data from...'
    printf '<%s>\n' "$post_branch"
 
@@ -119,6 +125,11 @@ command_get() {
    git merge --ff-only "$post_branch"
    git branch -d "$post_branch"
    git diff "$initial_commit" --name-only
+}
+
+command_show() {
+   local branch="$(_branch_or_top "${1:-""}")"
+   git diff "$branch^..$branch"
 }
 
 main() {
@@ -135,6 +146,9 @@ main() {
          ;;
       (list)
          command_list "$@"
+         ;;
+      (show)
+         command_show "$@"
          ;;
       (*)
          die "unknown command <$command>"
