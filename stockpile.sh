@@ -127,6 +127,12 @@ command_get() {
    git diff "$initial_commit" --name-only
 }
 
+command_xget() {
+   local initial_commit="$(git rev-parse HEAD)"
+   command_get "$@"
+   git reset --mixed "$initial_commit"
+}
+
 command_show() {
    local branch="$(_branch_or_top "${1:-""}")"
    git diff "$branch^..$branch"
@@ -149,6 +155,9 @@ main() {
          ;;
       (show)
          command_show "$@"
+         ;;
+      (xget)
+         command_xget "$@"
          ;;
       (*)
          die "unknown command <$command>"
