@@ -59,3 +59,4 @@ This yields a total of 9 octets for each identifier, yay!
 [Perl]: https://www.perl.org/
 [New representation]: {{ '/2021/01/12/aoc2016-11-new-representation/' | prepend: site.baseurl }}
 [parse it]: {{ '/2021/01/15/aoc2016-11-new-parsing/' | prepend: site.baseurl }}
+[pack]: https://perldoc.pl/functions/pack
