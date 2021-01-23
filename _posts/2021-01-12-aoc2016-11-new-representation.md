@@ -1,7 +1,7 @@
 ---
 title: 'AoC 2016/11 - New representation'
 type: post
-tags: [ advent of code, coding, perl, algorithm ]
+tags: [ advent of code, coding, perl, algorithm, AoC 2016-11 ]
 comment: true
 date: 2021-01-12 07:00:00 +0100
 mathjax: false
@@ -16,6 +16,11 @@ published: true
 One of the things that are quite evident in the solution so far is that
 it's a *memory hog*. I blame my representation for this and, to a lesser
 unscientific degree, the algorithm.
+
+> This is a series of posts, [click here][aoc2016-11-tag] to list them
+> all!
+
+[aoc2016-11-tag]: {{ '/tagged#aoc-2016-11' | prepend: site.baseurl }}
 
 So, we will try to adopt a different approach that is much more compact.
 We will go back to a time when things were simpler, screens were blocky

@@ -1,7 +1,7 @@
 ---
 title: 'AoC 2016/11 - New heuristic'
 type: post
-tags: [ advent of code, coding, perl, algorithm ]
+tags: [ advent of code, coding, perl, algorithm, AoC 2016-11 ]
 comment: true
 date: 2021-01-17 07:00:00 +0100
 mathjax: false
@@ -16,6 +16,11 @@ published: true
 While we are at it, it's also time to take a closer look at the
 *heuristic* function that we use to guess how far we are from the
 destination.
+
+> This is a series of posts, [click here][aoc2016-11-tag] to list them
+> all!
+
+[aoc2016-11-tag]: {{ '/tagged#aoc-2016-11' | prepend: site.baseurl }}
 
 To stress this fact, we will name the function as `distance_to_goal`;
 although it takes two states as input, the goal state is actually
