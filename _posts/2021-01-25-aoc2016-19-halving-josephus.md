@@ -1,7 +1,7 @@
 ---
 title: 'AoC 2016/19 - Halving Josephus'
 type: post
-tags: [ advent of code, coding, perl, algorithm ]
+tags: [ advent of code, coding, perl, algorithm, AoC 2016-19 ]
 comment: true
 date: 2021-01-25 07:00:00 +0100
 mathjax: true
@@ -12,6 +12,9 @@ published: true
 
 > On with [Advent of Code][] [puzzle 19][p19] from [2016][aoc2016]: part
 > 2 of the puzzle is a detour that I call *halving Josephus*.
+> This is a series of posts, [click here][series] to list them all!
+
+[series]: {{ '/tagged#aoc-2016-19' | prepend: site.baseurl }}
 
 I hope I'm not giving too much out, but after solving part 1 of [puzzle
 19][p19] (see [AoC 2016/19 - Josephus problem]) I was presented with the
