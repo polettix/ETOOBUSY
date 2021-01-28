@@ -139,7 +139,7 @@ command_show() {
 }
 
 main() {
-   [ $# -gt 0 ] || die "$0 cmd ... where cmd is add|get|list"
+   [ $# -gt 0 ] || die "$0 cmd ... where cmd is add|get|list|xget"
 
    command="$1"
    shift
