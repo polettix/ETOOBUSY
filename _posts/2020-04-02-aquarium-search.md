@@ -1,7 +1,7 @@
 ---
 title: Aquarium - search the solution space
 type: post
-tags: [ aquarium puzzle game, coding, perl, constraint programming ]
+tags: [ aquarium puzzle game, coding, perl, constraint programming, series:Aquarium ]
 comment: true
 date: 2020-04-02 23:42:44 +0200
 published: true

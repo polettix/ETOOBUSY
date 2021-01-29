@@ -1,7 +1,7 @@
 ---
 title: 'AoC 2016/11 - New algorithm: A*'
 type: post
-tags: [ advent of code, coding, perl, algorithm, AoC 2016-11 ]
+tags: [ advent of code, coding, perl, algorithm, series:AoC 2016-11 ]
 comment: true
 date: 2021-01-11 07:00:00 +0100
 mathjax: false
@@ -21,7 +21,7 @@ the longer one in **part 2**.
 > This is a series of posts, [click here][aoc2016-11-tag] to list them
 > all!
 
-[aoc2016-11-tag]: {{ '/tagged#aoc-2016-11' | prepend: site.baseurl }}
+[aoc2016-11-tag]: {{ '/series#aoc-2016-11' | prepend: site.baseurl }}
 
 There's a more complex, but also more efficient, algorithm that will yield
 the optimal path by generally expanding less nodes, taking less time in

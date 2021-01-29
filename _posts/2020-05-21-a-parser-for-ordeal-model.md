@@ -1,7 +1,7 @@
 ---
 title: 'A parser for Ordeal::Model'
 type: post
-tags: [ perl, coding, parsing ]
+tags: [ perl, coding, parsing, series:Ordeal::Model ]
 comment: true
 date: 2020-05-21 07:00:00 +0200
 mathjax: false

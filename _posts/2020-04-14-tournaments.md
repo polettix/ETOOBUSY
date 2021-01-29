@@ -1,7 +1,7 @@
 ---
 title: Allocating games in tournaments
 type: post
-tags: [ algorithm, game, maths, boardgamearena ]
+tags: [ algorithm, game, maths, boardgamearena, series:Tournaments games allocation ]
 comment: true
 date: 2020-04-14 07:00:00 +0200
 mathjax: true

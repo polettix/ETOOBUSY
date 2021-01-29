@@ -1,7 +1,7 @@
 ---
 title: Autobiographical numbers constraints - last is zero
 type: post
-tags: [ constraint programming, cglib, perl, algorithm ]
+tags: [ constraint programming, cglib, perl, algorithm, series:Autobiographical numbers ]
 comment: true
 date: 2020-04-10 09:35:23 +0200
 mathjax: true

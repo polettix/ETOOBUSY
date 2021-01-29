@@ -1,7 +1,7 @@
 ---
 title: 'AoC 2016/19 - Dynamic Josephus'
 type: post
-tags: [ advent of code, coding, perl, algorithm, AoC 2016-19 ]
+tags: [ advent of code, coding, perl, algorithm, series:AoC 2016-19 ]
 comment: true
 date: 2021-01-26 07:00:00 +0100
 mathjax: true
@@ -15,7 +15,7 @@ published: true
 > variant described in [Aoc2016/19 - Halving Josephus][].
 > This is a series of posts, [click here][series] to list them all!
 
-[series]: {{ '/tagged#aoc-2016-19' | prepend: site.baseurl }}
+[series]: {{ '/series#aoc-2016-19' | prepend: site.baseurl }}
 
 I was very happy to get past [puzzle 19][p19] from the [2016
 edition][aoc2016] of [Advent of Code][], but let's admit two facts:

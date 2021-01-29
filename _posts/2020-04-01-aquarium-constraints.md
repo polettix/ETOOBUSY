@@ -1,7 +1,7 @@
 ---
 title: Aquarium - constraints
 type: post
-tags: [ aquarium puzzle game, coding, perl, constraint programming ]
+tags: [ aquarium puzzle game, coding, perl, constraint programming, series:Aquarium ]
 comment: true
 date: 2020-04-01 18:54:17 +0200
 published: true

@@ -1,7 +1,7 @@
 ---
 title: 'Ordeal::Model::Parser: parsing generics'
 type: post
-tags: [ perl, coding, parsing ]
+tags: [ perl, coding, parsing, series:Ordeal::Model ]
 comment: true
 date: 2020-05-24 07:00:00 +0200
 mathjax: false

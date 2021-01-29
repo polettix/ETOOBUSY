@@ -1,7 +1,7 @@
 ---
 title: Autobiographical numbers constraints - weighted sum
 type: post
-tags: [ constraint programming, cglib, perl, algorithm ]
+tags: [ constraint programming, cglib, perl, algorithm, series:Autobiographical numbers ]
 comment: true
 date: 2020-04-11 09:05:55 +0200
 mathjax: true

@@ -1,7 +1,7 @@
 ---
 title: Autobiographical numbers constraints - step up
 type: post
-tags: [ constraint programming, cglib, perl, algorithm ]
+tags: [ constraint programming, cglib, perl, algorithm, series:Autobiographical numbers ]
 comment: true
 date: 2020-04-13 07:00:00 +0200
 mathjax: true

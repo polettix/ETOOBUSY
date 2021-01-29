@@ -1,7 +1,7 @@
 ---
 title: Aquarium - parse puzzle input
 type: post
-tags: [ aquarium puzzle game, coding, perl, constraint programming ]
+tags: [ aquarium puzzle game, coding, perl, constraint programming, series:Aquarium ]
 comment: true
 date: 2020-03-30 19:36:01 +0200
 mathjax: true

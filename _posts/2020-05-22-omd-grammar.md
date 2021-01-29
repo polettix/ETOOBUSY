@@ -1,7 +1,7 @@
 ---
 title: 'Ordeal::Model::Parser: grammar'
 type: post
-tags: [ perl, coding, parsing ]
+tags: [ perl, coding, parsing, series:Ordeal::Model ]
 comment: true
 date: 2020-05-22 07:00:00 +0200
 mathjax: false

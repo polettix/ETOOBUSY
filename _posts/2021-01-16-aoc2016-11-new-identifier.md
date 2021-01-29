@@ -1,7 +1,7 @@
 ---
 title: 'AoC 2016/11 - New identifier'
 type: post
-tags: [ advent of code, coding, perl, algorithm, AoC 2016-11 ]
+tags: [ advent of code, coding, perl, algorithm, series:AoC 2016-11 ]
 comment: true
 date: 2021-01-16 07:00:00 +0100
 mathjax: false
@@ -20,7 +20,7 @@ algorithm.
 > This is a series of posts, [click here][aoc2016-11-tag] to list them
 > all!
 
-[aoc2016-11-tag]: {{ '/tagged#aoc-2016-11' | prepend: site.baseurl }}
+[aoc2016-11-tag]: {{ '/series#aoc-2016-11' | prepend: site.baseurl }}
 
 We will start simple, i.e. the identifier function. This has to be a
 string that can represent a state in a one-to-one mapping, so that

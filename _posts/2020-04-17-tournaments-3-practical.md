@@ -1,7 +1,7 @@
 ---
 title: Allocating games in tournaments - 3 players practicalities
 type: post
-tags: [ game, boardgamearena, google docs ]
+tags: [ game, boardgamearena, google docs, series:Tournaments games allocation ]
 comment: true
 date: 2020-04-17 07:00:00 +0200
 mathjax: true

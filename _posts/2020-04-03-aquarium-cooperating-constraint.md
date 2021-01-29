@@ -1,7 +1,7 @@
 ---
 title: Aquarium - cooperating constraint
 type: post
-tags: [ aquarium puzzle game, coding, perl, constraint programming ]
+tags: [ aquarium puzzle game, coding, perl, constraint programming, series:Aquarium ]
 comment: true
 date: 2020-04-03 23:40:02 +0200
 preview: false
