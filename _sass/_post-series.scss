@@ -1,0 +1,42 @@
+.post-series {
+    padding-bottom: .5rem;
+    color: rgba($text-color, .8);
+
+    font-size: $tertiary-info-font-size;        
+
+    ol {
+        list-style: none;
+    }
+
+    .active-post {
+        color: $link-color;
+        font-weight: bold;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    @media screen and (min-width: $breakpoint-small) {
+        ol {
+            margin-left: 0.6rem;
+        }
+
+        li {
+            display: inline;
+        }
+
+        .separator {
+            display: inline;
+            font-size: 1rem;
+            font-weight: bold;
+
+            padding-left: .3rem;
+            padding-right: .3rem;
+        }
+
+        .separator:last-child {
+            display: none;
+        }
+    }
+}

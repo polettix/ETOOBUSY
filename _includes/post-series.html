@@ -1,0 +1,40 @@
+{% comment %}
+    Shows links to other posts in a series.
+
+    Several posts can be linked into a series using the page.series parameter.
+    If this variable is specified for a page, this include will render links to other posts in a series.
+
+
+    Parameters:
+        - uses page.series variable to search for and render other posts in a series.
+{% endcomment %}
+{% if page.series != nil %}
+
+{% assign index = 1 %}
+
+<aside class="post-series">
+    <div>This post is a part of the “{{page.series}}” series:</div>
+    <ol>
+        {% for post in site.posts reversed %}
+            {% if post.series == page.series %}
+                 <li>
+                    <span>
+                        {% if post.url == page.url %}
+                        <span>
+                            {{ index }}.&nbsp;<span class="active-post">{{ post.title }}</span>
+                        </span>
+                        {% else %}
+                            {{ index }}.&nbsp;<a href="{{post.url}}">{{ post.title }}</a>
+                        {% endif %}
+                    </span>
+                </li> 
+                <span class="separator">·</span>
+            {% comment %}
+                Increment the index and use it for list items.
+            {% endcomment %}
+            {% assign index = index | plus:1 %}
+            {% endif %}
+        {% endfor %}
+    </ol>
+</aside>
+{% endif %}

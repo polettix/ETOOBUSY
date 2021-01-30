@@ -27,6 +27,13 @@ $grey-color-dark:  darken($grey-color, 25%);
 $on-palm:          600px;
 $on-:              800px;
 
+$breakpoint-small: 480px;
+$breakpoint-medium: 640px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1365px;
+$tertiary-info-font-size: 0.7 * $base-font-size;
+$link-color-active: #d33c00;
+
 // Use media queries like this:
 // @include media-query($on-palm) {
 //     .wrapper {
@@ -44,7 +51,8 @@ $on-:              800px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "post-series"
 ;
 
 // ::before psuedo-element
