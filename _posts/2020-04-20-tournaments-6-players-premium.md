@@ -1,7 +1,8 @@
 ---
 title: Allocating games in tournaments - 6 players matches, premium
 type: post
-tags: [ algorithm, game, maths, boardgamearena, series:Tournaments games allocation ]
+tags: [ algorithm, game, maths, boardgamearena, Tournaments games allocation ]
+series: Tournaments games allocation
 comment: true
 date: 2020-04-20 07:00:00 +0200
 mathjax: true

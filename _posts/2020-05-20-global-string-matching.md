@@ -1,7 +1,8 @@
 ---
 title: Global string matching quirks
 type: post
-tags: [ perl, coding, regex, series:Ordeal::Model ]
+tags: [ perl, coding, regex, Ordeal::Model ]
+series: Ordeal::Model
 comment: true
 date: 2020-05-20 07:00:00 +0200
 mathjax: false

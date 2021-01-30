@@ -1,7 +1,8 @@
 ---
 title: 'AoC 2016/11 - Initial algorithm: Dijkstra'
 type: post
-tags: [ advent of code, coding, perl, algorithm, series:AoC 2016-11 ]
+tags: [ advent of code, coding, perl, algorithm, AoC 2016-11 ]
+series: Radioisotope Thermoelectric Generators (AoC 2016/11)
 comment: true
 date: 2021-01-08 07:00:00 +0100
 mathjax: false
@@ -16,12 +17,6 @@ published: true
 In the last post of this series ([AoC 2016/11 - Initial data structure][])
 we left with two data structures populated for the task: the *initial
 state* and the *goal state*.
-
-> This is a series of posts, [click here][aoc2016-11-tag] to list them
-> all!
-
-[aoc2016-11-tag]: {{ '/series#aoc-2016-11' | prepend: site.baseurl }}
-
 
 In itself, the problem can be thought as a search over a directed graph.
 Each *state* is represented as a **node** in the graph, while

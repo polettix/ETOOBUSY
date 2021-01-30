@@ -1,7 +1,8 @@
 ---
 title: 'AoC 2016/11 - New algorithm: A*'
 type: post
-tags: [ advent of code, coding, perl, algorithm, series:AoC 2016-11 ]
+tags: [ advent of code, coding, perl, algorithm, AoC 2016-11 ]
+series: Radioisotope Thermoelectric Generators (AoC 2016/11)
 comment: true
 date: 2021-01-11 07:00:00 +0100
 mathjax: false
@@ -17,11 +18,6 @@ One drawback of using Dijkstra's algorithm for our search is that it makes
 a lot of expansions to get from the start node to the goal one. This was
 somehow acceptable with the shorter inputs, but became prohibitive with
 the longer one in **part 2**.
-
-> This is a series of posts, [click here][aoc2016-11-tag] to list them
-> all!
-
-[aoc2016-11-tag]: {{ '/series#aoc-2016-11' | prepend: site.baseurl }}
 
 There's a more complex, but also more efficient, algorithm that will yield
 the optimal path by generally expanding less nodes, taking less time in
