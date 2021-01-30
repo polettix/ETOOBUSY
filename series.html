@@ -3,46 +3,34 @@ layout: default
 title: Post Series
 ---
 
-{% assign rawseries = "" %}
-{% for post in site.posts %}
-   {% for tag in post.tags %}
-      {% assign tser = tag | remove: "series:" %}
-      {% if tag != tser %}
-         {% assign rawseries = rawseries | append:tser | append:'|' %}
-      {% endif %}
-   {% endfor %}
-{% endfor %}
-{% assign rawseries = rawseries | split:'|' | sort %}
-
 {% assign series = "" %}
-{% for serie in rawseries %}
-	{% if serie != "" %}
-		{% if series == "" %}
-			{% assign series = serie | split:'|' %}
-		{% endif %}
-		{% unless series contains serie %}
-			{% assign series = series | join:'|' | append:'|' | append:serie | split:'|' %}
-		{% endunless %}
-	{% endif %}
+{% for post in site.posts %}
+   {% if post.series != nil %}
+      {% if series == "" %}
+         {% assign series = post.series %}
+      {% endif %}
+      {% unless series contains post.series %}
+         {% assign series = series | append:'|' | append: post.series %}
+      {% endunless %}
+   {% endif %}
 {% endfor %}
+{% assign series = series | split:'|' %}
 
 <div class="home">
 
 	<section>
-		<p>All series.</p>
+		<p>All series - from latest back to the first.</p>
 		{% for serie in series %}
-      {% assign tag = 'series:' | append:serie %}
-		<h3 class="tag-title" id="{{ serie | slugify }}"># {{ serie }}</h3>
-		<ul class="post-list">
-         {% assign posts = site.posts | sort: "date" %}
-			{% for post in posts %}
-	    {% if post.tags contains tag %}
+		<h3 class="series-title" id="{{ serie | slugify }}">{{ serie }}</h3>
+		<ol class="series-list">
+         {% for post in site.posts reversed %}
+            {%- if post.series == serie %}
 			<li>
 				<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
 			</li>
-			{% endif %}
-	    {% endfor %}
-		</ul>
+            {% endif %}
+         {%- endfor %}
+		</ol>
 		{% endfor %}
 	</section>
 
