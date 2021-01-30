@@ -2,6 +2,7 @@
 title: skfold - one-off files
 type: post
 tags: [ skfold, perl, coding ]
+series: skfold
 comment: true
 date: 2020-06-24 07:00:00 +0200
 mathjax: false

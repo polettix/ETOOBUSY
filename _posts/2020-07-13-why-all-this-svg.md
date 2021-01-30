@@ -2,6 +2,7 @@
 title: Why all this SVG?
 type: post
 tags: [ svg ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-13 07:00:00 +0200
 mathjax: false

@@ -2,6 +2,7 @@
 title: A card layout
 type: post
 tags: [ svg, board game ]
+series: Playing Cards with SVG
 comment: true
 date: 2020-08-23 07:00:00 +0200
 mathjax: true

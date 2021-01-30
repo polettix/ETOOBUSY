@@ -2,6 +2,7 @@
 title: Thread of tweets via API
 type: post
 tags: [ mojolicious, perl, web, client, twitter ]
+series: MojoX::Twitter
 comment: true
 date: 2020-01-18 00:23:17 +0100
 ---

@@ -2,6 +2,7 @@
 title: Shell logging helpers
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-24 07:33:12 +0100
 published: true

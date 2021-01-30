@@ -2,6 +2,7 @@
 title: Rejection method
 type: post
 tags: [ maths, probabilities, sampling ]
+series: 'Transforming Randomization'
 comment: true
 date: 2020-05-15 07:00:00 +0200
 published: true

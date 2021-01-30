@@ -2,6 +2,7 @@
 title: Some SVG cards
 type: post
 tags: [ svg, board game ]
+series: Playing Cards with SVG
 comment: true
 date: 2020-08-26 07:00:00 +0200
 mathjax: false

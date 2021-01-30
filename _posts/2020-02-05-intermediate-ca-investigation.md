@@ -2,6 +2,7 @@
 title: Intermediate CA Investigation
 type: post
 tags: [ security, openssl ]
+series: Playing with CAs
 comment: true
 date: 2020-02-05 22:48:20 +0100
 published: true

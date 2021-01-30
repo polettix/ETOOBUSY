@@ -2,6 +2,7 @@
 title: 'SVG path bounding box: segments'
 type: post
 tags: [ perl, svg, bounding box ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-14 07:00:00 +0200
 mathjax: true

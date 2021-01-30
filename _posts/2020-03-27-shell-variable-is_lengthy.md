@@ -2,6 +2,7 @@
 title: 'Shell variables tests: is it lengthy?'
 type: post
 tags: [ shell, coding]
+series: Shell Tricks
 comment: true
 date: 2020-03-27 01:50:05 +0100
 published: true

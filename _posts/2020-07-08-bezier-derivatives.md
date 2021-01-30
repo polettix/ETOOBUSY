@@ -2,6 +2,7 @@
 title: Derivatives of Bézier curves
 type: post
 tags: [ bézier, maths ]
+series: Bézier curves
 comment: true
 date: 2020-07-08 07:00:00 +0200
 mathjax: true

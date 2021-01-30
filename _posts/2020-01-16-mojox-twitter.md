@@ -2,6 +2,7 @@
 title: Getting started with MojoX::Twitter
 type: post
 tags: [ mojolicious, perl, web, client, twitter ]
+series: MojoX::Twitter
 comment: true
 date: 2020-01-16 07:16:47 +0100
 ---

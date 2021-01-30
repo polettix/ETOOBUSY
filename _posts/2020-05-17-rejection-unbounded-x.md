@@ -2,6 +2,7 @@
 title: Unbounding the x axis in the rejection method
 type: post
 tags: [ maths, probabilities ]
+series: 'Transforming Randomization'
 comment: true
 date: 2020-05-17 07:00:00 +0200
 mathjax: true

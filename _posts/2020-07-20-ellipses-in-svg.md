@@ -2,6 +2,7 @@
 title: 'Ellipses (for SVG): mapping to SVG representation'
 type: post
 tags: [ maths, svg ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-20 07:00:00 +0200
 mathjax: true

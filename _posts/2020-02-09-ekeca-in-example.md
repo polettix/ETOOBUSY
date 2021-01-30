@@ -2,6 +2,7 @@
 title: Certificate example now with ekeca
 type: post
 tags: [ security, openssl ]
+series: Playing with CAs
 comment: true
 date: 2020-02-09 06:47:47 +0100
 published: true

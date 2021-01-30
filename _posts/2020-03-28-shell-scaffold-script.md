@@ -2,6 +2,7 @@
 title: Shell scaffolding script
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-28 10:46:00 +0100
 published: true

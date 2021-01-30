@@ -2,6 +2,7 @@
 title: Shell quoting for exec
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-22 10:19:29 +0100
 published: true

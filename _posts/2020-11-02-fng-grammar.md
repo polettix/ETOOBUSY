@@ -2,6 +2,7 @@
 title: Fantasy Name Generator - a grammar
 type: post
 tags: [ perl, parsing ]
+series: Fantasy Name Generator
 comment: true
 date: 2020-11-02 07:00:00 +0200
 mathjax: false

@@ -2,6 +2,7 @@
 title: The Definitive Conway's Game of Life
 type: post
 tags: [ perl, cglib ]
+series: "Conway's Game of Life"
 comment: true
 date: 2020-12-24 16:25:45 +0100
 mathjax: false
@@ -11,7 +12,7 @@ published: true
 **TL;DR**
 
 > My fourth take on [Conway's Game of Life][] this year, amounting to more
-> tha 1% of all posts!
+> than 1% of all posts!
 
 Well, the folks at [Advent of Code][] did it again: squeeze the [Conway's
 Game of Life][] in a puzzle. This time we're talking about the second part

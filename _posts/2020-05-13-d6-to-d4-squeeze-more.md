@@ -2,6 +2,7 @@
 title: A D4 from a D6 - squeeze more
 type: post
 tags: [ maths, probabilities ]
+series: 'Transforming Randomization'
 comment: true
 date: 2020-05-13 07:00:00 +0200
 published: true

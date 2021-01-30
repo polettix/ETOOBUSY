@@ -2,6 +2,7 @@
 title: Global matching in scalar context
 type: post
 tags: [ perl, parsing ]
+series: Fantasy Name Generator
 comment: true
 date: 2020-11-04 07:00:00 +0100
 mathjax: false

@@ -2,6 +2,7 @@
 title: 'Ellipses (for SVG): parameter values'
 type: post
 tags: [ maths, svg ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-22 07:00:00 +0200
 mathjax: true

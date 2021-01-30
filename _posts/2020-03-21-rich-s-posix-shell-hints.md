@@ -2,6 +2,7 @@
 title: 'Rich’s sh (POSIX shell) tricks'
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-21 08:00:00 +0100
 published: true

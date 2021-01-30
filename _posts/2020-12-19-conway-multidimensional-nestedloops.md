@@ -2,6 +2,7 @@
 title: "Multidimensional Conway's Game of Life - the NestedLoops way"
 type: post
 tags: [ perl ]
+series: "Conway's Game of Life"
 comment: true
 date: 2020-12-19 07:00:00 +0100
 mathjax: false

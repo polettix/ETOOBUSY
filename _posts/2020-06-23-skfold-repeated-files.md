@@ -2,6 +2,7 @@
 title: skfold - repeated files
 type: post
 tags: [ skfold, perl, coding ]
+series: skfold
 comment: true
 date: 2020-06-23 07:00:00 +0200
 mathjax: false

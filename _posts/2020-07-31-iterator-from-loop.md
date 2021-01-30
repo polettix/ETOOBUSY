@@ -2,6 +2,7 @@
 title: Iterator from loop
 type: post
 tags: [ algorithm, perl ]
+series: Algorithm::Loops
 comment: true
 date: 2020-07-31 07:00:00 +0200
 mathjax: false

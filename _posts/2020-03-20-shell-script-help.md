@@ -2,6 +2,7 @@
 title: Shell script help
 type: post
 tags: [ shell, coding, perl ]
+series: Shell Tricks
 comment: true
 date: 2020-03-20 08:46:24 +0100
 published: true

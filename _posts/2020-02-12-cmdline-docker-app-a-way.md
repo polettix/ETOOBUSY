@@ -2,6 +2,7 @@
 title: Command-line Docker Applications - A way forward
 type: post
 tags: [ docker, command line ]
+series: Command-line Docker Applications
 comment: true
 date: 2020-02-12 08:25:55 +0100
 published: true

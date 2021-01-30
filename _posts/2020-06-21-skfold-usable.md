@@ -2,6 +2,7 @@
 title: 'skfold is usable!'
 type: post
 tags: [ perl, coding, skfold ]
+series: skfold
 comment: true
 date: 2020-06-21 17:06:23 +0200
 mathjax: false

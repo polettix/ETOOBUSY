@@ -2,6 +2,7 @@
 title: 'Shell variables tests: is it defined?'
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-25 07:27:52 +0100
 published: true

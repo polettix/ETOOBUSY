@@ -2,6 +2,7 @@
 title: skfold - getting started with simple files
 type: post
 tags: [ skfold, perl, coding ]
+series: skfold
 comment: true
 date: 2020-06-22 07:00:00
 mathjax: false

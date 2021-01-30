@@ -2,6 +2,7 @@
 title: Parsing SVG paths
 type: post
 tags: [ algorithm, svg, parsing, perl, coding ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-12 07:00:00 +0200
 mathjax: false

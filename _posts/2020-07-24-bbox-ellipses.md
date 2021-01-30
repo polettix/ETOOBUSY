@@ -2,6 +2,7 @@
 title: 'SVG path bounding box: arcs of ellipses'
 type: post
 tags: [ maths, perl, svg, bounding box, bézier ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-24 07:00:00 +0200
 mathjax: true

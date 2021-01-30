@@ -2,6 +2,7 @@
 title: Intermediate CA Solution
 type: post
 tags: [ security, openssl ]
+series: Playing with CAs
 comment: true
 date: 2020-02-07 22:13:25 +0100
 published: true

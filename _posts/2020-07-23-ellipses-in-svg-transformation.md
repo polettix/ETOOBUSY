@@ -2,6 +2,7 @@
 title: 'Ellipses (for SVG): transformation implementation'
 type: post
 tags: [ maths, svg, perl, coding ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-23 07:00:00 +0200
 mathjax: true

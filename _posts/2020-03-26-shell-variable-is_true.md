@@ -2,6 +2,7 @@
 title: 'Shell variables tests: is it true?'
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-26 23:33:01 +0100
 published: true

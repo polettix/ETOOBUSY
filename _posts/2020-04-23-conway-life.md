@@ -2,6 +2,7 @@
 title: "Conway's Game of Life"
 type: post
 tags: [ maths, perl, curses ]
+series: "Conway's Game of Life"
 comment: true
 date: 2020-04-23 07:00:00 +0200
 published: true

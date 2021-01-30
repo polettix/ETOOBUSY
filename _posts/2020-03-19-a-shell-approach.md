@@ -2,6 +2,7 @@
 title: A shell approach
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-19 23:58:13 +0100
 published: true

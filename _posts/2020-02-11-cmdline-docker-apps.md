@@ -2,6 +2,7 @@
 title: Command-line Docker Applications
 type: post
 tags: [ docker, command line ]
+series: Command-line Docker Applications
 comment: true
 date: 2020-02-11 08:45:59 +0100
 published: true

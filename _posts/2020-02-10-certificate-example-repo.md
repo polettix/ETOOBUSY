@@ -2,6 +2,7 @@
 title: Certificate example on GitHub
 type: post
 tags: [ security, openssl, github ]
+series: Playing with CAs
 comment: true
 date: 2020-02-10 00:00:01 +0100
 published: true

@@ -2,6 +2,7 @@
 title: Bare-bones Web Server
 type: post
 tags: [ security, web, server, perl, mojolicious ]
+series: Playing with CAs
 comment: true
 date: 2020-01-31 15:53:52 +0100
 published: true

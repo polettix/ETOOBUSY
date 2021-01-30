@@ -2,6 +2,7 @@
 title: Easy dumping of OpenSSL "stuff"
 type: post
 tags: [ openssl, shell ]
+series: Playing with CAs
 comment: true
 date: 2020-02-06 19:53:21 +0100
 published: true

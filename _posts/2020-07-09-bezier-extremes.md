@@ -2,6 +2,7 @@
 title: Extremes for Bézier curves
 type: post
 tags: [ bézier, maths ]
+series: Bézier curves
 comment: true
 date: 2020-07-09 07:00:00 +0200
 mathjax: true

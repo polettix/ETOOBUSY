@@ -2,6 +2,7 @@
 title: "Multidimensional Conway's Game of Life"
 type: post
 tags: [ maths, perl ]
+series: "Conway's Game of Life"
 comment: true
 date: 2020-12-18 07:00:00 +0100
 mathjax: true

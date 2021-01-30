@@ -2,6 +2,7 @@
 title: Building shell arguments list dynamically
 type: post
 tags: [ shell, coding ]
+series: Shell Tricks
 comment: true
 date: 2020-03-23 19:01:03 +0100
 published: true

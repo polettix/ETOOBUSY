@@ -2,6 +2,7 @@
 title: 'SVG path bounding box: merge multiple boxes'
 type: post
 tags: [ perl, svg, bounding box ]
+series: Bounding Box for SVG Paths
 comment: true
 date: 2020-07-15 07:00:00 +0200
 mathjax: false

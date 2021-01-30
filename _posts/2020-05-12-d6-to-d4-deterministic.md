@@ -2,6 +2,7 @@
 title: A D4 from a D6, with time guarantees
 type: post
 tags: [ maths, probabilities ]
+series: 'Transforming Randomization'
 comment: true
 date: 2020-05-12 07:00:00 +0200
 published: true

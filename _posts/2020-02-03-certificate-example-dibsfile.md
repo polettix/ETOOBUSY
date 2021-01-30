@@ -2,6 +2,7 @@
 title: Generating "Example on Certificates"
 type: post
 tags: [ security, openssl, docker, dibs ]
+series: Playing with CAs
 comment: true
 date: 2020-02-03 01:39:01 +0100
 published: true

@@ -2,6 +2,7 @@
 title: Docker image generation for skfold reshaped
 type: post
 tags: [ dibs, docker, skfold ]
+series: skfold
 comment: true
 date: 2020-07-03 07:00:00 +0200
 mathjax: false

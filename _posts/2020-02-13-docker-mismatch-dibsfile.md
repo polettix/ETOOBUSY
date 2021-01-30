@@ -9,7 +9,7 @@ published: true
 
 **TL;DR**
 
-> Curious about how the images in [polettix/docker-mismatch] were generated?
+> Curious about how the images in [polettix/docker-mismatch][] were generated?
 
 There's a [dibs][] file for it:
 

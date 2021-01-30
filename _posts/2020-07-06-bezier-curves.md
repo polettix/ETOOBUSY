@@ -2,6 +2,7 @@
 title: Bézier curves
 type: post
 tags: [ maths, bézier ]
+series: Bézier curves
 comment: true
 date: 2020-07-06 19:23:37 +0200
 mathjax: true

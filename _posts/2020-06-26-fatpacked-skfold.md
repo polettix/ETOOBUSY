@@ -2,6 +2,7 @@
 title: Fatpacked skfold
 type: post
 tags: [ skfold, perl, coding ]
+series: skfold
 comment: true
 date: 2020-06-26 07:00:00 +0200
 mathjax: false
