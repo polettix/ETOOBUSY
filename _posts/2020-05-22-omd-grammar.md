@@ -1,8 +1,8 @@
 ---
 title: 'Ordeal::Model::Parser: grammar'
 type: post
-tags: [ perl, coding, parsing, Ordeal::Model ]
-series: Ordeal::Model
+tags: [ perl, coding, parsing, 'Ordeal::Model' ]
+series: 'Ordeal::Model'
 comment: true
 date: 2020-05-22 07:00:00 +0200
 mathjax: false
