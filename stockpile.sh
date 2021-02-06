@@ -96,8 +96,20 @@ command_add() {
 }
 
 command_list() {
-   git branch -av \
-      | sed -ne '/^..stockpile\/item-/{s/^..//;s/  *[^ ]* */ | /p}'
+   local branch rest
+   git branch \
+      |  sed -ne '/^..stockpile\/item-/s/^..//p' \
+      |  while read branch rest ; do
+            git diff "$branch^..$branch" \
+               | sed -ne '/^+---/,/^+---/{s/^+//;p}' \
+               |  awk '
+                     /^title:/ { $1 = ""; title = $0 }
+                     /^date:/  { date = $2 }
+                     END       { print date " " title }
+                  ' \
+               | sed -e "s#^#$branch  #"
+         done \
+      |  nl
 }
 
 _branch_or_top() {
@@ -111,11 +123,27 @@ _branch_or_top() {
    fi
 }
 
+_resolve() {
+   local in="${1:-""}"
+   [ -n "$in" ] || return 0
+   if [ "${in%%/*}" = 'stockpile' ] ; then
+      printf %s "$in"
+   else
+      local tab="$(printf '\t')"
+      local out="$(command_list | grep "^[ $tab]\\+$in[ $tab]" | awk '{print $2}')"
+      if [ -n "$out" ] ; then
+         printf %s "$out"
+      else
+         printf %s "$in"
+      fi
+   fi
+}
+
 command_get() {
    local initial_branch="$(git rev-parse --abbrev-ref HEAD)"
    local initial_commit="$(git rev-parse              HEAD)"
 
-   local post_branch="$(_branch_or_top "${1:-""}")"
+   local post_branch="$(_branch_or_top "$(_resolve "${1:-""}")")"
    [ -n "$post_branch" ] || die 'no branch to get data from...'
    printf '<%s>\n' "$post_branch"
 
@@ -134,12 +162,45 @@ command_xget() {
 }
 
 command_show() {
-   local branch="$(_branch_or_top "${1:-""}")"
+   local branch="$(_branch_or_top "$(_resolve "${1:-""}")")"
    git diff "$branch^..$branch"
 }
 
+command_interactive() {
+   local cmd='list' args
+   while true ; do
+      case "$cmd" in
+         (g|get)
+            command_get $args
+            ;;
+         (s|h|head)
+            command_show $args | sed -ne '/^+---/,/^+---/{s/^+//;p}'
+            ;;
+         (l|ls|list)
+            command_list
+            ;;
+         (show)
+            command_show $args
+            command_list
+            ;;
+         (x|xget)
+            command_xget $args
+            ;;
+         (*)
+            printf '%s\n' "unknown command <$cmd> (get|list|quit|show|xget)"
+            ;;
+      esac
+      printf '(get|head|list|quit|show|xget)> '
+      cmd=''
+      while [ "$cmd" = '' ] ; do
+         read cmd args
+      done
+      [ "$cmd" = 'quit' ] && break
+   done
+}
+
 main() {
-   [ $# -gt 0 ] || die "$0 cmd ... where cmd is add|get|list|xget"
+   [ $# -gt 0 ] || set -- interactive # die "$0 cmd ... where cmd is add|get|list|xget"
 
    command="$1"
    shift
@@ -147,8 +208,14 @@ main() {
       (add)
          command_add "$@"
          ;;
+      (dates)
+         command_dates
+         ;;
       (get)
          command_get "$@"
+         ;;
+      (interactive)
+         command_interactive
          ;;
       (list)
          command_list "$@"
@@ -158,6 +225,10 @@ main() {
          ;;
       (xget)
          command_xget "$@"
+         ;;
+      (tmp)
+         _resolve "$@"
+         printf '\n'
          ;;
       (*)
          die "unknown command <$command>"
