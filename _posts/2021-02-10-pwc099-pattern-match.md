@@ -79,6 +79,26 @@ gives us the needed answer.
 
 Nice!
 
+The whole script, should you be curious:
+
+```perl
+#!/usr/bin/env perl
+use 5.024;
+use warnings;
+use experimental qw< postderef signatures >;
+no warnings qw< experimental::postderef experimental::signatures >;
+
+sub pattern_match ($S, $T) {
+   $T = join '',
+      map { $_ eq '*' ? '.*' : $_ eq '?' ? '.' : quotemeta($_) }
+      split m{([*?])}mxs, $T;
+   return $S =~ m{\A$T\z}mxs ? 1 : 0;
+}
+
+my $string = shift // 'abcde';
+my $pattern = shift // 'a*e';
+say pattern_match($string, $pattern);
+```
 
 [Perl Weekly Challenge]: https://perlweeklychallenge.org/
 [#099]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-099/
