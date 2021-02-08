@@ -24,7 +24,7 @@
                      {{ index }}.&nbsp;<span class="active-post">{{ post.title }}</span>
                </span>
                {% else %}
-                     {{ index }}.&nbsp;<a href="{{post.url | site.baseurl }}">{{ post.title }}</a>
+                     {{ index }}.&nbsp;<a href="{{post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                {% endif %}
             </span>
          </li> 
