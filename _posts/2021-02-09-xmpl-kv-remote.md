@@ -19,7 +19,7 @@ on-file key/value store][] we looked at two possible ways of
 implementing the key/value store interface, namely via a wrapper of a
 simple hash (resulting in `KVStore::InMemory`) or via a wrapper to this
 class that also takes care to save changes on a JSON-encoded file
-(resulting in `KVStore::InMemory`).
+(resulting in `KVStore::OnFile`).
 
 This time we will take a look at the last alternative: a *remote*
 repository implementing what described in [xmpl - the key/value API][].
