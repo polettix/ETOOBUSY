@@ -31,7 +31,7 @@ This:
 
 becomes this:
 
-![sequence-diagram]({{ '/assets/images/sequence-diagram.png' | | prepend: site.baseurl }})
+![sequence-diagram]({{ '/assets/images/sequence-diagram.png' | prepend: site.baseurl }})
 
 The code (a [local version is here][]) is the following:
 
