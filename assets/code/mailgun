@@ -1,0 +1,312 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Carp;
+use Pod::Usage qw< pod2usage >;
+use Getopt::Long qw< :config gnu_getopt >;
+use English qw< -no_match_vars >;
+my $VERSION = '0.0.1';
+use 5.014;
+use HTTP::Tiny;
+use MIME::Base64 qw< encode_base64 >;
+
+my %config = (
+   from    => 'noreply@example.com',
+   subject => "News from me",
+);
+
+# initialize configuration from environment variables
+for my $key (qw< domain from key message message_file subject to >) {
+   my $ekey = uc "MG_$key";
+   next unless exists $ENV{$ekey};
+   $config{$key} = $ENV{$ekey};
+}
+
+GetOptions(
+   \%config,
+   qw<
+     usage! help! man! version!
+     domain|d=s
+     from|f=s
+     key|k=s
+     message|m=s
+     message_file|message-file|M=s
+     subject|s=s
+     to|t=s@
+     >
+) or pod2usage(-verbose => 99, -sections => 'USAGE');
+pod2usage(message => "$0 $VERSION", -verbose => 99, -sections => ' ')
+  if $config{version};
+pod2usage(-verbose => 99, -sections => 'USAGE') if $config{usage};
+pod2usage(-verbose => 99, -sections => 'USAGE|EXAMPLES|OPTIONS')
+  if $config{help};
+pod2usage(-verbose => 2) if $config{man};
+
+# Script implementation here
+$config{message_file} //= '-' unless exists $config{message};
+if (defined(my $filename = $config{message_file})) {
+   my $fh = ($filename eq '-') ? \*STDIN : do {
+      open my $x, '<', $filename
+         or die "open('$filename'): $OS_ERROR\n";
+      $x;
+   };
+   binmode $fh, ':raw';
+   local $/;
+   $config{message} = <$fh>;
+}
+
+my @recipients = ref($config{to}) ? @{$config{to}} : $config{to};
+
+my $url = "https://api.mailgun.net/v3/$config{domain}/messages";
+my $ua  = HTTP::Tiny->new();
+my $response = $ua->post_form(
+   $url,
+   [
+      from    => $config{from},
+      (map {; to => $_ } @recipients),
+      subject => $config{subject},
+      text    => $config{message},
+   ],
+   {
+      headers => {
+         Authentication =>
+           ('Basic ' . encode_base64('api:' . $config{key}, '')),
+      },
+   }
+);
+
+die "failed: $response->{status} $response->{reason}\n"
+  unless $response->{success};
+print $response->{content}, "\n";
+
+__END__
+
+=head1 NAME
+
+mailgun - simple text email sender via Mailgun
+
+=head1 VERSION
+
+Ask the version number to the script itself, calling:
+
+   shell$ mailgun --version
+
+
+=head1 USAGE
+
+   mailgun [--usage] [--help] [--man] [--version]
+
+   mailgun [--domain|-d your.domain.com]
+           [--from|-f you@your.domain.com]
+           [--key|-k your-mailgun-API-key]
+           [--message|-m text-message]
+           [--message-file|-M path]
+           [--subject|-s subject-line]
+           [--to|-t recipient@example.com] [--to|-t ...]
+
+All parameters can also be set with corresponding environment variables
+C<MG_*>, e.g. C<MG_KEY> or C<MG_SUBJECT>. Option C<--message-file>
+corresponds to C<MG_MESSAGE_FILE>.
+
+=head1 EXAMPLES
+
+   shell$ mailgun -f me@example.com -t you@example.com \
+      -d example.com -k key-blahblahblah \
+      -s 'News!' -m 'Some news for you!'
+
+   # set most things via environment, message is taken from standard
+   # input by default
+   shell$ export  MG_FROM=me@example.com \
+                  MG_TO=list@example.com \
+                  MG_DOMAIN=example.com \
+                  MG_KEY=key-yaddayaddayadda
+   shell$ echo "Howdy!" | mailgun -s 'Greetings!'
+
+=head1 DESCRIPTION
+
+This is a simple driver script to use Mailgun's API and send simple
+messages. The main use case is to send notification emails when
+something happens, see L</BUGS AND LIMITATIONS> for a list of the
+missing features.
+
+When the email queueing succeeds, the response body from Mailgun is
+printed out, with an additional newline character.
+
+=head1 OPTIONS
+
+Most options below can be set via environment variables. When both the
+environment variable and the command line option are present, the latter
+wins (i.e. command line always overrides the environment variable).
+
+=over
+
+=item --domain|-d domain-name
+
+   --domain example.com
+
+set the domain according to what you have in Mailgun. If you just got
+started, it will be the sandbox domain provided by Mailgun, otherwise
+the one you configured.
+
+Environment variable: C<MG_DOMAIN>.
+
+=item --from|-f email-specification
+
+   --from 'A. U. Thor <author@example.com>'
+
+specification of the I<From> header for the email. It can be a simple,
+plain email address.
+
+Environment variable: C<MG_FROM>.
+
+=item --help
+
+print a somewhat more verbose help, showing usage, this description of
+the options and some examples from the synopsis.
+
+=item --key|-k API-key
+
+   --key key-yaddayaddayadda
+
+the key associated to the domain you are sending the emails from. You
+should get this from the Mailgun console.
+
+Environment variable: C<MG_KEY>.
+
+=item --man
+
+print out the full documentation for the script.
+
+=item --message|-m text-message
+
+   --message 'Hey you, how are you doing?'
+
+text message to send in the email. This is simple, plain text; the
+recipient's email program might do fancy things with links etc., but
+it's just basic text.
+
+If you need to send more than a few bytes, you might want to take a look
+at L<< /--message-fileE<verbar>-M path >> for reading the message from
+standard input or from a file.
+
+If C<--message-file> or C<-M> or environment variable C<MG_MESSAGE_FILE>
+are present, they take precedence over this parameter. Sorry :)
+
+Environment variable: C<MG_MESSAGE>.
+
+=item --message-file|-M path
+
+   --message-file /path/to/message
+   --message-file -
+
+set a filename for reading the message. If the filename is C<->, the
+message is read from standard input (in the unlikely case that your file
+is actually named C<->, please provide it as C<./->).
+
+If no message is present, defaults to standard input.
+
+Environment variable: C<MG_MESSAGE_FILE>.
+
+=item --subject|-s subject-line
+
+   --subject 'There are news for you'
+
+set the subject line of the email message.
+
+Environment variable: C<MG_SUBJECT>.
+
+=item --to|-t email-specification
+
+   --to first@example.com --to 'Second Chap <second@example.com>'
+
+set one or more recipients for the email message. Can be provided
+multiple times; each instance might contain multiple addresses separated
+by a comma.
+
+Environment variable: C<MG_TO>.
+
+=item --usage
+
+print a concise usage line and exit.
+
+=item --version
+
+print the version of the script.
+
+=back
+
+=head1 DIAGNOSTICS
+
+=over
+
+=item C<< open('%s'): %s >>
+
+while trying to load a message from a file, an error occurred. The first
+placeholder represents the offending filename, the second one is the
+error provided by the operating system.
+
+=item C<< failed: %s %s >>
+
+the email was not queued successfully. The two placeholders represent
+the HTTP status code and reason provided by Mailgun's server.
+
+=back
+
+
+=head1 CONFIGURATION AND ENVIRONMENT
+
+mailgun requires no configuration files. See L</OPTIONS> for the
+supported environment variables.
+
+
+=head1 DEPENDENCIES
+
+Perl 5.14 or following.
+
+
+=head1 BUGS AND LIMITATIONS
+
+No bugs have been reported.
+
+Please report any bugs or feature requests through http://rt.cpan.org/
+
+The Mailgun API provides a rich set of opportunities, but in this simple
+program there are quite a few restrictions:
+
+=over
+
+=item *
+
+no HTML version of the message
+
+=item *
+
+no attachments
+
+=item *
+
+only I<To> recipients, no I<CC> or I<BCC>
+
+=item *
+
+no additional Mailgun goodies, e.g. campaigns etc.
+
+=back
+
+=head1 AUTHOR
+
+Flavio Poletti C<polettix@cpan.org>
+
+
+=head1 LICENCE AND COPYRIGHT
+
+Copyright (c) 2016, Flavio Poletti C<polettix@cpan.org>.
+
+This module is free software.  You can redistribute it and/or
+modify it under the terms of the Artistic License 2.0.
+
+This program is distributed in the hope that it will be useful,
+but without any warranty; without even the implied warranty of
+merchantability or fitness for a particular purpose.
+
+=cut
