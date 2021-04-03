@@ -41,11 +41,12 @@ The rationale is this:
   result (`$r`) initialized to 1
 - swap `$k` and `$n_k` to make `$n_k` bigger. The binomial is symmetric and
   this swap does not change the result
-- the denominator of the binomial function is $k \cdot ($n - $k)$. We can
-  get rid of $n - k$ implicitly, by removing all the correspondent terms
-  from the numerator too, i.e. considering only the product $n \cdot (n - 1)
-  \cdot ... \cdot (n - k + 1)$, so we remain with a denominator that has $k$
-  only (which is also the smaller between the original $k$ and $n - k$)
+- the denominator of the binomial function is $k! \cdot ($n - $k)!$. We can
+  get rid of the $(n - k)!$ term implicitly, by removing all the
+  correspondent terms from the numerator too, i.e. considering only the
+  product $n \cdot (n - 1) \cdot ... \cdot (n - k + 1)$, so we remain with a
+  denominator that has $k!$ only (which is also the smaller between the
+  original $k!$ and $(n - k)!$)
 - we iterate over the factors for the numerator (`while ($n > $n_k)`) and
   update the result with a factor (`$f`). This factor is initialized with
   the number from the (truncated) factorial formula, but is simplified with
