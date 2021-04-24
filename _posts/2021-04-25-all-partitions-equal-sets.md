@@ -92,6 +92,13 @@ Lost? Let's take a look at the code:
 
 ```perl
 sub equalsets_partition_iterator ($k, @items) {
+   if ($k == 1) { # there's only one way to do this... let's do it!
+      my @retval = map { [$_] } @items;
+      return sub {
+         (my @rv, @retval) = @retval;
+         return @rv;
+      };
+   }
    if ($k == @items) {
       my @retvals = ([@items]);
       return sub { @retvals ? shift @retvals : () };
@@ -127,9 +134,12 @@ Our inputs are:
 - the list of `@items` representing the set we want to partition. Its
   size represents $n \cdot $k$.
 
-The initial `if` checks if we want to go to a short route: as there is
-always one single way to partition a $k$ sized set into a $k$ sized
-subset, we return an iterator that will only produce that very subset.
+The initial two `if` checks take care of the two corner cases which
+provide a trivial solution:
+- if $k$ is one, there is only one single partition (i.e. the one
+  composed of all singletons);
+- if $k$ is equal to the number of items, there is only one single
+  partition (i.e. the set of all items).
 
 Admittedly, we should also check for wrong inputs, like the number of
 items not being a multiple of $k$, or being $0$. It's an easy exercise
