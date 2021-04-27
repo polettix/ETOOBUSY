@@ -1,0 +1,13 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $n = shift || 3;
+my @buffer;
+while (<>) {
+   print && next if $. <= $n;
+   shift @buffer if @buffer == $n;
+   push @buffer, $_;
+}
+unshift @buffer, "...\n" if $. > $n * 2;
+print for @buffer;
