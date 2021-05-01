@@ -1,0 +1,90 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$code-font-family: Inconsolata, Monaco, Consolas, monospace;
+$base-font-size:   16px;
+$base-font-weight: 300;
+$small-font-size:  0.875rem;
+$big-font-size:    1.3rem;
+$base-line-height: 1.5;
+
+$spacing-unit:     2rem;
+$max-width:        48rem;
+
+$text-color:       #fff;
+$background-color: #333;
+$link-color:       #0645ad;
+
+$grey-color:       #aaa;
+$grey-color-light: lighten($grey-color, 25%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$on-palm:          600px;
+$on-:              800px;
+
+$breakpoint-small: 480px;
+$breakpoint-medium: 640px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1365px;
+$tertiary-info-font-size: 0.7 * $base-font-size;
+$link-color-active: #d33c00;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting",
+        "post-series"
+;
+
+// ::before psuedo-element
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+
+  li {
+    padding-left: 1rem;
+    text-indent: 1rem;
+    list-style-image: none;
+  }
+
+  li::before {
+    content: "✏️ ";
+  }
+}
+
+.announceable {
+  font-size: $small-font-size;
+  font-family: $base-font-family;
+  color: $grey-color;
+  text-indent: 0;
+  border-left: 1px solid $grey-color;
+  margin-left: 3em;
+  padding-left: 0.5em;
+}
+
+.series-title {
+   font-weight: bold;
+   color: #004000;
+   margin-top: 1.5em;
+   margin-bottom: 0.5em;
+}

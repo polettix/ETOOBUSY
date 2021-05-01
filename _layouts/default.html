@@ -8,6 +8,7 @@
       <title>{% if page.title %}{{ " - " | prepend: page.title }}{% endif %}{{ site.title }}</title>
       <meta name="description" content="{{ site.description }}">
       <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
+      {% if page.style %}<link rel="stylesheet" href="{{ ".css" | prepend: page.style | prepend: "/assets/css/" | prepend: site.baseurl | prepend: site.url }}">{% endif %}
       <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
       <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
@@ -17,7 +18,7 @@
       <link rel="manifest"                            href="{{ "/assets/favicon/site.webmanifest"     | prepend: site.baseurl | prepend: site.url }}">
    </head>
 
-  <body>
+   <body>
     {% include mathjax.html %}
     <div class="page-content">
       <section class="site-header">
@@ -29,6 +30,6 @@
       </div>
     </div>
     {% include google_analytics.html %}
-  </body>
+   </body>
 
 </html>
