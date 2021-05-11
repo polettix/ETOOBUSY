@@ -72,7 +72,7 @@ forced again on the same pattern... which is more than one million
 years. Enough!
 
 > This also seems to be one of the first cases of [off-by-one error][]
-> when that child eventually grew up...
+> but [it was not the child's fault][no-fault]...
 
 The solution can be found [here][].
 
@@ -84,3 +84,4 @@ The solution can be found [here][].
 [The blessing of forgetting]: {{ '/2020/12/03/the-blessing-of-forgetting/' | prepend: site.baseurl }}
 [off-by-one error]: https://en.wikipedia.org/wiki/Off-by-one_error
 [here]: https://github.com/manwar/perlweeklychallenge-club/tree/master/challenge-112/polettix/perl/ch-1.pl
+[no-fault]: https://upload.wikimedia.org/wikipedia/commons/0/04/Liber_abbaci_magliab_f124r.jpg
