@@ -10,12 +10,12 @@ published: true
 
 **TL;DR**
 
-> Let's complete the discussion about the [solution][] to the [Perl
-> Weekly Challenge][] [#077][Challenge 077].
+> Let's complete the discussion about the [solution][Fibonacci Sum part
+> 1] to the [Perl Weekly Challenge][] [#077][Challenge 077].
 
 In [Fibonacci Sum part 1][] we laid the foundations for the solution to
 the [Challenge 077][] with a function that gives us the [Zeckendorf's
-decomposition][Zeckendorf' theorem] of a positive integer. It's now time
+decomposition][Zeckendorf's theorem] of a positive integer. It's now time
 to address the other half of the problem, i.e. finding all possible
 arrangements.
 
