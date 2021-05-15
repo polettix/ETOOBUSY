@@ -44,13 +44,18 @@ In this case, then, the *equivalent* code (thanks to the `-p` option)
 becomes something like this:
 
 ```perl
+local $/; # set "slurp" mode, like -0777 does
 while (<>) {
     $_ = substr encode_json([$_]), 1, -1;
-    print STDOUT $_;
+    print $_;  # print to currently selected filehandle
 }
 ```
 
 Brilliant!
+
+**Update**: the *equivalent* code above was made more accurate thanks to
+Randal L. Schwartz's comment below. I managed to put two inaccuracies in
+a single code fragment of four lines, not bad! 🙄
 
 
 [giant]: http://plasmasturm.org/about/#me
