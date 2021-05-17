@@ -76,6 +76,9 @@ years. Enough!
 
 The solution can be found [here][].
 
+**Update** You might not find any reference in history about a Leonardo
+being sent to buy bread etc. and this is no coincidence - it was just my
+invention to give some flavor to the topic 🙄
 
 [Perl Weekly Challenge]: https://perlweeklychallenge.org/
 [#112]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-112/
