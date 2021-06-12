@@ -100,7 +100,7 @@ This is all I wanted to scribble about installing Perl modules... it should
 not take unnecessary time for us to do it, nor to realize how to do it!
 
 [Carton]: https://metacpan.org/pod/Carton
-[cpanm]: https://metacpan.org/pod/App-cpanminus
+[cpanm]: https://metacpan.org/pod/App::cpanminus
 [CPAN]: https://metacpan.org/
 [Debian]: https://debian.org/
 [cpanfile]: https://metacpan.org/pod/distribution/Module-CPANfile/lib/cpanfile.pod
