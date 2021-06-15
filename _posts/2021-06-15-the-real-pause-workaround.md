@@ -3,7 +3,7 @@ title: The real PAUSE workaround
 type: post
 tags: [ perl, cpan ]
 comment: true
-date: 2021-06-14 07:00:00 +0200
+date: 2021-06-15 07:00:00 +0200
 mathjax: false
 published: true
 ---
