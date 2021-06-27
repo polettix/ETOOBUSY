@@ -1,7 +1,7 @@
 ---
 title: Codingame library in Raku
 type: post
-tags: [ perl, raku, cglib ]
+tags: [ perl, rakulang, cglib ]
 comment: true
 date: 2021-06-26 07:00:00 +0200
 mathjax: false

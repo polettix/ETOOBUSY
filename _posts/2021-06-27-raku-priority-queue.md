@@ -1,7 +1,7 @@
 ---
 title: 'Raku cglib: a priority queue'
 type: post
-tags: [ raku, perl, cglib ]
+tags: [ rakulang, perl, cglib ]
 comment: true
 date: 2021-06-27 07:00:00 +0200
 mathjax: false

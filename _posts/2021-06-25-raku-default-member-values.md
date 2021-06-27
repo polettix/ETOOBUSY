@@ -1,7 +1,7 @@
 ---
 title: Raku - default member values
 type: post
-tags: [ raku ]
+tags: [ rakulang ]
 comment: true
 date: 2021-06-25 07:00:00 +0200
 mathjax: false
