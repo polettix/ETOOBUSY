@@ -74,12 +74,9 @@ hands are at:
   plus the additional rotation due to the minutes, which is equal to
   $\frac{m}{60} \frac{360}{12} = \frac{m}{2}$ degrees.
 
-
-
-Last, we can subtract the lower one from the bigger and get *one* angle
-between the two. As we are requested to find out the *smaller*, if it's
-greater than 180 degrees it will suffice to take the difference from the
-angle we have to arrive up to 360 degrees.
+Last, we can take the absolute value of their difference and compare
+with 180 degrees: if greater, we take the complement of that angle to
+360 degrees, so that we find the *smallest non-negative* angle.
 
 On to the implementation, then!
 
@@ -89,21 +86,22 @@ On to the implementation, then!
 #!/usr/bin/env raku
 use v6;
 sub clock-angle ($t) {
-   my ($hrs, $mins) = $t.split(/\:/).map: +*;
+   my ($hrs, $mins) = $t.split(/\:/);
    my $angle = ($mins * 6) - (($hrs % 12) * 30 + $mins / 2);
-   $angle = -$angle if $angle < 0; # make it non-negative
+   $angle = -$angle if $angle < 0;
    return $angle <= 180 ?? $angle !! 360 - $angle;
 }
 put "{clock-angle($_)} degree" for @*ARGS ?? @*ARGS !! qw< 03:10 04:00 >;
 ```
 
-We're 
+Yes, yes... I know... there's an [abs routine][] that's perfect for
+taking the absolute value! Silly me 😊
 
 The printout allows showing off the use of `{...}` inside double quotes,
-which allow calling code and expanding the result in the string.
-Something similar in [Perl][] would be one of the *hidden operators*
-(not real operators, but compositions of basic ones!) like `@{[...]}` or
-so.
+which allows calling code and expanding the result in the string.
+Something similar in [Perl][] would be one of the [secret operators][]
+(not real operators, but compositions of basic ones!) like the [baby
+cart operator][babycart] `@{[...]}` or so.
 
 [Perl][] now:
 
@@ -122,7 +120,8 @@ say clock_angle($_) . ' degree' for @ARGV ? @ARGV : qw< 03:10 04:00 >;
 This time I opted with an implementation that provides a clear view of
 the extreme similarity to the [Raku][] counterpart. I'm not including
 `warnings` (which I usually do) and signatures, but the input is only
-used once so it's ok-ish.
+used once so it's OK*ish* 🙄 And yes, I'm forgetting that [Perl][] too
+has its own [abs function][] 😊 
 
 The two lines with formulas are copied verbatim from the [Raku][]
 solution. The return line only changes due to the new ternary operator
@@ -135,3 +134,7 @@ Stay safe everyone, and have fun!
 [TASK #2]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-120/#TASK2
 [Perl]: https://www.perl.org/
 [Raku]: https://raku.org/
+[secret operators]: https://github.com/book/perlsecret/blob/master/lib/perlsecret.pod
+[babycart]: https://github.com/book/perlsecret/blob/master/lib/perlsecret.pod#baby-cart
+[abs routine]: https://docs.raku.org/routine/abs
+[abs function]: https://perldoc.perl.org/functions/abs
