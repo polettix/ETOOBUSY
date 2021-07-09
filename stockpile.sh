@@ -195,7 +195,7 @@ command_interactive() {
       while [ "$cmd" = '' ] ; do
          read cmd args
       done
-      [ "$cmd" = 'quit' ] && break
+      [ "$cmd" = 'quit' -o "$cmd" = 'exit' ] && break
    done
 }
 
