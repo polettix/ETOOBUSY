@@ -63,6 +63,11 @@ the interpretation as integers with a `+` (as in `+$left` and `+$top`).
 I have to admit that I don't like this particularly: it seems
 *unPerlish* and a loss in whipuptitude.
 
+> **Update** [Reddit to the rescue][] - thanks to [b2gills][] I could
+> have forced the `comb` into integers right off the bat, with
+> `+«$line.comb(/\d+/)`. It still requires us to do this operation, but
+> at this point it would be sort of complaining about `strict`...
+
 As a [Perl][] hacker, I'm used to play with scalars, arrays and hashes,
 covering 99% of my data structure needs. In this case I decided to give
 `SetHash` a try; it's maybe an improvement in readability, although not
@@ -96,3 +101,4 @@ Go figure...
 [Advent of Code]: https://adventofcode.com/
 [aoc2018]: https://adventofcode.com/2018/
 [day 3]: https://adventofcode.com/2018/day/3
+[Reddit to the rescue]: https://www.reddit.com/r/rakulang/comments/oa33hs/another_puzzle_in_raku_flavio_poletti/h3ri8g0
