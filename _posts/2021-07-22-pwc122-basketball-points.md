@@ -129,20 +129,40 @@ sub permutations_iterator {
 }
 
 sub basketball_points ($S) {
+   # $isi keeps track of iterating through all partitions of the
+   # input integer $S with 1, 2, or 3
    my $isi = int_sums_iterator($S, 3);
+
+   # $pi allows iterating through all partitions of a specific
+   # partition of $S. %seen allows filtering out duplicates.
    my ($pi, %seen);
+
    return sub {
       while ('necessary') {
-         if (!$pi) {
+         if (!$pi) { # no more permutations? Start next cycle
+            # if $isi->() does not return anything meaningful, we
+            # exhausted the partitions of $S and can stop here.
             my $arrangement = $isi->() or return;
+
+            # otherwise, $pi will help us move through the
+            # permutations
             $pi = permutations_iterator(items => $arrangement);
             %seen = ();
          }
          if (my @candidate = $pi->()) {
+            # %seen is used to filter out duplicates. As a hash, it
+            # is indexed via a string, which is $key in our case
             my $key = join ' ', @candidate;
             return @candidate unless $seen{$key}++;
+
+            # if $seen[$key} was already greater than 0 we arrive here.
+            # The external loop "while ('necessary')..." takes care
+            # to move on to the next candidate
          }
          else {
+            # we arrive here if the permutations iterator is exhausted.
+            # We set $pi to undef, so that the test at the beginning
+            # of the loop will generate a new permutations iterator.
             $pi = undef;
          }
       }
@@ -209,6 +229,9 @@ while $bp() -> $cmb {
    $cmb.join(' ').put;
 }
 ```
+
+I spared the comments in this version... getting used to add more of
+them 😅
 
 I guess it's everything for this post!
 
