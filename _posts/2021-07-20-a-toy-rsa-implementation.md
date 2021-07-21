@@ -187,3 +187,4 @@ discover that your language supports stuff out of the box... are
 [What every computer science major should know]: https://matt.might.net/articles/what-cs-majors-should-know/
 [easy enough to implement]: http://matt.might.net/articles/implementation-of-rsa-public-key-cryptography-algorithm-in-scheme-dialect-of-lisp/
 [RSA - theory and implementation]: https://eli.thegreenplace.net/2019/rsa-theory-and-implementation/
+[Math::BigInt]: https://metacpan.org/pod/Math::BigInt
