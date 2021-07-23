@@ -133,7 +133,7 @@ sub basketball_points ($S) {
    # input integer $S with 1, 2, or 3
    my $isi = int_sums_iterator($S, 3);
 
-   # $pi allows iterating through all partitions of a specific
+   # $pi allows iterating through all permutations of a specific
    # partition of $S. %seen allows filtering out duplicates.
    my ($pi, %seen);
 
