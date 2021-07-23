@@ -253,11 +253,20 @@ Any *last value* $L$ will have to be such that:
 $$
 5L + 1 \equiv 0 \pmod 4 \\
 5L \equiv -1 \pmod 4 \\
+L \equiv -1 \pmod 4
 $$
 
-i.e. $L = 4k - 1$ with $0 \leq k \leq 256$. In other terms, it only
-makes sense to consider *one-fourth* of the candidates we were
-discussing about before.
+i.e. $L = 4k - 1$ with $0 \leq k \leq 256$. The last passage is allowed
+because:
+
+$$
+(5L)_4 = 5_4 L_4 = L_4
+$$
+
+where $X_4 \doteq X \pmod 4$.
+
+In other terms, it only makes sense to consider *one-fourth* of the
+candidates we were discussing about before.
 
 This also means that our overall time to a solution drops to about 9
 hours... i.e. slightly more than one week. This is definitely in reach!
@@ -268,6 +277,7 @@ coconut in the last division, i.e. $L$ is such that:
 
 $$
 5L \equiv 0 \pmod 4 \\
+L \equiv 0 \pmod 4
 $$
 
 i.e. $L = 4k$, again with with $1 \leq k \leq 256$.
