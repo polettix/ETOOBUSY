@@ -99,6 +99,6 @@ Stay safe everyone!
 [WWW::Mechanize]: https://metacpan.org/pod/WWW::Mechanize
 [Mojo::UserAgent]: https://metacpan.org/pod/Mojo::UserAgent
 [Mojolicious]: https://metacpan.org/pod/Mojolicious
-[here]: {{ '/assets/code/MojoX-Mechanize' | prepend: site.baseurl }}
+[here]: {{ '/assets/code/MojoX-Mechanize.pm' | prepend: site.baseurl }}
 [modulino style]: https://gitlab.com/polettix/notechs/-/snippets/1868370
 [Moose]: https://metacpan.org/pod/Moose
