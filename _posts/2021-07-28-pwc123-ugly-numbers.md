@@ -1,7 +1,7 @@
 ---
 title: PWC123 - Ugly Numbers
 type: post
-tags: [ perl weekly challenge ]
+tags: [ the weekly challenge ]
 comment: true
 date: 2021-07-28 07:00:00 +0200
 mathjax: true
@@ -10,7 +10,7 @@ published: true
 
 **TL;DR**
 
-> Here we are with [TASK #1][] from the [Perl Weekly Challenge][]
+> Here we are with [TASK #1][] from [The Weekly Challenge][]
 > [#123][]. Enjoy!
 
 # The challenge
@@ -191,9 +191,9 @@ fault though, only my laziness in upgrading it.
 
 Well... I guess it's everything for this post!
 
-[Perl Weekly Challenge]: https://perlweeklychallenge.org/
-[#123]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-123/
-[TASK #1]: https://perlweeklychallenge.org/blog/perl-weekly-challenge-123/#TASK1
+[Perl Weekly Challenge]: https://theweeklychallenge.org/
+[#123]: https://theweeklychallenge.org/blog/perl-weekly-challenge-123/
+[TASK #1]: https://theweeklychallenge.org/blog/perl-weekly-challenge-123/#TASK1
 [Perl]: https://www.perl.org/
 [Raku]: https://raku.org/
 [gfldex]: https://gfldex.wordpress.com/
