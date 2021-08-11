@@ -23,7 +23,7 @@ allows using e.g. [Jekyll][] to use [Markdown][] instead of plain HTML.
 Alas, things can go wrong from time to time, as it happened on July
 13th:
 
-![GitHub Incident on 2020-07-13]({{ '/assets/images/gh-incident-20209713.png ' | prepend: site.baseurl }})
+![GitHub Incident on 2020-07-13]({{ '/assets/images/gh-incident-20200713.png ' | prepend: site.baseurl }})
 
 Considering that [busypub][] for me attempts publishing at 07:30 AM in
 Europe/Rome (i.e. 05:30 AM UTC at this time of the year), it's easy to
