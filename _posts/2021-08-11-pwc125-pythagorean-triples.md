@@ -63,7 +63,7 @@ famous is *Euclid's formula*, which unfortunately generates a lot, but
 not all of them. And we're going to need all of them here, potentially.
 
 Had I immediately read through [Formulas for generating Pythagorean
-triples][formula], I would not have *wasted* my time with an article
+triples][formulas], I would not have *wasted* my time with an article
 that eventually proved... *unuseful*. I would be tempted to post it here
 just to have a different pair of eyes confirming its lack of usefulness,
 but I'm inclined to believe that I would waste someone else's time
