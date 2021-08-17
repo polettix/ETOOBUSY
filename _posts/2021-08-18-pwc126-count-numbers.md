@@ -22,17 +22,17 @@ published: true
 > 
 > **Example**
 >
->    Input: $N = 15
->    Output: 8
+>     Input: $N = 15
+>     Output: 8
 >    
->        There are 8 numbers between 1 and 15 that don't contain digit 1.
->        2, 3, 4, 5, 6, 7, 8, 9.
+>         There are 8 numbers between 1 and 15 that don't contain digit 1.
+>         2, 3, 4, 5, 6, 7, 8, 9.
 >    
->    Input: $N = 25
->    Output: 13
+>     Input: $N = 25
+>     Output: 13
 >    
->        There are 13 numbers between 1 and 25 that don't contain digit 1.
->        2, 3, 4, 5, 6, 7, 8, 9, 20, 22, 23, 24, 25.
+>         There are 13 numbers between 1 and 25 that don't contain digit 1.
+>         2, 3, 4, 5, 6, 7, 8, 9, 20, 22, 23, 24, 25.
 
 # The questions
 
