@@ -50,6 +50,7 @@ overflow... that's why the questions.
 
 In the spirit of learning some [Raku][], I went for it first:
 
+{% raw %}
 ```raku
 #!/usr/bin/env raku
 use v6;
@@ -73,6 +74,7 @@ sub average-of-stream (@items) {
 my @stream = @*ARGS ?? @*ARGS !! <10 20 30 40 50 60 70 80 90>;
 average-of-stream(@stream);
 ```
+{% endraw %}
 
 Then... [Perl][]:
 
