@@ -92,6 +92,8 @@ or a right side) we will have to cope with the fact and act accordingly.
 
 [Perl][] goes first this time:
 
+{% raw %}
+
 ```perl
 #!/usr/bin/env perl
 use v5.24;
@@ -120,6 +122,8 @@ sub n ($k, $l = undef, $r = undef) {{key => $k, left => $l, right => $r}}
 say check_bst(n(8, n(5, n(4), n(6)), n(9)));
 say check_bst(n(5, n(4, n(3), n(6)), n(7)));
 ```
+
+{% endraw %}
 
 I guess that these two lines deserve some additional explanation:
 
