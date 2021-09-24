@@ -1,0 +1,32 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use experimental 'signatures';
+no warnings 'experimental::signatures';
+
+use FindBin '$Bin';
+use lib "$Bin/local/lib/perl5";
+
+use MIME::Base64;
+use IO::Uncompress::RawInflate;
+use Mojo::URL;
+use XML::Twig;
+
+my $url = shift // die "$0 <url>\n";
+my $sreq = get_urlparam($url, 'SAMLRequest');
+say "\nSAMLRequest = $sreq\n";
+my $xml = decode_saml($sreq);
+say pretty_xml($xml);
+
+sub decode_saml ($input) {
+   my $binary = MIME::Base64::decode_base64($input);
+   my $output;
+   IO::Uncompress::RawInflate::rawinflate(\$binary, \$output);
+   return $output;
+}
+
+sub get_urlparam ($url, $name) { Mojo::URL->new($url)->query->param($name) }
+
+sub pretty_xml ($input) {
+   XML::Twig->new(pretty_print => 'indented')->parse($input)->sprint
+}
