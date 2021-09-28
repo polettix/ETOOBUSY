@@ -31,31 +31,9 @@ Anyway.
 I thought to use the Unicode characters discovered from [QRcode.show][]
 to produce something good for the terminal:
 
-```perl
-sub terminalize ($encoded) {
-   state $char_for = [
-      ' ',                    # 0
-      "\N{LOWER HALF BLOCK}", # 1
-      "\N{UPPER HALF BLOCK}", # 2
-      "\N{FULL BLOCK}",       # 3
-   ];
-   my $first_row_id = 0;
-   my @output;
-   while ($first_row_id <= $encoded->$#*) {
-      my $first_row = $encoded->[$first_row_id++];
-      my $second_row = $first_row_id <= $encoded->$#*
-         ? $encoded->[$first_row_id++]
-         : [ (0) x scalar($first_row->@*) ];
-      push @output, join '', '  ', map {
-         my $id = $first_row->[$_] * 2 + $second_row->[$_];
-         $char_for->[$id];
-      } 0 .. $first_row->$#*;
-      $output[-1] .= '  ';
-   }
-   my $blank = $output[0] =~ s{.}{ }grmxs;
-   return [$blank, @output, $blank];
-}
-```
+<script src="https://gitlab.com/polettix/notechs/-/snippets/2181597.js"></script>
+
+[Local version here][].
 
 The input is the *encoded* form produced by [Text::QRCode][], and the
 output is an array of lines.
@@ -84,3 +62,4 @@ I guess it's all for today... stay safe folks!
 [previous]: {{ '/2021/09/25/term-qrcode/' | prepend: site.baseurl }}
 [QRcode.show]: []: {{ '/2021/09/24/qrcode-show/' | prepend: site.baseurl }}
 [Term::QRCode]: https://metacpan.org/pod/Term::QRCode
+[Local version here]: {{ '/assets/code/qrterm' | prepend: site.baseurl }}

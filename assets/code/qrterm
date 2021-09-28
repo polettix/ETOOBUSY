@@ -1,0 +1,35 @@
+#!/usr/bin/env perl
+use v5.24;
+use warnings;
+use experimental 'signatures';
+no warnings 'experimental::signatures';
+
+use Text::QRCode;
+
+sub terminalize ($encoded) {
+   state $char_for = [
+      ' ',                    # 0
+      "\N{LOWER HALF BLOCK}", # 1
+      "\N{UPPER HALF BLOCK}", # 2
+      "\N{FULL BLOCK}",       # 3
+   ];
+   state $c2i = sub ($c) { $c eq ' ' ? 0 : 1 };
+   my $first_row_id = 0;
+   my @output;
+   while ($first_row_id <= $encoded->$#*) {
+      my $first_row = $encoded->[$first_row_id++];
+      my $second_row = $first_row_id <= $encoded->$#*
+         ? $encoded->[$first_row_id++]
+         : [ (' ') x scalar($first_row->@*) ];
+      push @output, join '', '  ', map {
+         my $id = $c2i->($first_row->[$_]) * 2 + $c2i->($second_row->[$_]);
+         $char_for->[$id];
+      } 0 .. $first_row->$#*;
+      $output[-1] .= '  ';
+   }
+   my $blank = $output[0] =~ s{.}{ }grmxs;
+   return [$blank, @output, $blank];
+}
+
+binmode STDOUT, ':encoding(utf-8)';
+say for terminalize(Text::QRCode->new->plot(shift // '!'))->@*;
