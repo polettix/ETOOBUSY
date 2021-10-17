@@ -10,7 +10,7 @@ published: true
 
 **TL;DR**
 
-> I put [Accounting::Kitty][] on [GitHub][] after... a few years.
+> I put [Accounting-Kitty][] on [GitHub][] after... a few years.
 
 It's part of a little plot against myself to push towards proper
 documentation of how it's supposed to work. There's some documentation
@@ -26,6 +26,6 @@ Cheers!
 
 [Perl]: https://www.perl.org/
 [Raku]: https://raku.org/
-[Accounting::Kitty]: https://metacpan.org/pod/Accounting::Kitty
+[Accounting-Kitty]: https://github.com/polettix/Accounting-Kitty
 [GitHub]: https://github.com/
 [DBIx::Class]: https://metacpan.org/pod/DBIx::Class
