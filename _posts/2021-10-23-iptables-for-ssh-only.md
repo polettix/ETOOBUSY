@@ -54,7 +54,7 @@ anywhere else your [Linux][] distro will run it automatically.
 And now... credits:
 
 - [minimal-iptables][] contains the rules restoration mechanism as well
-  the file I used to get started with 'iptables.rules`;
+  the file I used to get started with `iptables.rules`;
 
 - the actual rules are taken from [this post][], adapted for
   `iptables-restore`.
