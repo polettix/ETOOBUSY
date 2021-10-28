@@ -3,7 +3,7 @@ title: 'Netcat... what a mess!'
 type: post
 tags: [ networking, linux ]
 comment: true
-date: 2021-10-28 07:00:00 +0200
+date: 2021-10-29 07:00:00 +0200
 mathjax: false
 published: true
 ---
