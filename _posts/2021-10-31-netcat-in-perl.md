@@ -2,8 +2,9 @@
 title: 'Netcat... in Perl'
 type: post
 tags: [ perl, networking, linux ]
+series: Netcat in Perl
 comment: true
-date: 2021-10-31 07:00:00 +0200
+date: 2021-10-31 07:00:00 +0100
 mathjax: false
 published: true
 ---
