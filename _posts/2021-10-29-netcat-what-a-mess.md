@@ -32,7 +32,7 @@ more practical note:
 - the version that comes with [busybox][] is really *simple*
 - the [GNU netcat][] has a wider feature set, but lacks support for
   using proxies;
-- the [BSC netcat][] is more evolved, and supports proxies through the
+- the [BSD netcat][] is more evolved, and supports proxies through the
   `-x` and `-X` options;
 - the [Nmap netcat][ncat] (a.k.a. [ncat][]) is another alternative that
   is feature-packed, including support for proxies, although with
