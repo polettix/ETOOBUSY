@@ -11,7 +11,8 @@ published: true
 
 **TL;DR**
 
-> Adding support for `CONNECT` setup in a Netcat for [Perl][].
+> Adding support for `CONNECT` setup in a Netcat for [Perl][]. **All
+> code in a single sweep inside [this snippet][]**.
 
 In [Reinventing Netcat in Perl][] we saw a way of putting some code that
 implements the basic functionality of Netcat in [Perl][].
@@ -102,7 +103,10 @@ part where the *other* connection is setup. After that, we use
 `IO::Flows` to revert to the *old* Netcat behaviour: connect the
 standard I/O descriptors with the socket to the proxy.
 
+**All code in a single sweep inside [this snippet][]**.
+
 Stay safe folks!
 
 [Perl]: https://www.perl.org/
 [Reinventing Netcat in Perl]: {{ '/2021/11/01/netcat-perl-2/' | prepend: site.baseurl }}
+[this snippet]: https://gitlab.com/polettix/notechs/-/snippets/2198887
