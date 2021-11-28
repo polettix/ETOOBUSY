@@ -1,7 +1,7 @@
 ---
 title: 'Pod::Markdown and Pod::Markdown::Github for the win!'
 type: post
-tags: [ perl, markdown ]
+tags: [ perl, markdown, pod ]
 comment: true
 date: 2021-08-24 07:00:00 +0200
 mathjax: false
