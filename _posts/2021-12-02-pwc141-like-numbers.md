@@ -3,7 +3,7 @@ title: PWC141 - Like Numbers
 type: post
 tags: [ the weekly challenge ]
 comment: true
-date: 2021-12-01 07:00:00 +0100
+date: 2021-12-02 07:00:00 +0100
 mathjax: true
 published: true
 ---
