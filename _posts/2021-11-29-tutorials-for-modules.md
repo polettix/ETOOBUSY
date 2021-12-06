@@ -71,4 +71,4 @@ Time will tell. In the meantime... stay safe!
 [pod-in-gh]: https://github.com/polettix/App-Easer/blob/5398a6894555a137e9e20bb2720a585ab115507d/lib/App/Easer.pod
 [POD]: https://perldoc.perl.org/perlpod
 [Markdown]: https://daringfireball.net/projects/markdown/
-[post]: {{ '/2021/08/24-pod-markdown-github' | prepend: site.baseurl }}
+[post]: {{ '/2021/08/24/pod-markdown-github' | prepend: site.baseurl }}
