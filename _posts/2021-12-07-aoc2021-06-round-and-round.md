@@ -97,7 +97,7 @@ solution* if only the puzzle was described differently...
 Stay safe, folks!
 
 
-[puzzle]: https://adventofcode.com/2016/day/6
+[puzzle]: https://adventofcode.com/2021/day/6
 [aoc2021]: https://adventofcode.com/2021/
 [Advent of Code]: https://adventofcode.com/
 [Raku]: https://www.raku.org/

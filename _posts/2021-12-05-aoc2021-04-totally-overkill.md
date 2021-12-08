@@ -155,7 +155,7 @@ If you're curious to run the full code, you can find it [here][]. In any
 case... stay safe!
 
 
-[puzzle]: https://adventofcode.com/2016/day/5
+[puzzle]: https://adventofcode.com/2021/day/5
 [aoc2021]: https://adventofcode.com/2021/
 [Advent of Code]: https://adventofcode.com/
 [Perl]: https://www.perl.org/
