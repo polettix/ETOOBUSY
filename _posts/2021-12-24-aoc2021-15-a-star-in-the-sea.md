@@ -33,6 +33,7 @@ is basically the same with different parameters:
 sub part1 ($b, :$kr = 1, :$kc = 1) {
    my $size = [$b.elems, $b[0].elems];
    my $max = ($size «*» ($kr, $kc)) «-» (1, 1);
+   my $row-size = $max[1] + 1;
    my &cost = -> $p {
       my $v = $p «%» $size;
       my $base = $b[$v[0]][$v[1]];
@@ -42,7 +43,7 @@ sub part1 ($b, :$kr = 1, :$kc = 1) {
    my $astar = Astar.new(
       heuristic => -> $v, $w { ($v «-» $w)».abs.sum },
       distance => -> $v, $w { &cost($w) },
-      identifier => -> $v { $v[0] * $size[1] + $v[1] },
+      identifier => -> $v { $v[0] * $row-size + $v[1] },
       successors => -> $v {
          ((1, 0), (0, 1), (-1, 0), (0, -1)).map({ $v «+» $_ })
             .grep({.min >= 0 && ($max «-» $_).min >= 0});
