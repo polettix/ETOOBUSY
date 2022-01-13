@@ -38,7 +38,7 @@ One question is about the input for the formula. It's only from the
 examples that we see that the inputs are only positive integers. To be
 fair, this is also in the original formulation.
 
-The difference here is in what to find exactly. While puzzle at [Projece
+The difference here is in what to find exactly. While puzzle at [Project
 Euler 44][] asks for a precise condition, here we're required to find
 the *first pair* to satisfy the conditions. I see this as an act of
 kindness, because a lot of solutions around actually arrive to the right
@@ -167,7 +167,9 @@ In the second case, we cannot say we have an optimal solution from the
 beginning, because in this case $\Delta$ is the bigger number and there
 might be a better difference in between. In any case, this can become
 our best candidate for a solution, i.e. an upper limit that we can print
-as soon as we have it (and we do).
+as soon as we have it (and we do). Having this upper limit is handy
+because it provides us a limit on how much we have to test for finding
+an optimal solution.
 
 The [Raku][] alternative is... pretty much the same:
 
