@@ -46,13 +46,13 @@ opposed to more mutable "interesting" inputs, and the change in
 mean*. Anyway, in this case `comb` is perfect.
 
 I use to toss a `.Array` at the end of the stuff I read because I've
-been biten too often by a complain the I already exhausted the iterator
+been biten too often by a complaint the I already exhausted the iterator
 for a sequence. This is another place where I'd like to have different
 defaults that *do what I mean*, at least for what gradual typing is
 concerned.
 
 The solution requires detecting when the situation comes to a freeze, so
-we have to compare two *snapshots" to spot differences. How about a
+we have to compare two *snapshots* to spot differences. How about a
 printable version of the matrix?
 
 
@@ -165,7 +165,7 @@ sub tick ($field, Bool:D :$east) {
 ```
 
 Solving this puzzle is trickier than I expected because these sea
-cucumbers seem to give flat-earthers an edge and the wrap on the edges,
+cucumbers seem to give flat-earthers an edge and they wrap on the edges,
 Pac-Man style. Hence we have to be very careful to avoid moving items
 too many times in a single tick. There is probably a better, simpler way
 to express this... but I was so mentally tired at this point that
