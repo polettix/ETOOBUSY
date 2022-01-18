@@ -42,8 +42,8 @@ To this regard, it's useful to look at [parameter expansion][]:
 
 > `${parameter:-[word]}`
 >
-> **Use Default Values**. If __parameter__ is unset or null, the expansion
-> of __word__ (or an empty string if word is omitted) shall be substituted;
+> **Use Default Values**. If **parameter** is unset or null, the expansion
+> of **word** (or an empty string if word is omitted) shall be substituted;
 > otherwise, the value of parameter shall be substituted.
 
 Hence, we can use `0` as the default value, so whatever variable state we

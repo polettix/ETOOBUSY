@@ -37,10 +37,10 @@ LENGTHY='whatever'
 
 We start from the *Use Alternate Value* in [parameter expansion][]:
 
-> `${parameter:+word}
+> `${parameter:+word}`
 >
-> **Use Alternate Value**. If __parameter__ is null or unset, nothing is
-> substituted, otherwise the expansion of __word__ is substituted.
+> **Use Alternate Value**. If **parameter** is null or unset, nothing is
+> substituted, otherwise the expansion of **word** is substituted.
 
 Test time:
 
@@ -53,9 +53,9 @@ Almost there, we can tell non-empty strings apart, but undefined strings are
 treated the same as empty ones. Anyway, [parameter expansion][] also has
 this:
 
-> In the parameter expansions shown previously, use of the <colon> in the
+> In the parameter expansions shown previously, use of the `:` in the
 > format shall result in a test for a parameter that is unset or null;
-> omission of the <colon> shall result in a test for a parameter that is
+> omission of the `:` shall result in a test for a parameter that is
 > only unset.
 
 So, it seems that we only have to get rid of the colon:
