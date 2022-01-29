@@ -29,6 +29,6 @@ Please provide feedback if you have... and until next time, stay safe!
 [Ticket to Write]: https://gitlab.com/polettix/ticket-to-write
 [initial-post]: {{ '/2022/01/24/ticket-to-write/' | prepend: site.baseurl }}
 [Ticket to Ride]: https://boardgamegeek.com/boardgame/9209/ticket-ride
-[Ticket to Ride: Europe]: https://boardgamegeek.com/boardgame/14996/ticket-ride-europe
+[Ticket to Ride: London]: https://boardgamegeek.com/boardgame/276894/ticket-ride-london
 [ttw-london.pdf]: https://gitlab.com/polettix/ticket-to-write/-/package_files/27551700/download
 [package registry]: https://gitlab.com/polettix/ticket-to-write/-/packages
