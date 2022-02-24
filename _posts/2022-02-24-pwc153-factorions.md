@@ -15,6 +15,25 @@ published: true
 
 # The challenge
 
+> You are given an integer, `$n`.
+>
+> Write a script to figure out if the given integer is factorion.
+>
+>> A factorion is a natural number that equals the sum of the factorials of its digits.
+>
+> **Example 1:**
+>
+>     Input: $n = 145
+>     Output: 1
+>
+>         Since 1! + 4! + 5! => 1 + 24 + 120 = 145
+>
+> **Example 2:**
+>
+>     Input: $n = 123
+>     Output: 0
+>
+>         Since 1! + 2! + 3! => 1 + 2 + 6 <> 123
 
 # The questions
 
