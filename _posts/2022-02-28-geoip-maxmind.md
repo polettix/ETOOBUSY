@@ -1,7 +1,7 @@
 ---
 title: GeoIP database from MaxMind
 type: post
-tags: [ geoip, geo-localization ]
+tags: [ geoip, geo-localization, fail2ban ]
 comment: true
 date: 2022-02-28 07:00:00 +0100
 mathjax: false
