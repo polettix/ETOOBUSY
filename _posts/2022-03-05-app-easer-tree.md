@@ -1,7 +1,7 @@
 ---
 title: 'App::Easer - tree auto-command'
 type: post
-tags: [ perl, client, terminale ]
+tags: [ perl, client, terminal ]
 comment: true
 date: 2022-03-05 07:00:00 +0100
 mathjax: false
