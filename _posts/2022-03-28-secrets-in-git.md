@@ -3,7 +3,7 @@ title: Secrets in Git
 type: post
 tags: [ git ]
 comment: true
-date: 2022-03-28 23:27:11 +0100
+date: 2022-03-28 23:27:11 +0200
 mathjax: false
 published: true
 ---
