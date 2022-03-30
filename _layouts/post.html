@@ -31,6 +31,7 @@ layout: default
   </div>
   <hr>
   {% if page.comment %}
+    {% include comments-note.html %}
     {% include disqus.html %}
   {% endif %}
 </article>
