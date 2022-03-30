@@ -21,7 +21,8 @@ permalink: pretty
 # Third-party services
 # just leave empty to disable it
 google_analytics:
-disqus_shortname: ETOOBUSY
+# was: disqus_shortname: ETOOBUSY
+disqus_shortname:
 
 plugins:
   - jekyll-sitemap
