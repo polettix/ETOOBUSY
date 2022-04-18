@@ -179,6 +179,9 @@ command_interactive() {
          (l|ls|list)
             command_list
             ;;
+         (q|quit|e|exit)
+            break
+            ;;
          (show)
             command_show $args
             command_list
@@ -195,35 +198,35 @@ command_interactive() {
       while [ "$cmd" = '' ] ; do
          read cmd args
       done
-      [ "$cmd" = 'quit' -o "$cmd" = 'exit' ] && break
    done
 }
 
+help() {
+   printf 'add get interactive list show xget\n'
+}
+
 main() {
-   [ $# -gt 0 ] || set -- interactive # die "$0 cmd ... where cmd is add|get|list|xget"
+   [ $# -gt 0 ] || set -- list # die "$0 cmd ... where cmd is add|get|list|xget"
 
    command="$1"
    shift
    case "$command" in
-      (add)
+      (a|add)
          command_add "$@"
          ;;
-      (dates)
-         command_dates
-         ;;
-      (get)
+      (g|get)
          command_get "$@"
          ;;
-      (interactive)
+      (i|int|interactive)
          command_interactive
          ;;
-      (list)
+      (l|ls|list)
          command_list "$@"
          ;;
-      (show)
+      (s|show)
          command_show "$@"
          ;;
-      (xget)
+      (x|xget)
          command_xget "$@"
          ;;
       (tmp)
