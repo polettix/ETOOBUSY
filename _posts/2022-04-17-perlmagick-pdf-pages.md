@@ -29,31 +29,34 @@ $image->[$x]->Frame("100x200");
 
 Wait. A. Minute.
 
-Are we saying that an `ImageMagick` is actually a blessed *array
+Are we saying that an `Image::Magick` object is actually a blessed *array
 reference* when reading multiple images (like a PDF)? It seems... so:
 
 ```
 Image::Magick=ARRAY(0x7efebdc8be00)
 ```
 
-From this point, the path goes downwards with a gentle decline, through
-an amazing country landscape. The array contains indeed one item for
-each page, *and* each item in the array can itself be used as an
-`ImageMagick` object (this time it's a blessed `SCALAR` instead, but who
-cares?).
+From this point, the path goes downwards with a gentle decline, through an
+amazing country landscape. The array contains indeed one item for each page,
+*and* each item in the array can itself be used as an `Image::Magick` object
+(this time it's a blessed `SCALAR` instead, but who cares?).
 
 So there we go, to know how many pages are in the PDF we can do like
 this:
 
 ```perl
 use v5.24;
-use ImageMagick;
-my $pm = ImageMagick->new;
+use Image::Magick;
+my $pm = Image::Magick->new;
 $pm->Read('myfile.pdf');
 my $n_pages = $pm->@*;
 ```
 
 Enjoy and stay safe!
 
+> Update: thanks to [n1vux][] for [proofreading][]!
+
 [Perl]: https://www.perl.org/
 [PerlMagick]: https://imagemagick.org/script/perl-magick.php
+[proofreading]: https://twitter.com/n1vux/status/1516101056866013184?s=20&t=1v6GYY8FPeaT_-GzC0Ky0Q
+[n1vux]: https://twitter.com/n1vux
