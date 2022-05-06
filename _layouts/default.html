@@ -22,7 +22,7 @@
     {% include mathjax.html %}
     <div class="page-content">
       <section class="site-header">
-         <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a> <span class="site-subtitle">{{ site.description }}</span></h1>
+         <h1 class="smallcap"><a class="site-title" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title }}</a> <span class="site-subtitle" title="{{ site.posts.size }} and counting!">{{ site.description }}</span></h1>
       </section>
       {{ content }}
       <div class="copyright">
