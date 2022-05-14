@@ -41,6 +41,8 @@ BASE64-CHAR              = %x2B / %x2F / %x30-39 / %x3D / %x41-5A /
                            %x61-7A
                            ; +, /, 0-9, =, A-Z, and a-z
                            ; as specified in RFC 2045
+
+BASE64-STRING            = [*(BASE64-CHAR)]
 ```
 
 Now I have that *matrixesque* feeling like *I know... how to fit binary
