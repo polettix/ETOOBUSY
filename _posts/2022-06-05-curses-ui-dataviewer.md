@@ -2,7 +2,7 @@
 title: 'Curses::UI data viewer'
 type: post
 tags: [ perl, curses ]
-series: Data viewer
+series: Terminal data viewer
 comment: true
 date: 2022-06-05 07:00:00 +0200
 mathjax: false
