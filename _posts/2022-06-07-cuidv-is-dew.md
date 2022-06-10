@@ -2,6 +2,7 @@
 title: 'Curses::UI data viewer becomes dew'
 type: post
 tags: [ perl, curses, terminal ]
+series: Terminal data viewer
 comment: true
 date: 2022-06-07 07:00:00 +0200
 mathjax: false
