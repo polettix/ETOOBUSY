@@ -6,14 +6,18 @@ no warnings 'experimental::signatures';
 
 use Text::QRCode;
 
-sub terminalize ($encoded) {
-   state $char_for = [
+sub terminalize ($encoded, $reverse = 1) {
+   state $direct_char_for = [
       ' ',                    # 0
       "\N{LOWER HALF BLOCK}", # 1
       "\N{UPPER HALF BLOCK}", # 2
       "\N{FULL BLOCK}",       # 3
    ];
    state $c2i = sub ($c) { $c eq ' ' ? 0 : 1 };
+
+   my @char_for = $direct_char_for->@*;
+   @char_for = reverse @char_for if $reverse;
+
    my $first_row_id = 0;
    my @output;
    while ($first_row_id <= $encoded->$#*) {
@@ -21,13 +25,13 @@ sub terminalize ($encoded) {
       my $second_row = $first_row_id <= $encoded->$#*
          ? $encoded->[$first_row_id++]
          : [ (' ') x scalar($first_row->@*) ];
-      push @output, join '', '  ', map {
+      push @output, join '', ($char_for[0] x 2), map {
          my $id = $c2i->($first_row->[$_]) * 2 + $c2i->($second_row->[$_]);
-         $char_for->[$id];
+         $char_for[$id];
       } 0 .. $first_row->$#*;
-      $output[-1] .= '  ';
+      $output[-1] .= $char_for[0] x 2;
    }
-   my $blank = $output[0] =~ s{.}{ }grmxs;
+   my $blank = $output[0] =~ s{.}{$char_for[0]}grmxs;
    return [$blank, @output, $blank];
 }
 
