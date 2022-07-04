@@ -58,6 +58,7 @@ case "$1" in
 bundle-update: run bundle update --all (might solve some issues)
 cache: create _bundle cache (only needed once)
 build: continuously build site as changes arise (full rebuild every time)
+production-build: build site (once) for production in _codeberg
 qbuild: continuously build site as changes arise (last 10 posts only)
 serve: serve built site
 EOF
