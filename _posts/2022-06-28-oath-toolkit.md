@@ -44,5 +44,5 @@ Well, there will be stuff to read... stay *secure* everybody!
 [Perl]: https://www.perl.org/
 [CPAN]: https://metacpan.org/
 [App::OATH]: https://metacpan.org/pod/App::OATH
-[Authen::OATH]: https://metacpan.org/pod/Authen::OATH.
+[Authen::OATH]: https://metacpan.org/pod/Authen::OATH
 [OATH Toolkit]: https://gitlab.com/oath-toolkit/oath-toolkit
