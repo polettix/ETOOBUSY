@@ -22,7 +22,7 @@ Afterwards, I discovered the [OATH Toolkit][] and soon realized that it
 *too* has a PAM module. Here's what I found **so far**:
 
 - it seems that nobody cared to do a comparison between the two. Most
-  tutorial I found around are sticking to
+  tutorials I found around are sticking to
   [google-authenticator-libpam][] but it *might* be that it's for the
   same reason I also did that: I just found out about it much more
   easily. I'd love to see a comparison from people that used both and
