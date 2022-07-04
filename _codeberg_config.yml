@@ -1,0 +1,25 @@
+# Site settings
+title: "ETOOBUSY"
+description: "🚀 minimal blogging for the impatient"
+origin: https://codeberg.org//polettix/etoobusy
+baseurl: ""
+url: "https://etoobusy.polettix.it"
+author: "polettix"
+timezone: Europe/Rome
+
+# Build settings
+permalink: pretty
+
+# Third-party services
+# just leave empty to disable it
+google_analytics:
+# was: disqus_shortname: ETOOBUSY
+disqus_shortname:
+
+plugins:
+  - jekyll-sitemap
+
+exclude: ["LICENSE", "README.md", "CNAME" ]
+
+destination: '_codeberg'
+keep_files: ['.git', '.domains']

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 multiconfig='--config _config.yml,_local_config.yml'
+prodconfig='--config _codeberg_config.yml'
 md="$(dirname "$(readlink -f "$0")")"
 cachedir="$md/_bundle"
 
@@ -43,6 +44,11 @@ case "$1" in
       DOKYLL_PRE='-p 4000:4000' dokyll bundle exec jekyll serve \
          $multiconfig --no-watch --skip-initial-build --host=0.0.0.0
       exit $?
+      ;;
+
+   (production-build)
+      DOKYLL_PRE='' dokyll bundle exec jekyll build \
+         $prodconfig
       ;;
 
    (*)
