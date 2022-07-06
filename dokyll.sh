@@ -14,7 +14,10 @@ dokyll() {
       "$@"
 }
 
-case "$1" in
+command="${1:-""}"
+[ $# -gt 0 ] && shift
+
+case "$command" in
 
    (bundle-update)
       DOKYLL_PRE='' dokyll bundle update --all
@@ -48,7 +51,7 @@ case "$1" in
 
    (production-build)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
-         $prodconfig
+         $prodconfig "$@"
       ;;
 
    (*)
