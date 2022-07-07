@@ -19,6 +19,11 @@ command="${1:-""}"
 
 case "$command" in
 
+   (bundle)
+      dokyll bundle "$@"
+      exit $?
+      ;;
+
    (bundle-update)
       DOKYLL_PRE='' dokyll bundle update --all
       exit $?
