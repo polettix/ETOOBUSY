@@ -4,7 +4,7 @@ type: post
 tags: [ perl, client, terminal ]
 series: 'App::Easer'
 comment: true
-date: 2022-07-19 07:00:00 +0200
+date: 2022-07-16 07:00:00 +0200
 mathjax: false
 published: true
 ---
