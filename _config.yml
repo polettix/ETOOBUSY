@@ -27,4 +27,4 @@ disqus_shortname:
 plugins:
   - jekyll-sitemap
 
-exclude: ["LICENSE", "README.md", "CNAME" ]
+exclude: ["_codeberg", "_site", "LICENSE", "README.md", "CNAME"]
