@@ -2,6 +2,7 @@
 title: Cryptopals
 type: post
 tags: [ security, cryptography ]
+series: Cryptopals
 comment: true
 date: 2022-07-10 07:00:00 +0200
 mathjax: false
