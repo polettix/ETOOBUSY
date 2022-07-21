@@ -59,8 +59,8 @@ So yes, the code above will find the requested solution... *eventually*.
 Yet it takes too much to accept it, even by *engineering* standards.
 
 I'll leave with a final note about the need for exactly 19 members of
-the [Disarium Numbers][] family. I mean, that's being *mean* in two
-senses:
+the [Disarium Numbers][] 20-members family. I mean, that's being *mean*
+in two senses:
 
 - the 19th member is considerably greater than the first 18, which means
   that brute-force approaches will suffer (at least in languages that
