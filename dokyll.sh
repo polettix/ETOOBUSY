@@ -54,7 +54,7 @@ case "$command" in
       exit $?
       ;;
 
-   (production-build)
+   (build-production|production-build)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
          $prodconfig "$@"
       ;;
