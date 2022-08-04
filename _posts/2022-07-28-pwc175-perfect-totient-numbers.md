@@ -223,3 +223,4 @@ until next time!
 [TASK #2]: https://theweeklychallenge.org/blog/perl-weekly-challenge-175/#TASK2
 [Perl]: https://www.perl.org/
 [Raku]: https://raku.org/
+[wp]: https://en.wikipedia.org/wiki/Perfect_totient_number
