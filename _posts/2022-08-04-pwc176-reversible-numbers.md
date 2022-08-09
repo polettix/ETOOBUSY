@@ -61,8 +61,8 @@ S = (h + l) \cdot 10 + (h + l)
 $$
 
 Now if $h + l > 9$, it can only be a number below `19` (the maximum
-possible value with summing two digits is $9 + 9 = 19$), i.e. it's a
-number of type $10 + o$ where $o < 9$ . This leads us to:
+possible value with summing two digits is $9 + 9 = 18 < 19$), i.e. it's
+a number of type $10 + o$ where $o < 9$ . This leads us to:
 
 $$
 S = (10 + o) \cdot 10 + 10 + o \\
