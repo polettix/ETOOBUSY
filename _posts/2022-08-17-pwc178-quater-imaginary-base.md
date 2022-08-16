@@ -64,7 +64,6 @@ use v6;
 
 sub MAIN (Str:D() $x) { put to-m4i($x) }
 
-
 sub to-m4i (Complex:D() $cx) {
    my $real = b10-to-bm($cx.re.Int, -4).comb.join('0') || 0;
    my $img  = b10-to-bm(-2 * $cx.im.Int, -4).comb.join('0');
