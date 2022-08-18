@@ -56,7 +56,13 @@ case "$command" in
 
    (build-production|production-build)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
-         $prodconfig "$@"
+         $prodconfig "$@" &&
+      cd _codeberg &&
+      tag="$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
+      git checkout wavefront &&
+      git add . &&
+      git commit -m "Publish $tag" &&
+      git tag "$tag"
       ;;
 
    (*)
