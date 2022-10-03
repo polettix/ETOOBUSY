@@ -22,7 +22,7 @@ There are a couple of projects where I'd like to contribute, one with
 code in [Perl][] (medium size) and the other one in C (large). Both seem
 to not be interested into [Hacktoberfest][], which is a bummer.
 
-An understandably bummer, right, but still.
+An understandable bummer, right, but still.
 
 Last year I also had a cold shower with [AllAlgorithms/perl][]. My pull
 request from 2021 is still there sitting alone.
