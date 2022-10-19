@@ -42,6 +42,19 @@ case "$command" in
       exit $?
       ;;
 
+   (cbuild)
+      cd _codeberg &&
+      git checkout wavefront &&
+      cd .. &&
+      DOKYLL_PRE='' dokyll bundle exec jekyll build --future \
+         $prodconfig "$@" &&
+      cd _codeberg &&
+      tag="$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
+      git add . &&
+      git commit -m "Publish $tag" &&
+      git tag "$tag"
+      ;;
+
    (qbuild)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
          $multiconfig --watch --future --limit_posts 5
@@ -63,8 +76,7 @@ case "$command" in
       cd _codeberg &&
       tag="$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
       git add . &&
-      git commit -m "Publish $tag" &&
-      git tag "$tag"
+      git commit -m "Publish $tag"
       ;;
 
    (*)

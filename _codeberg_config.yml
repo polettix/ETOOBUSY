@@ -1,7 +1,7 @@
 # Site settings
 title: "ETOOBUSY"
 description: "🚀 minimal blogging for the impatient"
-origin: https://codeberg.org//polettix/etoobusy
+origin: https://codeberg.org/polettix/etoobusy
 baseurl: ""
 url: "https://etoobusy.polettix.it"
 author: "polettix"
