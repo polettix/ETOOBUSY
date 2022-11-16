@@ -1,0 +1,59 @@
+body, h1, h2, h3, h4, h5, h6, div, p, li, ul {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+}
+
+div#content, div#header, div#footer, div#navigation {
+   text-align: center;
+}
+
+div#content h2, div#header h1 {
+   margin: 0.5em 1em;
+}
+
+div#content ul.exits, div#navigation ul {
+   list-style-type: none
+}
+
+div#content ul.exits li, div#navigation ul li {
+   margin: 0.2em;
+   padding: 0.3em 0.5em;
+}
+
+div#content ul.exits li a, div#navigation ul li a {
+   padding: 0.3em 0.5em;
+   border-radius: 5px;
+   background-color: blue;
+   color: white;
+   text-align: center;
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+}
+
+div#navigation ul, div#navigation ul li a {
+   background-color: green
+}
+
+div#navigation ul li.selected a {
+   color: yellow;
+}
+
+div#navigation ul li {
+   display: inline-block;
+}
+
+div#content {
+   margin-top: 1em;
+}
+
+div#content p {
+   margin: 1em;
+}
+
+div#content p code {
+   background-color: lightgray;
+   padding: 0.2em;
+   border-radius: 3px;
+}
