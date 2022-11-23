@@ -49,7 +49,7 @@ case "$command" in
       DOKYLL_PRE='' dokyll bundle exec jekyll build --future \
          $prodconfig "$@" &&
       cd _codeberg &&
-      tag="$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
+      tag="c$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
       git add . &&
       git commit -m "Publish $tag" &&
       git tag "$tag"
@@ -74,7 +74,7 @@ case "$command" in
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
          $prodconfig "$@" &&
       cd _codeberg &&
-      tag="$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
+      tag="c$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
       git add . &&
       git commit -m "Publish $tag"
       ;;
