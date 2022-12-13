@@ -1,5 +1,5 @@
 ---
-title: 'AoC 2022/9 - This little tail...'
+title: 'AoC 2022/9 - That little tail...'
 type: post
 tags: [ advent of code, coding, rakulang, algorithm ]
 comment: true
@@ -12,6 +12,13 @@ published: true
 
 > On with [Advent of Code][] [puzzle 9][puzzle] from [2022][aoc2022]:
 > this was fun!
+
+This challenge reminded me of [The Gateless Gate/A Buffalo Passes Through The Enclosure][tgg37]:
+
+> If the buffalo runs, he will fall into the trench;
+> If he returns, he will be butchered.
+> That little tail
+> Is a very strange thing.
 
 This challenge is very interesting because the operations depend on the
 reciprocal positions of the ends of a rope, which are "connected"
@@ -202,3 +209,4 @@ Stay safe, cheers!
 [Raku]: https://www.raku.org/
 [Perl]: https://www.perl.org/
 [Full solution]: https://gitlab.com/polettix/advent-of-code/-/blob/main/2022/09.raku
+[tgg37]: https://en.wikisource.org/wiki/The_Gateless_Gate/A_Buffalo_Passes_Through_The_Enclosure
