@@ -42,6 +42,14 @@ case "$command" in
       exit $?
       ;;
 
+   (cqbuild)
+      cd _codeberg &&
+      git checkout wavefront &&
+      cd .. &&
+      DOKYLL_PRE='' dokyll bundle exec jekyll build --future \
+         $prodconfig "$@"
+      ;;
+
    (cbuild)
       cd _codeberg &&
       git checkout wavefront &&
