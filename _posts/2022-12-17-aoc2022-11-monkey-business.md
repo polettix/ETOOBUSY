@@ -114,6 +114,8 @@ sub part2 (@monkeys) {
 
 This was also a good occasion to remember about `.tail($n)`.
 
+[Full solution][].
+
 Stay safe folks!
 
 [puzzle]: https://adventofcode.com/2022/day/X
@@ -121,3 +123,4 @@ Stay safe folks!
 [Advent of Code]: https://adventofcode.com/
 [Raku]: https://www.raku.org/
 [Perl]: https://www.perl.org/
+[Full solution]: https://gitlab.com/polettix/advent-of-code/-/blob/main/2022/11.raku
