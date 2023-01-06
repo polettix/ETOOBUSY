@@ -2,6 +2,7 @@
 title: 'AoC 2022/11 - Monkey business'
 type: post
 tags: [ advent of code, coding, rakulang, algorithm ]
+series: Advent of Code 2022
 comment: true
 date: 2022-12-17 07:00:00 +0100
 mathjax: true

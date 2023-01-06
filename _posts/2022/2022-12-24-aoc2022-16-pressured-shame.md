@@ -2,6 +2,7 @@
 title: 'AoC 2022/16 - Pressured shame'
 type: post
 tags: [ advent of code, coding, rakulang, algorithm ]
+series: Advent of Code 2022
 comment: true
 date: 2022-12-24 07:00:00 +0100
 mathjax: true
@@ -12,6 +13,9 @@ published: true
 
 > On with [Advent of Code][] [puzzle 16][puzzle] from [2022][aoc2022]:
 > with a little help from trial-and-error...
+
+> **UPDATE**: this post is incomplete, the full solution (including part
+> 2) is provided in [AoC 2022/16 - Paying a debt][].
 
 So... this was hard. December 16th was a working day (mostly, I was in
 quasi-vacation) so I could not devote *all the time* to the puzzle.
@@ -203,6 +207,9 @@ permutation over them.
 So yeah, I still have to go some way before I have a general solution
 program.
 
+> **UPDATE**: the full solution (including part 2) is provided in [AoC
+> 2022/16 - Paying a debt][].
+
 Cheers!
 
 
@@ -214,3 +221,4 @@ Cheers!
 [Match]: https://docs.raku.org/type/Match
 [fw]: https://github.com/polettix/cglib-raku/blob/main/FloydWarshall.rakumod
 [sm]: https://www.reddit.com/r/adventofcode/comments/zn6k1l/2022_day_16_solutions/
+[AoC 2022/16 - Paying a debt]: {{ '/2023/01/07/aoc2022-16-debt-payment/' | prepend: site.baseurl }}
