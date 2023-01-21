@@ -1,0 +1,38 @@
+#!/bin/sh
+
+: ${PGAL:="ghcr.io/polettix/pgal/pgal:latest"}
+
+main() {
+   local dir="$PWD" # sensible default
+
+   local last="$(get_last "$@")"
+   if [ -n "$last" ] && [ "X${last%"${last#?}"}X" != 'X-X' ] ; then
+      dir="${last%?}"
+      local args="$(popped_array "$@")"
+      eval "set -- $args"
+   fi
+
+   # set default parameters if we have none left
+   [ $# -gt 0 ] || set -- -cruN
+
+   docker run --rm -itv "$(readlink -f "$dir"):/mnt" "$PGAL" "$@"
+}
+
+get_last() {
+   [ $# -gt 0 ] || return 0
+   [ $# -eq 1 ] || shift "$(( $# - 1 ))"
+   printf '%sX' "$1"
+   return 0
+}
+
+popped_array() {
+   local array='' e
+   while [ $# -gt 1 ] ; do
+      e="$(printf '%s\n' "$1" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' /")"
+      array="$array$e "
+      shift
+   done
+   printf '%s' "$array"
+}
+
+main "$@"
