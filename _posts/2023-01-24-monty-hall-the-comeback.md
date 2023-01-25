@@ -4,7 +4,7 @@ type: post
 tags: [ maths, perl ]
 comment: true
 date: 2023-01-24 07:00:00 +0100
-mathjax: false
+mathjax: true
 published: true
 ---
 
