@@ -4,13 +4,25 @@ use warnings;
 use feature 'say';
 use Mojo::DOM;
 use Mojo::File;
+use Mojo::URL;
 use Mojo::UserAgent;
-my $ua = Mojo::UserAgent->new;
+my $ua = Mojo::UserAgent->new->max_redirects(10);
 for my $input (@ARGV) {
-    my $dom = $input =~ m{\A https?:// }imxs
-        ? $ua->get($input)->result->dom
-        : Mojo::DOM->new(Mojo::File->new($input)->slurp);
+    my ($dom, $base);
+    if ($input =~ m{\A https?:// }imxs) {
+        my $tx = $ua->get($input);
+        $base = $tx->req->url;
+        $dom = $tx->result->dom;
+    }
+    else {
+        $dom = Mojo::DOM->new(Mojo::File->new($input)->slurp);
+        $base = $ENV{XLINX_BASE} // undef;
+        $base = Mojo::URL->new($base) if defined $base;
+    }
     $dom->find('a[href],img[src]')->each(
-        sub { say $_[0]->attr(lc($_[0]->tag) eq 'a' ? 'href' : 'src') }
+        sub {
+            my $l = $_[0]->attr(lc($_[0]->tag) eq 'a' ? 'href' : 'src');
+            say $base ? Mojo::URL->new($l)->to_abs($base)->to_string : $l;
+        }
     );
 }
