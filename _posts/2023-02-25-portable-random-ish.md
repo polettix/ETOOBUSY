@@ -3,7 +3,7 @@ title: Portable(ish) Random(ish) Number Generator
 type: post
 tags: [ perl, rakulang, random ]
 comment: true
-date: 2023-02-26 07:00:00 +0100
+date: 2023-02-25 07:00:00 +0100
 mathjax: true
 published: true
 ---
