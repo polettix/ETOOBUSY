@@ -54,13 +54,11 @@ case "$command" in
       cd _codeberg &&
       git checkout wavefront &&
       cd .. &&
-      DOKYLL_PRE='' dokyll bundle exec jekyll build --future \
-         $prodconfig "$@" &&
+      DOKYLL_PRE='' dokyll bundle exec jekyll build $prodconfig "$@" &&
       cd _codeberg &&
-      tag="c$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
+      msg="$(git status --short --branch | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p}')" &&
       git add . &&
-      git commit -m "Publish $tag" &&
-      git tag "$tag"
+      git commit -m "Publish $msg"
       ;;
 
    (qbuild)
