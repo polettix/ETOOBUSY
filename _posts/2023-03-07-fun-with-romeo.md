@@ -1,7 +1,7 @@
 ---
 title: Fun with Romeo
 type: post
-tags: [ perl ]
+tags: [ perl, romeo ]
 series: Romeo
 comment: true
 date: 2023-03-07 06:00:00 +0100
