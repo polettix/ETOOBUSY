@@ -61,6 +61,20 @@ case "$command" in
       git commit -m "Publish $msg"
       ;;
 
+   (cpush) 
+      branch="$(git rev-parse --abbrev-ref HEAD)" &&
+         [ "$branch" = 'wavefront' ] &&
+         count="$(git rev-list --count pages..wavefront)" &&
+         [ "$count" -eq 1 ] &&
+         msg="$(git log --pretty=format:%s -1)" &&
+         git checkout pages &&
+         git merge wavefront &&
+         git reset --soft pages-root &&
+         git commit -m "$msg" &&
+         git branch --force wavefront &&
+         git push --force
+      ;;
+
    (qbuild)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
          $multiconfig --watch --future --limit_posts 5
