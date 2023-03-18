@@ -75,6 +75,23 @@ case "$command" in
          git push --force
       ;;
 
+   (cpublish)
+      cd _codeberg &&
+         git checkout pages &&
+         branch="$(git rev-parse --abbrev-ref HEAD)" &&
+         [ "$branch" = 'pages' ] &&
+         cd .. &&
+         DOKYLL_PRE='' dokyll bundle exec jekyll build $prodconfig "$@" &&
+         cd _codeberg &&
+         msg="Publish $(git status --short --branch \
+            | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p;q}')" &&
+         git add . &&
+         git reset --soft pages-base &&
+         git commit -m "$msg" &&
+         echo git branch --force wavefront &&
+         echo git push --force codeberg pages
+      ;;
+
    (qbuild)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
          $multiconfig --watch --future --limit_posts 5
