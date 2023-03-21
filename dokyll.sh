@@ -88,8 +88,8 @@ case "$command" in
          git add . &&
          git reset --soft pages-base &&
          git commit -m "$msg" &&
-         echo git branch --force wavefront &&
-         echo git push --force codeberg pages
+         git branch --force wavefront &&
+         git push --force codeberg pages
       ;;
 
    (qbuild)
