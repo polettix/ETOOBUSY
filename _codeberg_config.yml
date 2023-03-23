@@ -19,7 +19,7 @@ disqus_shortname:
 plugins:
   - jekyll-sitemap
 
-exclude: ["_site", "_codeberg", "LICENSE", "README.md", "CNAME", "vendor"]
+exclude: ["_site", "_codeberg", "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "Gemfile.lock"]
 
 destination: '_codeberg'
 keep_files: ['.git', '.domains']
