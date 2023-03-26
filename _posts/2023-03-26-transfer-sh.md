@@ -3,7 +3,7 @@ title: transfer.sh
 type: post
 tags: [ web, terminal ]
 comment: true
-date: 2023-03-26 06:00:00 +0100
+date: 2023-03-26 06:00:00 +0200
 mathjax: false
 published: true
 ---
