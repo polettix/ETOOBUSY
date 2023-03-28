@@ -142,8 +142,8 @@ sub merge_accounts ($aref) {
       if (defined($last_wiped)) {
          my $marker = my $cursor = $last_wiped;
          while (++$cursor < $all_groups->$#*) {
-            next if defined($all_groups->[$cursor]);
-            $all_groups->[$marker++] = $all_groups->[$cursor];
+            $all_groups->[$marker++] = $all_groups->[$cursor]
+              if defined($all_groups->[$cursor]);
          }
          splice $all_groups->@*, $marker if $marker < $all_groups->@*;
       }
@@ -157,6 +157,11 @@ sub merge_accounts ($aref) {
    return \@accounts;
 }
 ```
+
+> **Update**: the code above was previously bugged in a subtle way in the
+> sweep ahead to remove merged elements in `$all_groups`. Thanks to
+> [oldtechaa][] for [telling me][]! This will teach me to keep things
+> simpler the next time 🙄
 
 For contrast, in the [Raku][] implementation I chose to ditch the
 *stability* and opted for some copying of data around, which I think
@@ -221,3 +226,5 @@ Stay safe!
 [Raku]: https://raku.org/
 [manwar]: http://www.manwar.org/
 [premature optimization]: https://en.wikiquote.org/wiki/Donald_Knuth
+[telling me]: https://github.com/polettix/ETOOBUSY/issues/28
+[oldtechaa]: https://github.com/oldtechaa
