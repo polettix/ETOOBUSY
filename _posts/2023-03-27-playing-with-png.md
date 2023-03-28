@@ -75,3 +75,5 @@ Stay safe!
 [PNG specification]: https://www.w3.org/TR/png/
 [pack]: https://perldoc.perl.org/functions/pack
 [unpack]: https://perldoc.perl.org/functions/unpack
+[IO::Compress::Deflate]: https://metacpan.org/pod/IO::Compress::Deflate
+[IO::Uncompress::Inflate]: https://metacpan.org/pod/IO::Uncompress::Inflate
