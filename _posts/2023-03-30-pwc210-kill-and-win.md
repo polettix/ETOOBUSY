@@ -76,7 +76,7 @@ score. For example, the following sorted list provides us with three
 candidate sub-lists, as hinted by the spacing:
 
 ```
-1 1 2 2 2 3    6 7    8 8 8 8
+1 1 2 2 2 3    5 6    8 8 8 8
 
 ```
 
@@ -87,11 +87,14 @@ Under our rules above, the best score here is `13 = 6 + 7`, because:
     - this causes all the `2` to be killed due to chain reaction
     - this causes the remaining `1` and the `3` to be killed due to chain
       reaction
-- the second sub-list yields 13, like this:
-    - we hit the `6`
-    - this causes the `7` to be killed due to chain reaction
+- the second sub-list yields 11, like this:
+    - we hit the `5`
+    - this causes the `6` to be killed due to chain reaction
 - the third sub-list yields 8, because we only shoot at one single item and
   no chain reaction is triggered (there's no `7` nor `9`).
+
+> **UPDATE 2023-03-31** changed the example values to actually make sense,
+> sorry for the confusion!!!
 
 So, at this point, it's a matter of calculating how much each sub-list is
 worth, firing at the lowest item of each and tracking chain reactions by
