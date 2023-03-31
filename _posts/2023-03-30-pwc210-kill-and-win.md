@@ -76,13 +76,13 @@ score. For example, the following sorted list provides us with three
 candidate sub-lists, as hinted by the spacing:
 
 ```
-1 1 2 2 2 3    5 6    8 8 8 8
+1 1 2 2 3    5 6    8 8 8 8
 
 ```
 
-Under our rules above, the best score here is `13 = 6 + 7`, because:
+Under our rules above, the best score here is `11 = 5 + 6`, because:
 
-- the first sub-list yields 11, like this:
+- the first sub-list yields 9, like this:
     - we hit the very first `1`
     - this causes all the `2` to be killed due to chain reaction
     - this causes the remaining `1` and the `3` to be killed due to chain
