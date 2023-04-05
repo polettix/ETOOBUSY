@@ -98,3 +98,4 @@ Stay safe!
 [Rai]: https://www.rai.it/
 [Cosmic mitmproxy]: {{ '/2023/04/04/cosmic-mitmproxy/' | prepend: site.baseurl }}
 [Awesome exiftool]: {{ '/2023/04/03/awesome-exiftool/' | prepend: site.baseurl }}
+[Romeo]: {{ '/2023/03/07/fun-with-romeo/' | prepend: site.baseurl }}
