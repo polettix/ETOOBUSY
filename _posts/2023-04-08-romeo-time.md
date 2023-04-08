@@ -106,8 +106,6 @@ OK, I hope this will be a useful refresher... bye bye, future me!
 
 Everyone else stay safe!
 
-
-
 [Perl]: https://www.perl.org/
 [Romeo]: {{ '/2023/03/07/fun-with-romeo/' | prepend: site.baseurl }}
 [ereyesterday]: https://en.wiktionary.org/wiki/ereyesterday
