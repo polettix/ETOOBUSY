@@ -36,6 +36,12 @@ case "$command" in
       exit $?
       ;;
 
+   (one-build|build-one)
+      DOKYLL_PRE='' dokyll bundle exec jekyll build \
+         $multiconfig --future
+      exit $?
+      ;;
+
    (build)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
          $multiconfig --watch --future
