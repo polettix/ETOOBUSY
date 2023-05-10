@@ -100,7 +100,7 @@ case "$command" in
 
    (qbuild)
       DOKYLL_PRE='' dokyll bundle exec jekyll build \
-         $multiconfig --watch --future --limit_posts 5
+         $multiconfig --watch --future --limit_posts 7
       exit $?
       ;;
 
