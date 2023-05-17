@@ -65,6 +65,9 @@ and folks I did like it!
 
 # The solution
 
+> **Update** thanks to [E. Choroba][choroba] I discovered **two** bugs...
+> the joys of testing (or lack thereof...)
+
 The key word here is *needed*. So... it's an optimization problem, and we
 have to find out the lowest number of available stickers from which we can
 generate our target word.
@@ -132,13 +135,17 @@ sub word_stickers ($word, @stickers) {
       }
    }
 
+
    # check for a viable solution and set the bare minimum
    my %minimum;
    for my $letter (keys(%needed)) {
       my $alternatives = $provided{$letter}
          or return 0; # no viable source
       if (scalar(keys($alternatives->%*)) == 1) { # one viable source only
-         my ($word, $amount) = $alternatives->%*;
+         my ($word, $units) = $alternatives->%*;
+         my $amount = int($needed{$letter} / $units)
+            + ($needed{$letter} % $units ? 1 : 0);
+         my $amount = $units;
          $minimum{$word} = $amount
             if (! exists($minimum{$word})) || ($minimum{$word} < $amount);
       }
@@ -166,16 +173,19 @@ sub complete_minimum ($minimum, $needed, $provided) {
       my $frame = shift(@queue);
       my $needed = $frame->{needed};
       my $minimum = $frame->{minimum};
-      for my $letter (keys($needed->%*)) {
-         for my $source (keys($provided->{$letter}->%*)) {
-            my %nmin  = $minimum->%*;
-            $nmin{$source}++;
-            my %nneed = $needed->%*;
-            $nneed{$letter} -= $provided->{$letter}{$source};
+
+      my %words = map { $_ => 1 }
+         map { keys($provided->{$_}->%*) } keys($needed->%*);
+      for my $source (keys %words) {
+         my %nmin  = $minimum->%*;
+         $nmin{$source}++;
+         my %nneed = $needed->%*;
+         for my $letter (keys(%nneed)) {
+            $nneed{$letter} -= $provided->{$letter}{$source} // 0;
             delete($nneed{$letter}) if $nneed{$letter} <= 0;
-            return %nmin if scalar(keys(%nneed)) == 0;
-            push @queue, {needed => \%nneed, minimum => \%nmin};
          }
+         return %nmin if scalar(keys(%nneed)) == 0;
+         push @queue, {needed => \%nneed, minimum => \%nmin};
       }
    }
 }
@@ -214,7 +224,9 @@ sub word-stickers ($word, @stickers) {
       my $alternatives = %provided{$letter}
          or return 0; # no viable source
       if ($alternatives.elems == 1) { # one viable source only
-         my ($word, $amount) = $alternatives.kv;
+         my ($word, $units) = $alternatives.kv;
+         my $amount = (%needed{$letter} div $units)
+            + ((%needed{$letter} % $units) ?? 1 !! 0);
          %minimum{$word} = $amount
             if %minimum{$word}:!exists || (%minimum{$word} < $amount);
       }
@@ -243,22 +255,25 @@ sub letters-histogram ($word) {
    return %amount_for;
 }
 
+
 sub complete-minimum (%minimum is copy, %needed is copy, %provided) {
    my @queue = {needed => %needed, minimum => %minimum},;
    while @queue {
       my $frame = @queue.shift;
       my $needed = $frame<needed>;
       my $minimum = $frame<minimum>;
-      for $needed.keys -> $letter {
-         for %provided{$letter}.keys -> $source {
-            my %nmin  = %$minimum;
-            %nmin{$source}++;
-            my %nneed = %$needed;
-            %nneed{$letter} -= %provided{$letter}{$source};
+
+      my %words = $needed.keys.map({ %provided{$_}.keys }).flat.map({ $_ => 1 });
+      for %words.keys -> $source {
+         my %nmin  = %$minimum;
+         %nmin{$source}++;
+         my %nneed = %$needed;
+         for %nneed.keys -> $letter {
+            %nneed{$letter} -= %provided{$letter}{$source} // 0;
             %nneed{$letter}:delete if %nneed{$letter} <= 0;
-            return %nmin if %nneed.keys.elems == 0;
-            @queue.push: {needed => %nneed, minimum => %nmin};
          }
+         return %nmin if %nneed.keys.elems == 0;
+         @queue.push: {needed => %nneed, minimum => %nmin};
       }
    }
    return ();
@@ -274,3 +289,4 @@ Stay safe and cheers!
 [Perl]: https://www.perl.org/
 [Raku]: https://raku.org/
 [manwar]: http://www.manwar.org/
+[choroba]: https://github.com/choroba
