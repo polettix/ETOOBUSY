@@ -1,0 +1,104 @@
+{
+   "name": "Friday",
+   "decks": [
+      {
+         "name": "Robinson, start",
+         "+tags": [ "robinson", "start" ],
+         "cards": [
+            { "fight":  2, "ability": null },
+            { "fight":  1, "ability": null },
+            { "fight":  1, "ability": null },
+            { "fight":  1, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": null },
+            { "fight":  0, "ability": "+2 life" },
+            { "fight": -1, "ability": null },
+            { "fight": -1, "ability": null },
+            { "fight": -1, "ability": null },
+            { "fight": -1, "ability": null },
+            { "fight": -1, "ability": null }
+         ]
+      },
+      {
+         "name": "Robinson, experience",
+         "+tags": [ "robinson", "hazard" ],
+         "cards": [
+            { "fight": 0, "ability": "1x below the pile", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "+2 cards", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "+2 cards", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "1x copy", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "1x destroy", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "2x exchange", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "2x exchange", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "+1 life", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "+1 life", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 0, "ability": "-1 step", "hazard": [0, 1, 3], "deal": 1 },
+            { "fight": 1, "ability": "1x below the pile", "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 1, "ability": "1x copy", "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 1, "ability": "1x destroy", "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 1, "ability": "1x double", "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 1, "ability": "+1 life", "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 1, "ability": "+1 life", "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 2, "ability":  null, "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 2, "ability":  null, "hazard": [1, 3, 6], "deal": 2 },
+            { "fight": 2, "ability": "+1 card", "hazard": [2, 5, 8], "deal": 3 },
+            { "fight": 2, "ability": "1x destroy", "hazard": [2, 5, 8], "deal": 3 },
+            { "fight": 2, "ability": "1x double", "hazard": [2, 5, 8], "deal": 3 },
+            { "fight": 2, "ability": "1x exchange", "hazard": [2, 5, 8], "deal": 3 },
+            { "fight": 2, "ability": "+1 life", "hazard": [2, 5, 8], "deal": 3 },
+            { "fight": 2, "ability": "sort 3 cards", "hazard": [2, 5, 8], "deal": 3 },
+            { "fight": 3, "ability": "+1 card", "hazard": [4, 7, 11], "deal": 4 },
+            { "fight": 3, "ability": "1x destroy", "hazard": [4, 7, 11], "deal": 4 },
+            { "fight": 3, "ability": "1x exchange", "hazard": [4, 7, 11], "deal": 4 },
+            { "fight": 3, "ability": "sort 3 cards", "hazard": [4, 7, 11], "deal": 4 },
+            { "fight": 4, "ability": null, "hazard": [5, 9, 14], "deal": 5 },
+            { "fight": 4, "ability": null, "hazard": [5, 9, 14], "deal": 5 }
+         ]
+      },
+      {
+         "name": "Robinson, aging (normal level)",
+         "+tags": [ "robinson", "aging", "aging/normal" ],
+         "cards": [
+            { "fight":  0, "ability": "highest card = 0" },
+            { "fight":  0, "ability": "highest card = 0" },
+            { "fight":  0, "ability": "-1 life" },
+            { "fight":  0, "ability": "stop" },
+            { "fight": -1, "ability": null },
+            { "fight": -2, "ability": null },
+            { "fight": -2, "ability": null },
+            { "fight": -3, "ability": null, "+tags": [ "aging/very stupid" ] }
+         ]
+      },
+      {
+         "name": "Robinson, aging (difficult level)",
+         "+tags": [ "robinson", "aging", "aging-difficult" ],
+         "cards": [
+            { "fight":  0, "ability": "-2 life" },
+            { "fight": -4, "ability": null },
+            { "fight": -5, "ability": null }
+         ]
+      },
+      {
+         "name": "Pirates",
+         "+tags": [ "pirate", "hazard" ],
+         "cards": [
+            { "hazard": "*", "deal":   5, "ability": "2x aging", "short explanation": "hazard value: 2 for each aging card already played" },
+            { "hazard":  20, "deal":   6, "ability":  null, "short explanation":  null },
+            { "hazard":  25, "deal":   7, "ability":  null, "short explanation":  null },
+            { "hazard":  16, "deal":   7, "ability": "2x lifes", "short explanation": "each non-free fight card costs 2 lifes instead of 1" },
+            { "hazard": "*", "deal": "*", "ability": "all hazards", "short explanation": "sum all remaining hazard cards for hazard (red values) and deals" },
+            { "hazard":  30, "deal":   8, "ability":  null, "short explanation":  null },
+            { "hazard":  22, "deal":   9, "ability": "half cards", "short explanation": "use only half of the fight cards in play (keep all aging cards though), round at will" },
+            { "hazard":  35, "deal":   9, "ability":  null, "short explanation":  null },
+            { "hazard":  40, "deal":  10, "ability":  null, "short explanation":  null },
+            { "hazard":  52, "deal":  10, "ability": "1x cards", "short explanation": "1 additional fight point for each fight card played" }
+         ]
+      }
+   ]
+}
