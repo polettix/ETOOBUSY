@@ -1,5 +1,5 @@
 ---
-title: Coding disci[pline
+title: Coding discipline
 type: post
 tags: [ perl, coding ]
 comment: true
