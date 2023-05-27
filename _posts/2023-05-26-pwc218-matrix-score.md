@@ -60,21 +60,35 @@ bit strings as native integers.
 
 # The solution
 
-For each line, the higher the better. Hence, we have to make sure that the
-most significant bit is always on - this can be done by toggling all lines
-where it's off.
+> Update: cleaned up solution, text, and added [Raku][] solution.
 
-Then we move on to check each column, skipping the one for the most
-significant bit (we already addressed it with the rows). We make sure that
-we always have the highest possible number of bits toggled on, which is at
-least half of them (for an even number of rows) or one more than the half
-(for an odd number of rows). Hopefully more!
+Each position in the matrix holds a value that depends on its column,
+according to powers of 2 starting from the right-most column (value 1),
+doubling for each move to the left. There is no dependency on the row.
 
-As the final sum is *in some sense* the sum of all individual positions
-(each with its weight), this should give us the maximum.
+To start with, we can observe that it's better to have a single 1 on the
+left than all 1 in the rest of a row going to the right, i.e.:
+
+```
+1 0...0 > 0 1...1
+```
+
+(the two "strings" of either 0 or 1 in the above inequality have the same
+amount of digits, of course).
+
+This means that we MUST turn on the left-most bit in every row, which can be
+done by toggling every row where the left-most bit is not set yet.
+
+At this point, for each residual column going to the right, our best
+strategy is to turn on as many bits as possible. For each column we count
+how many bits are on, and toggle the whole column if it's not *at least*
+half of them.
+
+Now, of course, one might argue what would happen if we did this initial
+move to the left-most column as well. This blog is too narrow to write a
+full demonstration, but trust me that nothing changes. (I trust it, anyway).
 
 On with the [Perl][] solution:
-
 
 ```perl
 #!/usr/bin/env perl
@@ -82,42 +96,34 @@ use v5.24;
 use warnings;
 use experimental 'signatures';
 use List::Util 'sum';
-use Data::Dumper;
 
 say matrix_score($_) for test_matrixes();
 
 sub matrix_score ($matrix) {
    my $n_rows = $matrix->@*;
+   my $threshold = int($n_rows / 2) + ($n_rows % 2);
    for my $r (0 .. $n_rows - 1) {
       toggle_row($matrix, $r) unless $matrix->[$r][0];
    }
-   my $threshold = int($n_rows / 2) + ($n_rows % 2);
    for my $c (1 .. $matrix->[0]->$#*) {
       toggle_col($matrix, $c) if count_col($matrix, $c) < $threshold;
    }
-   return sum(map { binstr_to_dec($_) } $matrix->@*);
+   return sum(map { binarr_to_dec($_) } $matrix->@*);
 }
 
-sub binstr_to_dec ($row) {
+sub binarr_to_dec ($row) {
    my $v = 0;
    $v = ($v << 1) | ($row->[$_] ? 1 : 0) for 0 .. $row->$#*;
    return $v;
 }
 
-sub toggle_row ($matrix, $r) {
-   my $row = $matrix->[$r];
-   $row->[$_] =~ tr/01/10/ for 0 .. $row->$#*;
-   return $matrix;
+sub toggle_row ($m, $r) {
+   $m->[$r][$_] = 1 - $m->[$r][$_] for 0 .. $m->[$r]->$#*;
 }
 
-sub toggle_col ($matrix, $c) {
-   $_->[$c] =~ tr/10/01/ for $matrix->@*;
-   return $matrix;
-}
+sub toggle_col ($matrix, $c) { $_->[$c] = 1 - $_->[$c] for $matrix->@* }
 
-sub count_col ($matrix, $c) {
-   return sum(map { $_->[$c] ? 1 : 0 } $matrix->@*) // 0;
-}
+sub count_col ($m, $c) { sum(map { $_->[$c] ? 1 : 0 } $m->@*) // 0 }
 
 sub test_matrixes {
    return (
@@ -127,7 +133,42 @@ sub test_matrixes {
 }
 ```
 
-I'm in a hurry and I'll hopefully add a [Raku][] solution later, stay safe!
+I initially tried to implement `binarr_to_dec` with some combination of
+`pack` and `unpack`, but failed miserably. The joys of having Plan B.
+
+The [Raku][] alternative is pleasant in my opinion:
+
+```raku
+#!/usr/bin/env raku
+use v6;
+sub MAIN {
+   my @tests =
+      [[0, 0, 1, 1], [1, 0, 1, 0], [1, 1, 0, 0]],
+      [[0],],
+   ;
+   put(matrix-score($_)) for @tests;
+}
+
+sub matrix-score ($matrix) {
+   my $n-rows = $matrix.elems;
+   my $threshold = ($n-rows div 2) + ($n-rows % 2);
+   for ^$n-rows -> $r {
+      toggle-row($matrix, $r) unless $matrix[$r][0];
+   }
+   for 1 .. $matrix[0].end -> $c {
+      toggle-col($matrix, $c) if count-col($matrix, $c) < $threshold;
+   }
+   return $matrix.map({ $_.join('').parse-base(2) }).sum;
+}
+
+sub toggle-row ($m, $r) { $m[$r][$_] = 1 - $m[$r][$_] for 0 .. $m[0].end }
+
+sub toggle-col ($matrix, $c) { $_[$c] = 1 - $_[$c] for @$matrix }
+
+sub count-col ($matrix, $c) { $matrix.map({ $_[$c] }).sum }
+```
+
+OK, now the residual debt with this post has been paid... stay safe!
 
 
 [The Weekly Challenge]: https://theweeklychallenge.org/
