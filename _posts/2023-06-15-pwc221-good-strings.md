@@ -45,7 +45,7 @@ Given past challenges, one question is whether characters case matters or
 not. Additional questions would be:
 
 - how should we handle accented characters?
-- special charas, like quotation marks, hyphens, dots, etc.
+- special characters, like quotation marks, hyphens, dots, etc.
 
 # The solution
 
