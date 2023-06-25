@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="home">
+   {% include nav.html %}
+   <section>
+      <ul class="post-list">
+         {% for page in site.pages | sort:'title' %}
+            {% if page.doc %}
+         <li>
+            <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
+         </li>
+            {% endif %}
+         {% endfor %}
+      </ul>
+   </section>
+</div>
