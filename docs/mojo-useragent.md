@@ -1,8 +1,9 @@
 ---
-title: 'Mojo::UserAgent introductory notes'
+title: 'Mojo::UserAgent'
 type: page
 tags: [ mojolicious, perl, user agent ]
 date: 2021-02-22 07:00:00 +0100
+doc: true
 mathjax: false
 toc: true
 published: true
