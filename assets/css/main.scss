@@ -88,3 +88,17 @@ $link-color-active: #d33c00;
    margin-top: 1.5em;
    margin-bottom: 0.5em;
 }
+
+// page navigation
+.page-nav {
+   right: -17em;
+   width: 17em;
+   list-style-type: none;
+}
+@include media-query($breakpoint-large) {
+   .page-nav { display: none }
+}
+
+.toc-entry {
+   list-style-type: none;
+}
