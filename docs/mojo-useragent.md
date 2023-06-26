@@ -2,13 +2,16 @@
 title: 'Mojo::UserAgent'
 type: page
 tags: [ mojolicious, perl, user agent ]
-date: 2021-02-22 07:00:00 +0100
+date: 2023-06-23 07:00:00 +0100
 doc: true
 mathjax: false
 toc: true
 published: true
 ---
 
+Notes about [Mojo::UserAgent][] that can come handy all in one place, in a
+synthetic form. More and better stuff in [Commented examples in the
+Cookbook][].
 
 # SYNOPSIS
 
@@ -283,18 +286,15 @@ This also works for other HTTP verbs that allow for a request body, like
 
 # Basic Authentication
 
-Basic Authentication usually ends up as a `Authorization` header in the HTTP
-request, so it's possible to go the long way and set it directly:
+It's possible to just put the credentials in the URL and it will be put in
+the right place:
 
 {% include code_header.html %}
 ```perl
-use Mojo::Util 'b64_encode';
-my $encoded = b64_encode("$user:$pass", '')
-my $res = $ua->get($url, {Authorization => "Basic $encoded"});
+my $res = $ua->get('https://$user:$pass@example.com/');
 ```
 
-More idiomatically, it's possible to set them through a [Mojo::URL][]
-object:
+Code can be cleaner using a [Mojo::URL][] object and method `userinfo`:
 
 {% include code_header.html %}
 ```perl
@@ -303,6 +303,16 @@ my $url = Mojo::URL->new('https://example.com/')->userinfo("$user:$pass");
 my $res = $ua->get($url)->res;
 ```
 
+The bottom line is that Basic Authentication data end up as a
+`Authorization` header in the HTTP request, so it's possible to go the long
+way and set it directly:
+
+{% include code_header.html %}
+```perl
+use Mojo::Util 'b64_encode';
+my $encoded = b64_encode("$user:$pass", '')
+my $res = $ua->get($url, {Authorization => "Basic $encoded"});
+```
 
 # Useful links
 
@@ -311,9 +321,6 @@ The following pages can help a lot:
 - [SYNOPSIS][]
 - [Commented examples in the Cookbook][]
 - [Mojo::Message][] and [Mojo::Message::Response][]
-
-
-
 
 [Mojo::UserAgent]: https://metacpan.org/pod/Mojo::UserAgent
 [Mojo::UserAgent::Proxy]: https://metacpan.org/pod/Mojo::UserAgent::Proxy
@@ -331,3 +338,4 @@ The following pages can help a lot:
 [Mojo::Headers]: https://metacpan.org/pod/Mojo::Headers
 [btx]: https://metacpan.org/pod/Mojo::UserAgent#build_tx
 [Mojo::URL]: https://metacpan.org/pod/Mojo::URL
+[Perl]: https://www.perl.org/
