@@ -23,6 +23,6 @@ it should go in a page on its own.
 Stay safe!
 
 [Perl]: https://www.perl.org/
-[mojopage]: {{ '/pages/mojolicious/' | prepend: site.baseurl }}
+[mojopage]: {{ '/docs/mojolicious/' | prepend: site.baseurl }}
 [Mojo::UserAgent specific page, and a salutation]: {{ '/2023/06/25/mojo-useragent-page/' | prepend: site.baseurl }}
 [Mojolicious]: https://metacpan.org/pod/Mojolicious
