@@ -5,7 +5,8 @@ layout: default
    {% include nav.html %}
    <section>
       <ul class="post-list">
-         {% for page in site.pages | sort:'title' %}
+         {% assign sorted_pages = site.pages | sort:'title' %}
+         {% for page in sorted_pages %}
             {% if page.doc %}
          <li>
             <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
