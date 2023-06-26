@@ -6,10 +6,8 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
   <div style="position: relative">
-     <div class="page-nav" style="position: absolute">
-        <div style="position: fixed">
+     <div class="page-nav">
         {{ content | toc_only }}
-        </div>
      </div>
      <div class="post-content" id="content">
       {{ content | inject_anchors }}

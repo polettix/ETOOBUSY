@@ -91,14 +91,18 @@ $link-color-active: #d33c00;
 
 // page navigation
 .page-nav {
-   right: -17em;
+   top: 70px;
+   bottom: 30px;
+   left: 760px;
    width: 17em;
    list-style-type: none;
+   overflow-y: scroll;
+   position: fixed;
 }
 @include media-query($breakpoint-large) {
    .page-nav { display: none }
 }
 
 .toc-entry {
-   list-style-type: none;
+   list-style-type: '- '; //'▶';
 }
