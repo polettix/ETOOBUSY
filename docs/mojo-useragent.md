@@ -38,7 +38,12 @@ else { # error handling, log/warn/die/croak/ouch/...
 }
 ```
 
-# Constructor
+# Setup
+
+Here is where we get a user agent object and, if needed, we set up automatic
+proxy detection too.
+
+## Get a UserAgent object
 
 Use `new` to get a [Mojo::UserAgent][] object, pass the [ATTRIBUTES][] you
 want to set:
@@ -61,7 +66,7 @@ my $ua  = Mojo::UserAgent->new
     ->max_redirects(5);
 ```
 
-# Proxy
+## Proxy
 
 **No "common" environment variables by default**. They can be [detect][]ed
 though:
@@ -77,7 +82,13 @@ $ua->proxy->detect;
 The `proxy` method gives back an object of class [Mojo::UserAgent::Proxy][]
 for fancier configurations.
 
-# Query response: `res`
+
+# Response
+
+Using HTTP is about making requests and getting responses back. Let's assume
+you're more focused on the latter here.
+
+## Use `res`
 
 The outcome of a [get][] (or [post][], or...) is a
 [Mojo::Transaction::HTTP][] (/[Mojo::Transaction][]) object, but this is
@@ -101,7 +112,7 @@ else { # error handling, log/warn/die/croak/ouch/...
 > conditions must be checked in two different ways.
 
 
-# Response outcome: success and errors
+## `is_success`, `is_error`, or...?
 
 Errors can be checked upon a `res`ponse, usually `is_success` should suffice:
 
@@ -141,7 +152,7 @@ die 'remote server is feeling bad' if $res->is_server_error;
 say $res->body;
 ```
 
-# Response data: `body`/`dom`/`json` (and others)
+## Get the data: `body`/`dom`/`json` (and others)
 
 Data can be extracted from a successful response, which is also a
 [Mojo::Message][] object:
@@ -170,7 +181,7 @@ Last, `message` refers to the small text that is usually provided along with
 a HTTP status code (like the `OK` in `200 OK`. Rarely what is acually
 needed.
 
-# Response headers: `headers`
+## Look at `headers`
 
 Headers in a response can be of help sometimes:
 
@@ -203,14 +214,85 @@ generic `header` method, providing the name of the header (case does not
 matter):
 
 {% include code_header.html %}
-```
+```perl
 my $type_alt1 = $headers->header('content-type');  # all lowercase
 my $type_alt2 = $headers->header('Content-Type');  # Camel Case
 my $type_alt2 = $headers->header('cOnTeNt-tYpE');  # kiddie?
 my $generic   = $headers->header('X-my-header');
 ```
 
-# Request: headers
+# Request
+
+If you need to craft the request, read on.
+
+## Send form data
+
+Sending a HTTP form can be done by adding two parameters in the request
+([get][], [post][], ...), the first being `form` and the second a hash
+reference with key/value pairs.
+
+GET requests have form data encoded in the URL:
+
+{% include code_header.html %}
+```perl
+my %form_data = (foo => bar, multi => [ qw< first second third > ]);
+my $res = $ua->get($url, form => \%form_data);
+```
+
+POST (and other HTTP verbs that allow for a request body) have form data set
+in the body and content-type set to `application/x-www-form-urlencoded`:
+
+{% include code_header.html %}
+```perl
+my %form_data = (foo => bar, multi => [ qw< first second third > ]);
+my $res = $ua->post($url, form => \%form_data);
+```
+
+Multiple values for the same key can be passed using an array reference,
+like in the example above.
+
+## Send JSON-encoded data
+
+Encoding a data structure as a JSON string to send as the request body (e.g.
+while consuming a remote API) can be done easily:
+
+{% include code_header.html %}
+```perl
+my $res = $ua->post($url, json => $request_data_structure);
+```
+
+This also works for other HTTP verbs that allow for a request body, like
+`PUT`.
+
+## Upload a file
+
+A HTTP file upload is usually arranged as a POST form with `Content-Type`
+set to `multipart/form-data`. Just treat it as a regular `form` and pass the
+data as a `file`, like the example below:
+
+{% include code_header.html %}
+```perl
+$ua->post('https://example.com/send-file', form => {
+    foo => {file => '/on/to/something.png'},
+    bar => 'howdy!',
+    baz => 'go!',
+});
+```
+
+It roughly corresponds to the following HTML form:
+
+```html
+<form method="POST" action="https://example.com/send-file">
+    <input  type="file"   name="foo">
+    <input  type="hidden" name="bar" value="howdy!">
+    <button type="submit" name="bar" value="go!">
+</form>
+```
+
+In both the [Mojo::UserAgent][] and the HTML form, the presence of the
+`file` form field triggers usage of the right `Content-Type`.
+
+## Fiddle with `headers`
 
 All request methods ([get][], [post][], ...) take a URL (or equivalent) as
 the first required parameter, then accept other optional parameters.
@@ -245,46 +327,7 @@ $headers->header('X-foo' => qw< foo bar >);
 $ua->start($tx);
 ```
 
-# Request: form data
-
-Sending a HTTP form can be done by adding two parameters in the request
-([get][], [post][], ...), the first being `form` and the second a hash
-reference with key/value pairs.
-
-GET requests have form data encoded in the URL:
-
-{% include code_header.html %}
-```perl
-my %form_data = (foo => bar, multi => [ qw< first second third > ]);
-my $res = $ua->get($url, form => \%form_data);
-```
-
-POST (and other HTTP verbs that allow for a request body) have form data set
-in the body and content-type set to `application/x-www-form-urlencoded`:
-
-{% include code_header.html %}
-```perl
-my %form_data = (foo => bar, multi => [ qw< first second third > ]);
-my $res = $ua->post($url, form => \%form_data);
-```
-
-Multiple values for the same key can be passed using an array reference,
-like in the example above.
-
-# Request: JSON-encoded data
-
-Encoding a data structure as a JSON string to send as the request body (e.g.
-while consuming a remote API) can be done easily:
-
-{% include code_header.html %}
-```perl
-my $res = $ua->post($url, json => $request_data_structure);
-```
-
-This also works for other HTTP verbs that allow for a request body, like
-`PUT`.
-
-# Basic Authentication
+## Basic Authentication
 
 It's possible to just put the credentials in the URL and it will be put in
 the right place:

@@ -291,6 +291,7 @@ See [specific page][authentication-page].
 The main application exposes a method `log` that gives access to the
 [Mojo::Log][] object:
 
+{% include code_header.html %}
 ```perl
 app->log->info('this is from where the main app is visible');
 
@@ -303,6 +304,7 @@ get '/in/controller' => sub ($c) {
 
 From the SYNOPSIS of [Mojo::Log][], the following log levels are supported:
 
+{% include code_header.html %}
 ```perl
 # Log messages
 $log->trace('Doing stuff');
@@ -323,7 +325,7 @@ share a single logging channel. The plugin is
 In a [Mojolicious::Lite][] app:
 
 {% include code_header.html %}
-```
+```perl
 use Mojolicious::Lite;
 use Log::Any::Adapter ...; # whatever adapter is needed!
 plugin 'Log::Any';
