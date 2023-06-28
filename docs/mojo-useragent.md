@@ -9,6 +9,14 @@ toc: true
 published: true
 ---
 
+<div class="page-nav" markdown="1">
+
+{:toc}
+* this is the toc
+
+</div>
+<div class="post-content" id="content" markdown="1">
+
 Notes about [Mojo::UserAgent][] that can come handy all in one place, in a
 synthetic form. More and better stuff in [Commented examples in the
 Cookbook][].
@@ -382,3 +390,5 @@ The following pages can help a lot:
 [btx]: https://metacpan.org/pod/Mojo::UserAgent#build_tx
 [Mojo::URL]: https://metacpan.org/pod/Mojo::URL
 [Perl]: https://www.perl.org/
+
+</div>

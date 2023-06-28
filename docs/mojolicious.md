@@ -9,9 +9,18 @@ toc: true
 published: true
 ---
 
+<div class="page-nav" markdown="1">
+
+{:toc}
+* this is the toc
+
+</div>
+<div class="post-content" id="content" markdown="1">
+
 [Mojolicious][] is a fantastic web framework for [Perl][]. It has a lot of
 [Guides][], so here there are some things that might come handy every now
 and then, from the perspective of a non-professional user.
+
 
 # Starter code for lite app
 
@@ -448,3 +457,5 @@ Also:
 [Layouts]: https://metacpan.org/dist/Mojolicious/view/lib/Mojolicious/Guides/Rendering.pod#Layouts
 [Mojo::Log]: https://metacpan.org/pod/Mojo::Log
 [Log::Any::Adapter::MojoLog]: https://metacpan.org/pod/Log::Any::Adapter::MojoLog
+
+</div>

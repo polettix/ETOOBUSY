@@ -7,6 +7,10 @@ url: "https://github.polettix.it"
 author: "polettix"
 timezone: Europe/Rome
 
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
 #defaults:
 #   -
 #      scope:

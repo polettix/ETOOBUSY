@@ -16,8 +16,9 @@ google_analytics:
 # was: disqus_shortname: ETOOBUSY
 disqus_shortname:
 
-plugins:
-  - jekyll-sitemap
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 
 exclude: ["_site", "_codeberg", "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "Gemfile.lock"]
 
