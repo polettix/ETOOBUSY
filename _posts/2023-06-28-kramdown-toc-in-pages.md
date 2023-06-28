@@ -1,5 +1,5 @@
 ---
-title: Kramdown Table of Contents in pages
+title: kramdown Table of Contents in pages
 type: post
 tags: [ blog, jekyll ]
 comment: true
@@ -78,3 +78,4 @@ And with this, I guess that's all folks!
 
 
 [GitHub Pages failed me]: {{ '/2023/06/27/github-pages-failed-me/' | prepend: site.baseurl }}
+[kramdown]: https://kramdown.gettalong.org/
