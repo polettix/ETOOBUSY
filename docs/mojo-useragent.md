@@ -9,13 +9,13 @@ toc: true
 published: true
 ---
 
-<div class="page-nav" markdown="1">
+<div class="page-nav">
 
 {:toc}
 * this is the toc
 
 </div>
-<div class="post-content" id="content" markdown="1">
+<div class="post-content" id="content">
 
 Notes about [Mojo::UserAgent][] that can come handy all in one place, in a
 synthetic form. More and better stuff in [Commented examples in the

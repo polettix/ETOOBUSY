@@ -9,13 +9,13 @@ toc: true
 published: true
 ---
 
-<div class="page-nav" markdown="1">
+<div class="page-nav">
 
 {:toc}
 * this is the toc
 
 </div>
-<div class="post-content" id="content" markdown="1">
+<div class="post-content" id="content">
 
 [Mojolicious][] is a fantastic web framework for [Perl][]. It has a lot of
 [Guides][], so here there are some things that might come handy every now
