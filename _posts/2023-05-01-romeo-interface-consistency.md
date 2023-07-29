@@ -57,4 +57,4 @@ occurrences of `-i`/`--input`. Which is totally fine, I think.
 Cheers and... stay safe!
 
 [Perl]: https://www.perl.org/
-[Raku]: https://raku.org/
+[Romeo]: {{ '/2023/03/07/fun-with-romeo/' | prepend: site.baseurl }}
