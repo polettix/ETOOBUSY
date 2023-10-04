@@ -12,6 +12,9 @@ published: true
 
 > [Readonly::Tiny][] is better than [constant][].
 
+> **UPDATE 2021-10-04** it was long time due to fix the big issue with
+> this post! Now it does what it was meant to do.
+
 I rarely use constants, mainly because I like those constants to be...
 variables that are possibly read from a file. But yes, those variables might
 have default values and these would probably be... *constants*.
@@ -54,6 +57,19 @@ left of the *fat comma*:
 my %doubles = (SOME_VALUE => SOME_VALUE * 2);
 ```
 
+There are a couple workarounds for this:
+
+```perl
+# SOME_VALUE is a function after all, let's call it as such
+my %doubles = (SOME_VALUE()  => SOME_VALUE * 2);
+
+# force evaluation as a string
+my %triples = (SOME_VALUE.'' => SOME_VALUE * 3);
+```
+
+But they are... *workarounds*, and they don't work inside double-quoted
+strings anyway.
+
 The solution to this would be to use a full-fledged *scalar*, **but**
 scalars are *variables*, not *constants*.
 
@@ -61,8 +77,8 @@ Well... not so fast! Scalars *can* be constants... and [Readonly::Tiny][]
 can help us craft them as such:
 
 ```perl
-use Readonly::Tiny;
-my $SOME_VALUE = readonly 42;
+use Readonly::Tiny 'Readonly';
+Readonly my $SOME_VALUE => 42;
 ```
 
 Now things will work as expected:
@@ -70,6 +86,20 @@ Now things will work as expected:
 ```perl
 print "default value is $SOME_VALUE\n";
 my %doubles = ($SOME_VALUE => $SOME_VALUE * 2);
+
+# the following statement will die with error message:
+#   Modification of a read-only value attempted...
+$SOME_VALUE = 37;
+```
+
+Last, if you don't like using the *fat-comma* to do what amounts to an
+assignment (another itch I always had with `use constant`), it's
+possible to use function `readonly` instead, taking care to pass a
+*reference* to the variable we want to make read-only:
+
+```perl
+use Readonly; # function `readonly` is exported by default, yay!
+readonly \(my $SOME_VALUE = 42);
 ```
 
 So... if you are in need for a scalar constant, keep [Readonly::Tiny][] in
