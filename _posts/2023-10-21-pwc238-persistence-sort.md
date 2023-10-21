@@ -117,7 +117,7 @@ sub persistence-for ($v) {
 }
 ```
 
-The Schwartziant ransform has a different *taste* this time, because it
+The Schwartziant transform has a different *taste* this time, because it
 goes on a natural "reading" way instead of going backwards. Still, it's
 basically the same as before.
 
