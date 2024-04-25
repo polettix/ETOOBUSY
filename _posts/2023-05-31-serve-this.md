@@ -21,7 +21,7 @@ The good thing is that it's based on [Mojolicious][], which is a breeze to
 install, as long as the associated plugin for doing the fancy directory
 indexing [Mojolicious::Plugin::Directory::Stylish][].
 
-Another [Perl][]-based alternative is [http\_this][], although these days I
+Another [Perl][]-based alternative is [`http_this`][], although these days I
 don't usually fiddle with [Plack][], so it's somehow more *distant*. 
 
 Why [Perl][], you might wonder, when there might be better tools to do this?
@@ -40,5 +40,5 @@ Cheers!
 [serve-this]: https://gist.github.com/lbe/1b0de949e14300ffa52bd9f1c6896895
 [Mojolicious]: https://metacpan.org/pod/Mojolicious
 [Mojolicious::Plugin::Directory::Stylish]: https://metacpan.org/pod/Mojolicious::Plugin::Directory::Stylish
-[http\_this]: https://metacpan.org/pod/http_this
+[`http_this`]: https://metacpan.org/pod/http_this
 [Plack]: https://metacpan.org/pod/Plack
