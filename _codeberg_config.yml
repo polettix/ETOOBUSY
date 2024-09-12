@@ -20,7 +20,7 @@ markdown: kramdown
 kramdown:
   parse_block_html: true
 
-exclude: ["_site", "_codeberg", "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "Gemfile.lock"]
+exclude: ["_site", "_codeberg", "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "Gemfile.lock", "PROCESS.md"]
 
 destination: '_codeberg'
 keep_files: ['.git', '.domains']
