@@ -89,8 +89,9 @@ case "$command" in
          cd .. &&
          DOKYLL_PRE='' dokyll bundle exec jekyll build $prodconfig "$@" &&
          cd _codeberg &&
-         msg="Publish $(git status --short --branch \
+         defmsg="Publish $(git status --short --branch \
             | sed -ne '/^??/{s/.* //;s#/$##;s#/#-#g;p;q}')" &&
+         msg="${MSG:-"$defmsg"}"
          git add . &&
          git reset --soft pages-base &&
          git commit -m "$msg" &&
