@@ -2,3 +2,4 @@
 .DS_store
 /_bundle/
 /_site/
+/Gemfile.lock
